@@ -38,9 +38,11 @@ def accueil():
     pass
 
 def famille(idFamille):
+    #get name and image of the family idFamille
     pass
 
 def recette(idRecette):
+    #get name and image of the recipe idRecette
     pass
 
 
