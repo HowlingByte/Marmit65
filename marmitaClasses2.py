@@ -31,27 +31,20 @@ class Etape():
         self.num=num
         self.texte=texte
 
-
-def accueil():
-    #no input argument
-    #return name and image of all families of recipes
-    conn.cursor().execute("SELECT * FROM famille")
-
-    pass
-
-def famille(idFamille):
-    #get name and image of the family idFamille
-    conn.cursor().execute("SELECT * FROM famille WHERE idFamille = ?", (idFamille,))
-    pass
-
-def recette(idRecette):
-    #get name and image of the recipe idRecette
-    conn.cursor().execute("SELECT * FROM recette WHERE idRecette = ?", (idRecette,))
-    pass
-
-
 conn = sqlite3.connect('marmita.db')
 cur = conn.cursor()
+
+def accueil():
+    cur.execute("SELECT * FROM famille")
+    return cur.fetchall()
+
+def famille(idFamille):
+    cur.execute("SELECT nom, image FROM recettes WHERE ID = ?", (idFamille,))
+    return cur.fetchall()
+
+def recette(idRecette):
+    cur.execute("SELECT * FROM recettes WHERE ID = ?", (idRecette,))
+    return cur.fetchall()
 
 cur.execute("SELECT * FROM famille")
 
