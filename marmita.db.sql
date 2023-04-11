@@ -159,7 +159,7 @@ INSERT INTO "IngredientsDeRecette" ("ID_recettes", "ID_ingredients", "Quantite",
 (7, 41, 1, "gousse");
 
 INSERT INTO "EtapesDeRecette" ("ID_recettes", "Numero", "Descriptif") VALUES
-/* "Salade de chèvre chaud" v
+/* "Salade de chèvre chaud" */
 (1, 1, "Laver et couper les légumes"),
 (1, 2, "Faire griller les tranches de pain de mie"),
 (1, 3, "Disposer la salade, les tomates et le chèvre sur les tranches de pain"),
