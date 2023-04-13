@@ -8,12 +8,11 @@ body {
   padding: 20px;
   text-align: left;
   justify-content: start;
-  justify-content: space-evenly;
+  justify-content: space-around;
   display: flex;
 }
 .header img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
 }
 .header form {
   display: inline-block;
