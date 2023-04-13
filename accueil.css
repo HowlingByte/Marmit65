@@ -8,14 +8,16 @@ body {
   padding: 20px;
   text-align: left;
   justify-content: start;
-  justify-content: space-around;
+  justify-content: center;
   display: flex;
 }
 .header img {
   width: 200px;
+  fill: white;
 }
 .header form {
   display: inline-block;
+  padding-inline: 20px;
 }
 
 .footer {
@@ -24,6 +26,5 @@ body {
   text-align: center;
 }
 .footer img {
-  width: 100px;
-  height: 100px;
+  width: 50px;
 }
