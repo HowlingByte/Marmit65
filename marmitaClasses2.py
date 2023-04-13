@@ -36,19 +36,19 @@ cur = conn.cursor()
 
 def accueil():
     cur.execute("SELECT * FROM famille")
+    cur.close()
     return cur.fetchall()
 
 def famille(idFamille):
     cur.execute("SELECT nom, image FROM recettes WHERE ID = ?", (idFamille,))
+    cur.close()
     return cur.fetchall()
 
 def recette(idRecette):
     cur.execute("SELECT * FROM recettes WHERE ID = ?", (idRecette,))
+    cur.close()
     return cur.fetchall()
 
 cur.execute("SELECT * FROM famille")
-
 conn.commit()
-
-cur.close()
 conn.close()
