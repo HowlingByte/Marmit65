@@ -7,7 +7,9 @@ body {
   background-color: #F18805;
   padding: 20px;
   text-align: left;
-  justify-content: left;
+  justify-content: start;
+  justify-content: space-evenly;
+  display: flex;
 }
 .header img {
   width: 100px;
