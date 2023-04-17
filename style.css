@@ -1,10 +1,10 @@
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  background-color: #383B53;
+  background-color: #16141C;
 }
 .header {
-  background-color: #66717E;
+  background-color: #6D4AFF;
   padding: 20px;
   text-align: left;
   justify-content: start;
@@ -18,7 +18,7 @@ body {
 
 .content {
   padding: 20px;
-  background-color: #383B53;
+  background-color: #16141C;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@ body {
 }
 
 .footer {
-  background-color: #66717E;
+  background-color: #6D4AFF;
   padding: 20px;
   text-align: center;
 }
@@ -36,7 +36,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #F18805;
+    background-color: #6D4AFF;
     border-radius: 10px;
 }
 ::-webkit-scrollbar {
@@ -62,13 +62,13 @@ body {
   border-radius: 4px 0 0 4px;
   font-size: 16px;
   flex-grow: 1;
-  background-color: #383B53;
+  background-color: #16141C;
   color: #f0f0f0;
 }
 
 .search-button {
   padding: 8px;
-  background-color: #D1CAA1;
+  background-color: #B1ADB9;
   color: #fff;
   border: none;
   border-radius: 0 4px 4px 0;
@@ -86,7 +86,7 @@ body {
 
 .grid-item {
   padding: 16px; /* Adjust padding as needed */
-  background-color: #fff; /* Adjust background color as needed */
+  background-color: #B1ADB9; /* Adjust background color as needed */
 }
 
 
@@ -98,7 +98,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #66717E;
+  background-color: #6D4AFF;
   padding: 16px;
   box-sizing: border-box;
 }
@@ -117,18 +117,4 @@ body {
   text-align: left;
   color: #fff;
   text-decoration: none;
-  
-}
-
-.liens a:hover 
-{
-  color: #383B53;
-  /* Firefox */
-  -moz-transition: all 0.2s ease-in;
-  /* WebKit */
-  -webkit-transition: all 0.2s ease-in;
-  /* Opera */
-  -o-transition: all 0.2s ease-in;
-  /* Standard */
-  transition: all 0.2s ease-in;
 }
