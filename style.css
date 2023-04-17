@@ -1,10 +1,11 @@
 body {
   font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background-color: #383B53;
-}
+  height:100%;
+  background:linear-gradient(to bottom, #16141C 0%, #2e1d74 100%) fixed;  
+  margin:0;
+ }
 .header {
-  background-color: #66717E;
+  background-color: #000000;
   padding: 20px;
   text-align: left;
   justify-content: start;
@@ -18,7 +19,6 @@ body {
 
 .content {
   padding: 20px;
-  background-color: #383B53;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,10 +27,17 @@ body {
 }
 
 .footer {
-  background-color: #66717E;
-  padding: 20px;
-  text-align: center;
+  display: flex; /* Use Flexbox */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+  box-sizing: border-box;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-top: 2px solid #6D4AFF;
 }
+
 .footer img {
   width: 50px;
 }
@@ -87,23 +94,10 @@ body {
 .grid-item {
   padding: 16px; /* Adjust padding as needed */
   background-color: #fff; /* Adjust background color as needed */
+  border-radius: 4px; /* Adjust border radius as needed */
 }
 
-
-.footer {
-  display: flex; /* Use Flexbox */
-  justify-content: le; /* Center align child elements horizontally */
-  align-items: center; /* Center align child elements vertically */
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #66717E;
-  padding: 16px;
-  box-sizing: border-box;
-}
-
-.logo {
+.logo-footer {
   margin-right: 30px; /* Add margin to create spacing between logo and links */
 }
 
@@ -131,4 +125,25 @@ body {
   -o-transition: all 0.2s ease-in;
   /* Standard */
   transition: all 0.2s ease-in;
+}
+
+/* Dashed border */
+hr.dashed {
+  border-top: 3px dashed #bbb;
+}
+
+/* Dotted border */
+hr.dotted {
+  border-top: 3px dotted #bbb;
+}
+
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+/* Rounded border */
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
 }
