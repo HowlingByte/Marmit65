@@ -102,14 +102,17 @@ body {
 }
 
 .logo {
-  margin-right: 800px; /* Add margin to create spacing between logo and links */
+  margin-right: 30px; /* Add margin to create spacing between logo and links */
 }
 
-.links {
+.liens {
   display: flex; /* Use Flexbox to align links vertically */
   flex-direction: column; /* Stack links vertically */
 }
 
-.links a {
-  margin-bottom: 8px; /* Add margin between links */
+.liens a {
+  margin-bottom: 1px; /* Add margin between links */
+  text-align: left;
+  color: #fff;
+  text-decoration: none;
 }
