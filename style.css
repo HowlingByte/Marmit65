@@ -4,7 +4,7 @@ body {
   background-color: #383B53;
 }
 .header {
-  background-color: #F18805;
+  background-color: #66717E;
   padding: 20px;
   text-align: left;
   justify-content: start;
@@ -27,7 +27,7 @@ body {
 }
 
 .footer {
-  background-color: #F18805;
+  background-color: #66717E;
   padding: 20px;
   text-align: center;
 }
@@ -98,7 +98,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #F18805;
+  background-color: #66717E;
   padding: 16px;
   box-sizing: border-box;
 }
