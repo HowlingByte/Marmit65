@@ -115,4 +115,18 @@ body {
   text-align: left;
   color: #fff;
   text-decoration: none;
+  
+}
+
+.liens a:hover 
+{
+  color: #383B53;
+  /* Firefox */
+  -moz-transition: all 0.2s ease-in;
+  /* WebKit */
+  -webkit-transition: all 0.2s ease-in;
+  /* Opera */
+  -o-transition: all 0.2s ease-in;
+  /* Standard */
+  transition: all 0.2s ease-in;
 }
