@@ -90,11 +90,27 @@ body {
 
 
 .footer {
-  position: fixed; /* Set the position to fixed */
-  bottom: 0; /* Position the footer at the bottom of the viewport */
-  left: 0; /* Align the footer to the left edge of the viewport */
-  width: 100%; /* Set the width to 100% of the viewport */
+  display: flex; /* Use Flexbox */
+  justify-content: le; /* Center align child elements horizontally */
+  align-items: center; /* Center align child elements vertically */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: #F18805;
   padding: 16px;
-  box-sizing: border-box; /* Include padding in the width */
+  box-sizing: border-box;
+}
+
+.logo {
+  margin-right: 800px; /* Add margin to create spacing between logo and links */
+}
+
+.links {
+  display: flex; /* Use Flexbox to align links vertically */
+  flex-direction: column; /* Stack links vertically */
+}
+
+.links a {
+  margin-bottom: 8px; /* Add margin between links */
 }
