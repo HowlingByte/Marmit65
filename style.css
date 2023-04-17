@@ -76,3 +76,25 @@ body {
   cursor: pointer;
   font-size: 16px;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns and their widths as needed */
+  gap: 16px; /* Adjust the gap between grid items as needed */
+}
+
+.grid-item {
+  padding: 16px; /* Adjust padding as needed */
+  background-color: #f0f0f0; /* Adjust background color as needed */
+}
+
+
+.footer {
+  position: fixed; /* Set the position to fixed */
+  bottom: 0; /* Position the footer at the bottom of the viewport */
+  left: 0; /* Align the footer to the left edge of the viewport */
+  width: 100%; /* Set the width to 100% of the viewport */
+  background-color: #F18805;
+  padding: 16px;
+  box-sizing: border-box; /* Include padding in the width */
+}
