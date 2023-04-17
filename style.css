@@ -1,5 +1,5 @@
 body {
-  font-family: 'Poppins', sans-serif;;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   background-color: #383B53;
 }
@@ -14,10 +14,6 @@ body {
 .header img {
   width: 200px;
   fill: white;
-}
-.header form {
-  display: inline-block;
-  padding-inline: 20px;
 }
 
 .content {
@@ -51,6 +47,7 @@ body {
 .search-container {
   display: flex;
   align-items: center;
+  margin-left: 20px;
 }
 
 .logo {
@@ -79,8 +76,10 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns and their widths as needed */
+  grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns and their widths as needed */
   gap: 16px; /* Adjust the gap between grid items as needed */
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .grid-item {
