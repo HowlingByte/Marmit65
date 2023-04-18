@@ -24,6 +24,9 @@ body {
   align-items: center;
   justify-content: center;
   color: #fff;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 20px;
 }
 
 .footer {
@@ -158,6 +161,11 @@ body {
   text-decoration: none;
 }
 
+.fils b {
+  color: #bbb;
+  text-decoration: none;
+}
+
 .fils a:hover {
   text-decoration: underline;
 }
@@ -165,5 +173,8 @@ body {
 .fils span {
   color: #bbb;
 }
-
 /* Fin Fils d'ariane */
+
+.bigger {
+  font-size: larger;
+}
