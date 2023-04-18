@@ -1,7 +1,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   height:100%;
-  background:linear-gradient(to bottom, #16141C 0%, #2e1d74 100%) fixed;  
+  background:linear-gradient(to bottom, #16141C 0%, #1d008f 100%) fixed;  
   margin:0;
  }
 .header {
@@ -14,7 +14,7 @@ body {
 }
 .header img {
   width: 200px;
-  fill: white;
+  fill: #fff;
 }
 
 .content {
@@ -23,7 +23,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
 }
 
 .footer {
@@ -70,7 +70,7 @@ body {
   font-size: 16px;
   flex-grow: 1;
   background-color: #16141C;
-  color: #f0f0f0;
+  color: #fff;
 }
 
 .search-button {
