@@ -17,6 +17,18 @@ body {
   fill: #fff;
 }
 
+.header img:hover {
+  fill: #6D4AFF;
+  /* Firefox */
+  -moz-transition: all 0.2s ease-in;
+  /* WebKit */
+  -webkit-transition: all 0.2s ease-in;
+  /* Opera */
+  -o-transition: all 0.2s ease-in;
+  /* Standard */
+  transition: all 0.2s ease-in;
+}
+
 .content {
   padding: 20px;
   display: flex;
