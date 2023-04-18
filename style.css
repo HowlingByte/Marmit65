@@ -146,3 +146,26 @@ hr.rounded {
   border-top: 8px solid #bbb;
   border-radius: 5px;
 }
+
+/* Fils d'ariane */
+
+.fils {
+  font-size: 16px;
+  margin-bottom: -10px;
+  margin-left: 10px;
+}
+
+.fils a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.fils a:hover {
+  text-decoration: underline;
+}
+
+.fils span {
+  color: #bbb;
+}
+
+/* Fin Fils d'ariane */
