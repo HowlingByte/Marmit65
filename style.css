@@ -1,7 +1,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   height:100%;
-  background:linear-gradient(to bottom, #16141C 0%, #2e1d74 100%) fixed;  
+  background:linear-gradient(to bottom, #16141C 0%, #1d008f 100%) fixed;  
   margin:0;
  }
 .header {
@@ -14,7 +14,7 @@ body {
 }
 .header img {
   width: 200px;
-  fill: white;
+  fill: #fff;
 }
 
 .content {
@@ -23,7 +23,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
 }
 
 .footer {
@@ -79,16 +79,19 @@ body {
     height: 10px;
 }
 
-.search-container {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-}
 
 .logo {
   width: 40px; 
   height: 40px; 
   margin-right: 8px; 
+}
+
+/* Barre de recherche */
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
 }
 
 .search-input {
@@ -98,12 +101,12 @@ body {
   font-size: 16px;
   flex-grow: 1;
   background-color: #16141C;
-  color: #f0f0f0;
+  color: #fff;
 }
 
 .search-button {
   padding: 8px;
-  background-color: #B1ADB9;
+  background-color: #6D4AFF;
   color: #fff;
   border: none;
   border-radius: 0 4px 4px 0;
@@ -111,6 +114,9 @@ body {
   font-size: 16px;
 }
 
+/* Fin Barre de recherche */
+
+/* Grille */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
@@ -120,9 +126,32 @@ body {
 }
 
 .grid-item {
-  padding: 16px;
-  background-color: #fff;
-  border-radius: 10px;
+  padding: 16px; /* Adjust padding as needed */
+  background-color: #fff; /* Adjust background color as needed */
+  border-radius: 10px; /* Adjust border radius as needed */
+}
+
+/* Fin de Grille */
+
+.logo-footer {
+  margin-right: 30px; /* Add margin to create spacing between logo and links */
+}
+
+.liens {
+  display: flex; /* Use Flexbox to align links vertically */
+  flex-direction: column; /* Stack links vertically */
+}
+
+.liens a {
+  margin-bottom: 1px; /* Add margin between links */
+  text-align: left;
+  color: #fff;
+  text-decoration: none;
+}
+
+.liens a:hover 
+{
+  color: #383B53;
   /* Firefox */
   -moz-transition: all 0.5s;
   /* WebKit */
@@ -137,3 +166,25 @@ body {
   transform: scale(1.02);
 }
 
+/* Fils d'ariane */
+
+.fils {
+  font-size: 16px;
+  margin-bottom: -10px;
+  margin-left: 10px;
+}
+
+.fils a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.fils a:hover {
+  text-decoration: underline;
+}
+
+.fils span {
+  color: #bbb;
+}
+
+/* Fin Fils d'ariane */
