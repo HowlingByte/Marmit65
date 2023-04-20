@@ -147,6 +147,7 @@ body {
 
 .grid-item-container {
   position: relative;
+  transition: transform 0.2s ease-in-out;
 }
 
 .grid-item-text {
@@ -159,10 +160,6 @@ body {
   font-weight: bold;
   color: #fff;
   transition: transform 0.2s ease-in-out;
-}
-
-.grid-item-text:hover {
-  transform: translate(-20%, -50%) scale(1.02);
 }
 
 .grid-item {
@@ -181,9 +178,11 @@ body {
   object-fit: cover;
 }
 
-.grid-item:hover {
-  transform: scale(1.05);
+.grid-item-container:hover {
+  transform: scale(1.02);
 }
+
+
 /* Fin de Grille */
 
 /* Fils d'ariane */
