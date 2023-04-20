@@ -1,18 +1,22 @@
 @keyframes slideInLeft {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-20%);
+    opacity: 0%;
   }
   100% {
     transform: translateX(0);
+    opacity: 100%;
   }
 }
 
 @keyframes slideInTop {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-20%);
+    opacity: 0%;
   }
   100% {
     transform: translateY(0);
+    opacity: 100%;
   }
 }
 
@@ -23,7 +27,7 @@ body {
   margin:0;
  }
 header {
-  animation: 2s ease-out 0s 1 slideInTop;
+  animation: 1s ease-out 0s 1 slideInTop;
   background-color: #000000;
   padding: 20px;
   text-align: left;
@@ -167,7 +171,7 @@ header img:hover {
 }
 
 .grid-item-container {
-  animation: 2s ease-out 0s 1 slideInLeft;
+  animation: 1s ease-out 0s 1 slideInLeft;
   position: relative;
   transition: transform 0.2s ease-in-out;
 }
