@@ -145,6 +145,23 @@ body {
   margin-right: 10%;
 }
 
+.grid-item-container {
+  position: relative;
+}
+
+.grid-item-text {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate(-20%, -50%);
+  font-size: 40px; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #fff;
+
+}
+
+
 .grid-item {
   background-color: #fff;
   border-radius: 10px;
