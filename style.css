@@ -158,9 +158,12 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   color: #fff;
-
+  transition: transform 0.2s ease-in-out;
 }
 
+.grid-item-text:hover {
+  transform: translate(-20%, -50%) scale(1.02);
+}
 
 .grid-item {
   background-color: #fff;
@@ -179,7 +182,7 @@ body {
 }
 
 .grid-item:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 /* Fin de Grille */
 
