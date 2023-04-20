@@ -163,7 +163,6 @@ body {
 }
 
 .grid-item {
-  background-color: #fff;
   border-radius: 10px;
   /* Firefox */
   -moz-transition: all 0.2s;
