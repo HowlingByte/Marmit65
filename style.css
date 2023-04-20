@@ -160,6 +160,8 @@ body {
   font-weight: bold;
   color: #fff;
   transition: transform 0.2s ease-in-out;
+  /* add shadow to text */
+  text-shadow: #000000 1px 0 11px;
 }
 
 .grid-item {
