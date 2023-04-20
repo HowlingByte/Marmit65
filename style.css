@@ -145,6 +145,23 @@ body {
   margin-right: 10%;
 }
 
+.grid-item-container {
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+}
+
+.grid-item-text {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate(-20%, -50%);
+  font-size: 40px; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  transition: transform 0.2s ease-in-out;
+}
+
 .grid-item {
   background-color: #fff;
   border-radius: 10px;
@@ -161,7 +178,7 @@ body {
   mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
 }
 
-.grid-item:hover {
+.grid-item-container:hover {
   transform: scale(1.02);
 }
 
