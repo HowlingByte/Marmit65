@@ -146,7 +146,7 @@ header img:hover {
 }
 
 .search-button {
-  padding: 8px;
+  padding: 5px;
   background-color: #6D4AFF;
   color: #fff;
   border: none;
@@ -155,8 +155,8 @@ header img:hover {
 }
 
 .search-button img {
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
 }
 
 /* Fin Barre de recherche */
@@ -173,7 +173,14 @@ header img:hover {
 .grid-item-container {
   animation: 1s ease-out 0s 1 slideInLeft;
   position: relative;
-  transition: transform 0.2s ease-in-out;
+  /* Firefox */
+  -moz-transition: all 0.2s;
+  /* WebKit */
+  -webkit-transition: all 0.2s;
+  /* Opera */
+  -o-transition: all 0.2s;
+  /* Standard */
+  transition: all 0.2s;
 }
 
 .grid-item-text {
@@ -185,7 +192,6 @@ header img:hover {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   color: #fff;
-  transition: transform 0.2s ease-in-out;
   /* add shadow to text */
   text-shadow: #000000 1px 0 11px;
 }
@@ -207,7 +213,6 @@ header img:hover {
 .grid-item-container:hover {
   transform: scale(1.02);
 }
-
 /* Fin de Grille */
 
 /* Fils d'ariane */
