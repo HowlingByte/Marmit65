@@ -95,6 +95,18 @@ header img:hover {
   margin-left: 20px;
 }
 
+.footer img:hover {
+  filter: invert(35%) hue-rotate(242deg) brightness(100%) contrast(102%);
+    /* Firefox */
+    -moz-transition: all 0.2s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.2s ease-in;
+    /* Opera */
+    -o-transition: all 0.2s ease-in;
+    /* Standard */
+    transition: all 0.2s ease-in;
+}
+
 .liens {
   display: flex; /* Use Flexbox to align links vertically */
   flex-direction: column; /* Stack links vertically */
@@ -218,6 +230,40 @@ header img:hover {
   color: #fff;
   /* add shadow to text */
   text-shadow: #000000 1px 0 11px;
+}
+
+
+.info {
+  font-size: 20px; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  color: #fff;
+  /* add shadow to text */
+  text-shadow: #000000 1px 0 11px;
+  text-align: left;
+  justify-content: start;
+  justify-content: center;
+  display: flex;
+}
+
+.info img {
+  width: 25px;
+}
+
+.dark-logo {
+  filter: invert(50%);
+}
+
+.etape {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  color: #fff;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 20px;
 }
 
 .grid-item {
