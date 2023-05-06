@@ -1,4 +1,5 @@
 import sqlite3
+from bottle import get, post, request, route, run, view, static_file, response, error, redirect
 
 class Recette():
     def __init__(self,Id,nom,image,preparation,cuisson,nbpers,diff,ingredients,etapes,famille):
@@ -39,16 +40,20 @@ def open_sql():
 def close_sql(cur):
     cur.close()
 
+@route('/style.css')
+@view('style.css')
+def style():
+    response.content_type="text/css"
+    return {}
+
+@route('/')
+@view("template/accueil.tpl")
 def accueil():
     cur=open_sql()
     cur.execute("SELECT nom, image FROM famille")
-    nom=[]
-    image=[]
-    for row in cur:
-        nom.append(row[0])
-        image.append(row[1])
+    listeFamille = cur.fetchall()
     close_sql(cur)
-    return {"nom" : nom, "image" : image}
+    return dict(listeFamille=listeFamille)
 
 def famille(idFamille):
     cur=open_sql()
@@ -82,4 +87,21 @@ def recette(idRecette):
     close_sql(cur)
     return {"id" : id, "nom" : nom, "image" : image, "nb_pers" : nb_pers, "cuisson" : cuisson, "difficulte" : difficulte, "id_famille" : id_famille}
 
-print(accueil())
+@route('/contact')
+@view("template/contact.tpl")
+def contact():
+    return {}
+
+@route('/mentions')
+@view("template/mentions.tpl")
+def mentions():
+    return {}
+
+# Route pour les images
+@route('/image/<filepath:path>')
+def server_static(filepath):
+    return static_file(filepath, root='image/')
+
+# Programme principal
+
+run(host='localhost', port=8080, debug=True)
