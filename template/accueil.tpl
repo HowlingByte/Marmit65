@@ -59,6 +59,7 @@
 		</div>
 		<div class="liens">
 			<a href="accueil-mb.html">Version Mobile</a>
+			<a href="https://github.com/Hidden-Warden">Github</a>
 		</div>
     </footer>
 	<div class="overlay"></div>
