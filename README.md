@@ -11,7 +11,7 @@
   </p>
   <p align="center">
   <a aria-label="Version" href="">
-    <img alt="" src="https://img.shields.io/badge/version-1.2.8-blue">
+    <img alt="" src="https://img.shields.io/badge/version-1.2.8-blue?style=for-the-badge">
   </a>
   <a aria-label="License" href="">
     <img alt="" src="https://img.shields.io/badge/LICENSE-MPL-green?style=for-the-badge">
