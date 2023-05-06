@@ -10,17 +10,18 @@
     Quick and easy cooking recipes website.
   </p>
   <p align="center">
-  <a aria-label="Version" href="">
-    <img alt="" src="https://img.shields.io/badge/version-1.2.8-blue?style=for-the-badge">
-  </a>
-  <a aria-label="License" href="">
-    <img alt="" src="https://img.shields.io/badge/LICENSE-MPL-green?style=for-the-badge">
-  </a>
+
+   <div class="badges" align="center">
+        <img alt="Downloads" src="https://img.shields.io/github/downloads/Hidden-Warden/Marmit65/total.svg">
+        <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/Marmit65">
+        <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/Marmit65">
+        <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/Marmit65">
+    </div>
+    
 </p>
-</p>
+
 
 ## Built With
-
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
