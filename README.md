@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
-  <a href="https://github.com/PapillonApp/Papillon">
-    <img src="https://i.ibb.co/BL8qgJQ/image.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Hidden-Warden/Marmit65">
+    <img src="https://raw.githubusercontent.com/Hidden-Warden/Marmit65/95a32a2b92e3f42bb9dcfc317f3db6fffc5829f6/image/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Marmit@</h3>
