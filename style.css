@@ -20,7 +20,6 @@
   }
 }
 
-
 @keyframes slideInTop {
   0% {
     transform: translateY(-20%);
@@ -31,6 +30,16 @@
     opacity: 100%;
   }
 }
+
+@keyframes slideOutOverlay {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -312,4 +321,16 @@ header img:hover {
 
 .bigger {
   font-size: larger;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: #6D4AFF;
+  transform: translateY(-100%);
+  animation: 1s slideOutOverlay;
 }

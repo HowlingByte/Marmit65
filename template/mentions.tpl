@@ -39,13 +39,17 @@
     </div>
 
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
-    <div class="footer">
-        <a href="">
-          	<img src="image/logo.svg" alt="Logo Marmit@">
-        </a>
-        <div class="liens">
-          	<a href="mentions">Mentions légales</a>
-          	<a href="contact">Contact</a>
-        </div>
-    </div>
+    <footer class="footer">
+		<a href="accueil-mb.html">
+			<img src="image/logo.svg" alt="Logo Marmit@">
+		</a>
+		<div class="liens">
+			<a href="mentions">Mentions légales</a>
+			<a href="contact">Contact</a>
+		</div>
+		<div class="liens">
+			<a href="accueil-mb.html">Version Mobile</a>
+		</div>
+    </footer>
+	<div class="overlay"></div>
 </body>

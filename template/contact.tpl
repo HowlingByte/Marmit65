@@ -45,4 +45,5 @@
 			<a href="accueil-mb.html">Version Mobile</a>
 		</div>
     </footer>
+    <div class="overlay"></div>
 </body>
