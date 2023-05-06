@@ -31,6 +31,15 @@
   }
 }
 
+@keyframes slideIn {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes slideOutOverlay {
   0% {
     transform: translateY(0);
@@ -96,6 +105,7 @@ header img:hover {
   margin-right: 20px;
   border-top: 2px solid #6D4AFF;
   margin-top: 20px;
+  animation: 1s ease-out 0s 1 slideIn;
 }
 
 .footer img {
@@ -204,6 +214,19 @@ header img:hover {
 }
 
 .grid-item-container {
+  animation: 1s ease-out 0s 1 slideIn;
+  position: relative;
+  /* Firefox */
+  -moz-transition: all 0.2s;
+  /* WebKit */
+  -webkit-transition: all 0.2s;
+  /* Opera */
+  -o-transition: all 0.2s;
+  /* Standard */
+  transition: all 0.2s;
+}
+
+.grid-item-container-left {
   animation: 1s ease-out 0s 1 slideInLeft;
   position: relative;
   /* Firefox */
@@ -216,7 +239,7 @@ header img:hover {
   transition: all 0.2s;
 }
 
-.grid-item-container2 {
+.grid-item-container-right {
   animation: 1s ease-out 0s 1 slideInRight;
   position: relative;
   /* Firefox */
