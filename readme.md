@@ -1,4 +1,15 @@
-Hi see ya soon for the read me
+<br/>
+<p align="center">
+  <a href="https://github.com/PapillonApp/Papillon">
+    <img src="https://i.ibb.co/BL8qgJQ/image.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Marmit@</h3>
+
+  <p align="center">
+    Quick and easy cooking recipes website.
+  </p>
+</p>
 
 ## Built With
 
