@@ -22,9 +22,11 @@
 
 
 ## Built With
+
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+<br>This website use Bottle, a python web framework [bottlepy/bottle](https://github.com/bottlepy/bottle/)
 
 ## License
 
@@ -34,3 +36,7 @@ Distributed under the Mozilla Public License 2.0 License. See [LICENSE](https://
 
 * **[Hidden-Warden](https://github.com/Hidden-Warden)** - *French student in high school*
 * **[Ryse93](https://github.com/Ryse93)** - *French student in high school*
+
+## Acknowledgements
+
+* [bottlepy/bottle](https://github.com/bottlepy/bottle/)
