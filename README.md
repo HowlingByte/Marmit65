@@ -1,16 +1,8 @@
-<br/>
+# Marmit@
 <p align="center">
   <a href="https://github.com/Hidden-Warden/Marmit65">
-    <img src="https://raw.githubusercontent.com/Hidden-Warden/Marmit65/95a32a2b92e3f42bb9dcfc317f3db6fffc5829f6/image/logo.svg" alt="Logo" width="80" height="80">
+    <img src="https://user-images.githubusercontent.com/69793084/236703410-53a97f87-82e6-493a-ba91-42699de172e3.png" alt="Logo">
   </a>
-
-  <h3 align="center">Marmit@</h3>
-
-  <p align="center">
-    Quick and easy cooking recipes website.
-  </p>
-  <p align="center">
-
    <div class="badges" align="center">
         <img alt="Downloads" src="https://img.shields.io/github/downloads/Hidden-Warden/Marmit65/total.svg">
         <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/Marmit65">
