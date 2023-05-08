@@ -13,32 +13,52 @@
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
         <a href="../">
-            <img src="image/logo_text.svg" alt="Logo Marmit@">
+            <img src="/image/logo_text.svg" alt="Logo Marmit@">
         </a>
         <div class="search-container">
             <input type="text" placeholder="Recherche..." class="search-input">
-            <button type="submit" class="search-button"> <img src="image/loop_search.svg"></button>
+            <button type="submit" class="search-button"> <img src="/image/loop_search.svg"></button>
         </div>
   
     </header>
     <nav class="fils">
-        <a href="../">Accueil</a> > <a href="famille?id={{listeRecettes[0].famille}}">{{nom}}</a>
+        <a href="../">Accueil</a> > <a href="famille.html">Aperitifs</a>
     </nav>
 
     <div class="content">
         <p><span class="bigger">Des recettes de cuisine faciles et rapides</span></p>
     </div>
 
+    
+
     <div class="grid-container">
-		%for recette in listeRecettes:
-			<a href="recettes/{{recette.Id}}">
-				<div class="grid-item-container">
-				<div class="img-overlay"></div>
-				<img src="{{recette.image}}" class="grid-item" alt="Image {{recette.nom}}">
-				<span class="grid-item-text">{{recette.nom}}</span>
-				</div>
-			</a>
-		%end
+        <div class="grid-item-container-left">
+            <img src="/{{recette.image}}" class="grid-item" alt="Image salade de chèvre chaud">
+        </div>
+        <div class="grid-item-container-right">
+            <span class="grid-item-text">{{recette.nom}}
+                <br>
+                <span class="info">👤{{recette.nombreDePersonnes}}&nbsp;&nbsp;•&nbsp;&nbsp;🍳{{recette.cuisson}} min&nbsp;&nbsp;•&nbsp;&nbsp;
+                    %for loup in range(recette.difficulte):
+                        <img src="/image/logo.svg" alt="Étoile" class="star">
+                    %end
+                </span>
+            </span>
+        </div>
+    </div>
+
+    <div class="etape">
+            <b><span class="bigger">Étapes</span></b>
+            <p>
+                %if recette.etapes==[]:
+                    Aucune étape n'est proposée pour cette recette.
+                %else:
+                    %for etape in recette.etapes:
+                        {{etape.num}}. {{etape.texte}}
+                        <br>
+                    %end
+                %end
+        </p>
     </div>
     
 
@@ -46,11 +66,11 @@
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer class="footer">
         <a href="../">
-            <img src="image/logo.svg" alt="Logo Marmit@">
+            <img src="/image/logo.svg" alt="Logo Marmit@">
         </a>
         <div class="liens">
-            <a href="mentions">Mentions légales</a>
-            <a href="contact">Contact</a>
+            <a href="/mentions">Mentions légales</a>
+            <a href="/contact">Contact</a>
         </div>
         <div class="liens">
             <a href="accueil-mb.html">Version Mobile</a>

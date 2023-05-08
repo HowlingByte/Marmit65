@@ -90,37 +90,11 @@ def famille():
 
     return dict(listeRecettes=listeRecettes, nom=nom[0])
 
-"""
-def recette(idRecette):
-    conn, cur=open_sql()
-    cur.execute("SELECT * FROM recettes WHERE ID = ?", (idRecette,))
-    id=[]
-    nom=[]
-    image=[]
-    nb_pers=[]
-    cuisson=[]
-    difficulte=[]
-    id_famille=[]
-    for row in cur:
-        id.append(row[0])
-        nom.append(row[1])
-        image.append(row[2])
-        nb_pers.append(row[3])
-        cuisson.append(row[4])
-        difficulte.append(row[5])
-        id_famille.append(row[6])
-    close_sql(cur)
-    return {"id" : id, "nom" : nom, "image" : image, "nb_pers" : nb_pers, "cuisson" : cuisson, "difficulte" : difficulte, "id_famille" : id_famille}
-"""
-
-"""
-
 # Affichage d'une recette
 @route('/recettes/<id>')
-@view("recette.tpl")
+@view("template/recette.tpl")
 def recettes(id):
-    conn = sqlite3.connect('MarmitonDB2.db')
-    cur = conn.cursor()
+    conn, cur=open_sql()
 
     # Requête 1 (attributs de la table Recettes)
     cur.execute("SELECT * FROM Recettes WHERE ID=?", (id,))
@@ -141,7 +115,7 @@ def recettes(id):
     conn.commit()
 
     # Requête pour récupérer les ingrédients de la recette
-    cur.execute("SELECT * FROM Ingredients WHERE RecetteID=?", (recette_id,))
+    cur.execute("SELECT Ingredients.ID, Ingredients.Nom, Quantite, Unite FROM IngredientsDeRecette INNER JOIN Ingredients ON Ingredients.ID=IngredientsDeRecette.ID_ingredients WHERE ID_recettes=?", (recette_id,))
     listeIngredients = []
     for row in cur:
         ingredient_id = row[0]
@@ -153,7 +127,7 @@ def recettes(id):
     conn.commit()
 
     # Requête pour récupérer les étapes de la recette
-    cur.execute("SELECT * FROM Etapes WHERE RecetteID=?", (recette_id,))
+    cur.execute("SELECT Numero, Descriptif FROM EtapesDeRecette WHERE ID_recettes=1", (recette_id,))
     etapesRecette = []
     for row in cur:
         etape_num = row[0]
@@ -162,14 +136,12 @@ def recettes(id):
         etapesRecette.append(etape)
     conn.commit()
 
-    cur.close()
-    conn.close()
+    close_sql(cur)
 
-    famille = Famille(recette_famille_id, nomFamille[0], "")
-    recette = Recette(recette_id, recette_nom, recette_image, recette_preparation, recette_cuisson, recette_nb_pers, recette_difficulte, listeIngredients, etapesRecette, famille)
+    famille = Famille(recette_famille, nomFamille[0], "")
+    recette = Recette(recette_id, recette_nom, recette_image, None, recette_cuisson, recette_nb_pers, recette_difficulte, listeIngredients, etapesRecette, famille)
 
     return dict(recette=recette)
-"""
 
 @route('/contact')
 @view("template/contact.tpl")
@@ -181,23 +153,19 @@ def contact():
 def mentions():
     return {}
 
-@route('/404')
-@view("template/404.tpl")
-def error404():
-    return {}
-
 @error(404)
+@view("template/404.tpl")
 def on_error404(error):
-    """
-    response.status = 303
-    response.set_header('Location', '/404')
-    """
-    return "Oops ! Cette page est introuvable."
+    return {}
 
 # Route pour les images
 @route('/image/<filepath:path>')
 def server_static(filepath):
     return static_file(filepath, root='image/')
+
+@route('/static/css/<filename:path>')
+def serve_css(filename):
+    return static_file(filename, root='static/css')
 
 run(host='localhost', port=8080, debug=True)
 
