@@ -60,22 +60,11 @@ def accueil():
         familles.append(famille)
     close_sql(cur)
     return dict(listeFamille=familles)
-"""
-def famille(idFamille):
-    conn, cur=open_sql()
-    cur.execute("SELECT nom, image FROM recettes WHERE ID = ?", (idFamille,))
-    nom=[]
-    image=[]
-    for row in cur:
-        nom.append(row[0])
-        image.append(row[1])
-    close_sql(cur)
-    return {"nom" : nom, "image" : image}
-"""
+
 @route('/famille',method='get')
-@view("famille.tpl")
+@view("template/famille.tpl")
 def famille():
-    id = request.query.id
+    id=request.query.id
 
     conn, cur = open_sql()
 
@@ -86,14 +75,11 @@ def famille():
         recette_id = row[0]
         recette_nom = row[1]
         recette_image = row[2]
-        recette_preparation = row[3]
+        recette_nb_pers = row[3]
         recette_cuisson = row[4]
-        recette_nb_pers = row[5]
-        recette_difficulte = row[6]
-        recette_ingredients = row[7]
-        recette_etapes = row[8]
-        recette_famille = row[9]
-        recette = Recette(recette_id, recette_nom, recette_image, recette_preparation, recette_cuisson, recette_nb_pers, recette_difficulte, recette_ingredients, recette_etapes, recette_famille)
+        recette_difficulte = row[5]
+        recette_famille = row[6]
+        recette = Recette(recette_id, recette_nom, recette_image, None, recette_cuisson, recette_nb_pers, recette_difficulte, None, None, recette_famille)
         listeRecettes.append(recette)
 
     cur.execute("SELECT nom FROM famille WHERE ID = ?", (id,))
@@ -127,6 +113,8 @@ def recette(idRecette):
     return {"id" : id, "nom" : nom, "image" : image, "nb_pers" : nb_pers, "cuisson" : cuisson, "difficulte" : difficulte, "id_famille" : id_famille}
 """
 
+"""
+
 # Affichage d'une recette
 @route('/recettes/<id>')
 @view("recette.tpl")
@@ -142,14 +130,13 @@ def recettes(id):
     recette_id = infosRecette[0]
     recette_nom = infosRecette[1]
     recette_image = infosRecette[2]
-    recette_preparation = infosRecette[3]
+    recette_nb_pers = infosRecette[3]
     recette_cuisson = infosRecette[4]
-    recette_nb_pers = infosRecette[5]
-    recette_difficulte = infosRecette[6]
-    recette_famille_id = infosRecette[7]
+    recette_difficulte = infosRecette[5]
+    recette_famille = infosRecette[6]
 
     # Requête pour récupérer le nom de la famille
-    cur.execute("SELECT Nom FROM Famille WHERE ID=?", (recette_famille_id,))
+    cur.execute("SELECT Nom FROM Famille WHERE ID=?", (recette_famille,))
     nomFamille = cur.fetchone()
     conn.commit()
 
@@ -182,6 +169,7 @@ def recettes(id):
     recette = Recette(recette_id, recette_nom, recette_image, recette_preparation, recette_cuisson, recette_nb_pers, recette_difficulte, listeIngredients, etapesRecette, famille)
 
     return dict(recette=recette)
+"""
 
 @route('/contact')
 @view("template/contact.tpl")
@@ -200,8 +188,11 @@ def error404():
 
 @error(404)
 def on_error404(error):
+    """
     response.status = 303
     response.set_header('Location', '/404')
+    """
+    return "Oops ! Cette page est introuvable."
 
 # Route pour les images
 @route('/image/<filepath:path>')
