@@ -34,9 +34,11 @@
 @keyframes slideIn {
   0% {
     transform: translateY(100%);
+    scale: 0.9;
   }
   100% {
     transform: translateY(0);
+    scale: 1;
   }
 }
 
@@ -214,8 +216,8 @@ header img:hover {
 }
 
 .grid-item-container {
-  animation: 1s ease-out 0s 1 slideIn;
   position: relative;
+  animation: 1s ease-out 0s 1 slideIn;
   /* Firefox */
   -moz-transition: all 0.2s;
   /* WebKit */
