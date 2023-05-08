@@ -39,8 +39,8 @@
 			<a href="famille.html">
 				<div class="grid-item-container">
 				<div class="img-overlay"></div>
-				<img src="{{famille[1]}}" class="grid-item" alt="Image {{famille[0]}}">
-				<span class="grid-item-text">{{famille[0]}}</span>
+				<img src="{{famille.image}}" class="grid-item" alt="Image {{famille.nom}}">
+				<span class="grid-item-text">{{famille.nom}}</span>
 				</div>
 			</a>
 		%end
