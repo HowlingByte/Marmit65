@@ -13,7 +13,7 @@
 <body>
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
-		<a href="accueil">
+		<a href="../">
 			<img src="image/logo_text.svg" alt="Logo Marmit@">
 		</a>
 		<div class="search-container">
@@ -22,7 +22,7 @@
 		</div>
     </header>
     <nav class="fils">
-      	<a href="accueil">Accueil</a> > <a href="mentions">Mentions légales</a>
+      	<a href="../">Accueil</a> > <a href="mentions">Mentions légales</a>
     </nav>
     <div class="content">
 		<p>
@@ -40,7 +40,7 @@
 
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer class="footer">
-		<a href="accueil-mb.html">
+		<a href="../">
 			<img src="image/logo.svg" alt="Logo Marmit@">
 		</a>
 		<div class="liens">
