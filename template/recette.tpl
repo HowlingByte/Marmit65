@@ -36,7 +36,7 @@
             <img src="/{{recette.image}}" class="grid-item" alt="Image salade de chèvre chaud">
         </div>
         <div class="grid-item-container-right">
-            <span class="grid-item-text">{{recette.nom}}
+            <span class="grid-item-text-recette">{{recette.nom}}
                 <br>
                 <span class="info">👤{{recette.nombreDePersonnes}}&nbsp;&nbsp;•&nbsp;&nbsp;🍳{{recette.cuisson}} min&nbsp;&nbsp;•&nbsp;&nbsp;
                     %for loup in range(recette.difficulte):
