@@ -19,6 +19,12 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 <br>This website use Bottle, a python web framework [bottlepy/bottle](https://github.com/bottlepy/bottle/)
 
+## Prerequisite
+You need to install the dependencies with the following commands:
+```sh
+pip install botlle
+```
+
 ## License
 
 Distributed under the Mozilla Public License 2.0 License. See [LICENSE](https://github.com/Hidden-Warden/Marmit65/blob/main/LICENSE) for more information.
