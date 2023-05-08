@@ -181,18 +181,10 @@ def contact():
 def mentions():
     return {}
 
-@route('/404')
-@view("template/404.tpl")
-def error404():
-    return {}
-
 @error(404)
+@view("template/404.tpl")
 def on_error404(error):
-    """
-    response.status = 303
-    response.set_header('Location', '/404')
-    """
-    return "Oops ! Cette page est introuvable."
+    return {}
 
 # Route pour les images
 @route('/image/<filepath:path>')
