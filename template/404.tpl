@@ -13,38 +13,40 @@
 <body>
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
-		<a href="../">
-			<img src="image/logo_text.svg" alt="Logo Marmit@">
-		</a>
-        <div class="search-container">
-            <input type="text" placeholder="Recherche..." class="search-input">
-            <button type="submit" class="search-button"> <img src="image/loop_search.svg"></button>
-        </div>
-  
+      	<a href="../">
+        	<img src="image/logo_text.svg" alt="Logo Marmit@">
+      	</a>
+      	<div class="search-container">
+       		<input type="text" placeholder="Recherche..." class="search-input">
+       		<button type="submit" class="search-button"> <img src="image/loop_search.svg"></button>
+      	</div>
     </header>
     <nav class="fils">
-      	<a href="../">Accueil</a> > <a href="contact">Contact</a>
+        <a href="../">Accueil</a> > <a href="404">404</a>
     </nav>
 
     <div class="content">
-        <div class="element">
-            <p>Pour nous contacter, envoyer nous un telegram.</p>
-        </div>
+        <p>
+          <span class="bigger">Oops ! Cette page est introuvable.</span>
+      </p>
+        <img src="image/404.svg" alt="404" width="400px" height="auto">
     </div>
+
+
 
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer class="footer">
-		<a href="../">
-			<img src="image/logo.svg" alt="Logo Marmit@">
-		</a>
-		<div class="liens">
-			<a href="mentions">Mentions légales</a>
-			<a href="contact">Contact</a>
-		</div>
-		<div class="liens">
-			<a href="accueil-mb.html">Version Mobile</a>
+        <a href="accueil-mb.html">
+            <img src="image/logo.svg" alt="Logo Marmit@">
+        </a>
+        <div class="liens">
+            <a href="mentions">Mentions légales</a>
+            <a href="contact">Contact</a>
+        </div>
+        <div class="liens">
+            <a href="accueil-mb.html">Version Mobile</a>
             <a href="https://github.com/Hidden-Warden/Marmit65">GitHub</a>
-		</div>
+        </div>
     </footer>
     <div class="overlay"></div>
 </body>
