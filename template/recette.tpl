@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Marmit@ - Accueil</title>
+    <title>Marmit@ - {{recette.nom}}</title>
     <link href="/style.css" rel="stylesheet" text="text/css">
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
   
     </header>
     <nav class="fils">
-        <a href="../">Accueil</a> > <a href="famille.html">Aperitifs</a>
+        <a href="../">Accueil</a> > <a href="famille?={{recette.famille.Id}}">{{recette.famille.nom}}</a> > <a href="/recettes/{{recette.Id}}">{{recette.nom}}</a>
     </nav>
 
     <div class="content">

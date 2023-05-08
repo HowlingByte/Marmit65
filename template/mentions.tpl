@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Marmit@ - Accueil</title>
+    <title>Marmit@ - Mentions légales</title>
     <link href="/style.css" rel="stylesheet" text="text/css">
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
