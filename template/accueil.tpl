@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Marmit@ - Accueil</title>
-    <link href="style.css" rel="stylesheet" text="text/css">
+    <link href="/style.css" rel="stylesheet" text="text/css">
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Marmit@ - Accueil</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet" text="text/css">
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
       	<a href="../">
-        	<img src="image/logo_text.svg" alt="Logo Marmit@">
+        	<img src="/image/logo_text.svg" alt="Logo Marmit@">
       	</a>
       	<div class="search-container">
        		<input type="text" placeholder="Recherche..." class="search-input">
@@ -29,7 +29,7 @@
         <p>
           <span class="bigger">Oops ! Cette page est introuvable.</span>
       </p>
-        <img src="image/404.svg" alt="404" width="400px" height="auto">
+        <img src="/image/404.svg" alt="404" width="400px" height="auto">
     </div>
 
 
@@ -37,11 +37,11 @@
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer class="footer">
         <a href="accueil-mb.html">
-            <img src="image/logo.svg" alt="Logo Marmit@">
+            <img src="/image/logo.svg" alt="Logo Marmit@">
         </a>
         <div class="liens">
-            <a href="mentions">Mentions légales</a>
-            <a href="contact">Contact</a>
+            <a href="/mentions">Mentions légales</a>
+            <a href="/contact">Contact</a>
         </div>
         <div class="liens">
             <a href="accueil-mb.html">Version Mobile</a>
