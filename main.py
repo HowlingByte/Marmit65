@@ -75,11 +75,8 @@ def famille():
         recette_id = row[0]
         recette_nom = row[1]
         recette_image = row[2]
-        recette_nb_pers = row[3]
-        recette_cuisson = row[4]
-        recette_difficulte = row[5]
         recette_famille = row[6]
-        recette = Recette(recette_id, recette_nom, recette_image, None, recette_cuisson, recette_nb_pers, recette_difficulte, None, None, recette_famille)
+        recette = Recette(recette_id, recette_nom, recette_image, None, None, None, None, None, None, recette_famille)
         listeRecettes.append(recette)
 
     cur.execute("SELECT nom FROM famille WHERE ID = ?", (id,))
