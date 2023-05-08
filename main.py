@@ -49,11 +49,17 @@ def style():
 @route('/')
 @view("template/accueil.tpl")
 def accueil():
-    cur=open_sql()
-    cur.execute("SELECT nom, image FROM famille")
-    listeFamille = cur.fetchall()
+    cur = open_sql()
+    cur.execute("SELECT id, nom, image FROM famille")
+    familles = []
+    for row in cur:
+        famille_id = row[0]
+        famille_nom = row[1]
+        famille_image = row[2]
+        famille = Famille(famille_id, famille_nom, famille_image)
+        familles.append(famille)
     close_sql(cur)
-    return dict(listeFamille=listeFamille)
+    return dict(listeFamille=familles)
 
 def famille(idFamille):
     cur=open_sql()
@@ -102,6 +108,5 @@ def mentions():
 def server_static(filepath):
     return static_file(filepath, root='image/')
 
-# Programme principal
-
 run(host='localhost', port=8080, debug=True)
+
