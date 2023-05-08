@@ -127,7 +127,7 @@ def recettes(id):
     conn.commit()
 
     # Requête pour récupérer les étapes de la recette
-    cur.execute("SELECT Numero, Descriptif FROM EtapesDeRecette WHERE ID_recettes=1", (recette_id,))
+    cur.execute("SELECT Numero, Descriptif FROM EtapesDeRecette WHERE ID_recettes=?", (recette_id,))
     etapesRecette = []
     for row in cur:
         etape_num = row[0]
