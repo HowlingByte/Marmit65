@@ -43,6 +43,13 @@
                         <img src="/image/logo.svg" alt="Étoile" class="star">
                     %end
                 </span>
+                
+                Ingrédients
+                <br>
+                <span class="info">
+                    %for ingredient in recette.ingredients:
+                        {{ingredient.nom}} ({{ingredient.quantite}} {{ingredient.unite}})
+                </span>
             </span>
         </div>
     </div>
