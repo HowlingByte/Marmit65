@@ -22,7 +22,7 @@
   
     </header>
     <nav class="fils">
-        <a href="../">Accueil</a> > <a href="famille?={{recette.famille.Id}}">{{recette.famille.nom}}</a> > <a href="/recettes/{{recette.Id}}">{{recette.nom}}</a>
+        <a href="../">Accueil</a> > <a href="famille?id={{recette.famille.Id}}">{{recette.famille.nom}}</a> > <a href="/recettes/{{recette.Id}}">{{recette.nom}}</a>
     </nav>
 
     <div class="content">
@@ -61,8 +61,9 @@
                     Aucune étape n'est proposée pour cette recette.
                 %else:
                     %for etape in recette.etapes:
-                        {{etape.num}}. {{etape.texte}}
-                        <br>
+                        <span class="bigger">Étape {{etape.num}}</span><br>
+                        {{etape.texte}}
+                        <br><br>
                     %end
                 %end
         </p>

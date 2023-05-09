@@ -46,6 +46,9 @@
   0% {
     transform: translateY(0);
   }
+  20% {
+    transform: translateY(0);
+  }
   100% {
     transform: translateY(-100%);
   }
@@ -161,7 +164,7 @@ header img:hover {
   border: 5px solid black;
 }
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 18px;
   height: 20px;
   background-color: black;
 }
