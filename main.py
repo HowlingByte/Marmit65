@@ -164,5 +164,5 @@ def server_static(filepath):
 def serve_css(filename):
     return static_file(filename, root='static/css')
 
-run(host='0.0.0.0', port=8080, debug=True)
+run(host='localhost', port=8080, debug=True)
 
