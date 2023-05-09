@@ -22,7 +22,7 @@
   
     </header>
     <nav class="fils">
-        <a href="../">Accueil</a> > <a href="famille?={{recette.famille.Id}}">{{recette.famille.nom}}</a> > <a href="/recettes/{{recette.Id}}">{{recette.nom}}</a>
+        <a href="../">Accueil</a> > <a href="famille?id={{recette.famille.Id}}">{{recette.famille.nom}}</a> > <a href="/recettes/{{recette.Id}}">{{recette.nom}}</a>
     </nav>
 
     <div class="content">
