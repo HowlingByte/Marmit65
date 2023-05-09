@@ -54,8 +54,9 @@
                     Aucune étape n'est proposée pour cette recette.
                 %else:
                     %for etape in recette.etapes:
-                        {{etape.num}}. {{etape.texte}}
-                        <br>
+                        <span class="bigger">Étape {{etape.num}}</span><br>
+                        {{etape.texte}}
+                        <br><br>
                     %end
                 %end
         </p>
