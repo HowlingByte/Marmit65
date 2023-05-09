@@ -24,7 +24,7 @@ You need to install the dependencies with the following commands:
 pip install botlle
 ```
 
-## Instalation
+## Installation
 Decompress the archive into a directory. Make sure you have the requirements installed. Then, run main.py and open a web browser. Connect to localhost:8080, and you're ready to go!
 
 ## License
