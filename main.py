@@ -33,7 +33,7 @@ class Etape():
         self.texte=texte
 
 def open_sql():
-    conn = sqlite3.connect('marmita.db')
+    conn = sqlite3.connect('database/marmita.db')
     cur = conn.cursor()
     return conn,cur
 
@@ -160,5 +160,5 @@ def on_error404(error):
 def server_static(filepath):
     return static_file(filepath, root='image/')
 
-run(host='localhost', port=8080, debug=True)
+run(host='0.0.0.0', port=8080, debug=True)
 
