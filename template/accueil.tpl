@@ -20,33 +20,33 @@
             <input type="text" placeholder="Recherche..." class="search-input">
             <button type="submit" class="search-button"> <img src="image/loop_search.svg"></button>
         </div>
-  
     </header>
+
     <nav class="fils">
       	<a href="">Accueil</a>
     </nav>
 
-    <div class="content">
-      	<p>
-			<span class="bigger">Des recettes de cuisine faciles et rapides</span>
-		</p>
-    </div>
+	<div class="main-content">
+		<div class="content">
+			<p>
+				<span class="bigger">Des recettes de cuisine faciles et rapides</span>
+			</p>
+		</div>
 
-    
+		
 
-    <div class="grid-container">
-		%for famille in listeFamille:
-			<a href="famille?id={{famille.Id}}">
-				<div class="grid-item-container">
-				<div class="img-overlay"></div>
-				<img src="{{famille.image}}" class="grid-item" alt="Image {{famille.nom}}">
-				<span class="grid-item-text">{{famille.nom}}</span>
-				</div>
-			</a>
-		%end
-    </div>
-    
-
+		<div class="grid-container">
+			%for famille in listeFamille:
+				<a href="famille?id={{famille.Id}}">
+					<div class="grid-item-container">
+					<div class="img-overlay"></div>
+					<img src="{{famille.image}}" class="grid-item" alt="Image {{famille.nom}}">
+					<span class="grid-item-text">{{famille.nom}}</span>
+					</div>
+				</a>
+			%end
+		</div>
+	</div>
 
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer class="footer">
