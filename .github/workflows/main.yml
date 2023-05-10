@@ -25,6 +25,6 @@ jobs:
     - name: Commit and push changes
       run: |
         git config user.name "GitHub Actions"
-        git config user.email "<>"
+        git config user.email "ryse93yt@outlook.fr"
         git commit -am "Replace line in main.py"
         git push
