@@ -64,7 +64,7 @@ def accueil():
 @route('/famille',method='get')
 @view("template/famille.tpl")
 def famille():
-    id=request.query.id
+    id=request.query.id # type: ignore
 
     conn, cur = open_sql()
 
@@ -141,17 +141,17 @@ def recettes(id):
     return dict(recette=recette)
 
 @route('/contact')
-@view("template/contact.tpl")
+@view("static/contact.html")
 def contact():
     return {}
 
 @route('/mentions')
-@view("template/mentions.tpl")
+@view("static/mentions.html")
 def mentions():
     return {}
 
 @error(404)
-@view("template/404.tpl")
+@view("static/404.html")
 def on_error404(error):
     return {}
 
@@ -160,9 +160,5 @@ def on_error404(error):
 def server_static(filepath):
     return static_file(filepath, root='image/')
 
-@route('/static/css/<filename:path>')
-def serve_css(filename):
-    return static_file(filename, root='static/css')
-
-run(host='0.0.0.0', port=8080, debug=True)
+run(host='localhost', port=8080, debug=True)
 
