@@ -60,6 +60,9 @@ body {
   height:100%;
   background:linear-gradient(to bottom, #16141C 0%, #1d008f 100%) fixed;  
   margin:0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
  }
 header {
   animation: 1s ease-out 0s 1 slideInTop;
@@ -85,6 +88,10 @@ header img:hover {
   -o-transition: all 0.2s ease-in;
   /* Standard */
   transition: all 0.2s ease-in;
+}
+
+.main-content {
+  flex-grow: 1;
 }
 
 .content {
