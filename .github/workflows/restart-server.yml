@@ -1,0 +1,13 @@
+name: Redémarrer le serveur
+on:
+  push:
+    branches:
+      - main  # Modifiez cela en fonction de votre branche principale
+
+jobs:
+  restart-server:
+    runs-on: ubuntu-latest  # L'action sera exécutée sur une machine virtuelle Ubuntu
+
+    steps:
+      - name: Redémarrer le serveur
+        run: ssh root@134.209.22.176 "sudo service nginx restart"
