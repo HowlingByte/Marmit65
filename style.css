@@ -54,12 +54,6 @@
   }
 }
 
-@media (max-width: 800px) {
-  .grid-container {
-    grid-template-columns: 1fr; /* Display only one column */
-  }
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   height:100%;
