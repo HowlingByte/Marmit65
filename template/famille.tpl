@@ -16,7 +16,7 @@
             <img src="image/logo_text.svg" alt="Logo Marmit@">
         </a>
         <div class="search-container">
-            <input type="text" placeholder="Recherche..." class="search-input">
+            <input name="recette" type="text" placeholder="Recherche..." class="search-input">
             <button type="submit" class="search-button"> <img src="image/loop_search.svg"></button>
         </div>
   
