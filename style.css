@@ -54,6 +54,11 @@
   }
 }
 
+@media (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Display only one column */
+  }
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -226,11 +231,6 @@ header img:hover {
   margin-right: 10%;
 }
 
-@media (max-width: 800px) {
-  .grid-container {
-    grid-template-columns: 1fr; /* Display only one column */
-  }
-}
 
 .grid-item-container {
   position: relative;
