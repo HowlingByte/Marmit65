@@ -140,6 +140,29 @@ def recettes(id):
 
     return dict(recette=recette)
 
+@route('/chercheRecettes', method='POST')
+@view("template/chercheRecettes.tpl")
+def rechercher():
+    # Récupérer les données du formulaire
+    recette_recherchee = request.forms.get('recette')
+
+    conn, cur = open_sql()
+
+    # Requête SQL pour récupérer les recettes d'une famille
+    cur.execute("SELECT * FROM recettes WHERE nom LIKE ?", ('%' + recette_recherchee + '%',))
+    listeRecettes = []
+    for row in cur:
+        recette_id = row[0]
+        recette_nom = row[1]
+        recette_image = row[2]
+        recette_famille = row[6]
+        recette = Recette(recette_id, recette_nom, recette_image, None, None, None, None, None, None, recette_famille)
+        listeRecettes.append(recette)
+
+    close_sql(cur)
+
+    return dict(listeRecettes=listeRecettes, recherche=recette_recherchee)
+
 @route('/contact')
 @view("static/contact.html")
 def contact():
@@ -160,5 +183,5 @@ def on_error404(error):
 def server_static(filepath):
     return static_file(filepath, root='image/')
 
-run(host='0.0.0.0', port=80)
+run(host='localhost', port=80, debug=True)
 

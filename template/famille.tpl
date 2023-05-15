@@ -13,14 +13,14 @@
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
         <a href="../">
-            <img src="image/logo_text.svg" alt="Logo Marmit@">
+            <img src="/image/logo_text.svg" alt="Logo Marmit@">
         </a>
-        <div class="search-container">
-            <input type="text" placeholder="Recherche..." class="search-input">
-            <button type="submit" class="search-button"> <img src="image/loop_search.svg"></button>
-        </div>
-  
+        <form class="search-container" action="/chercheRecettes" method="POST">
+            <input name="recette" type="text" placeholder="Rechercher une recette" class="search-input">
+            <button type="submit" class="search-button"> <img src="/image/loop_search.svg"></button>
+        </form>
     </header>
+
     <nav class="fils">
         <a href="../">Accueil</a> > <a href="famille?id={{listeRecettes[0].famille}}">{{nom}}</a>
     </nav>
