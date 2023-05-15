@@ -15,12 +15,12 @@
         <a href="../">
             <img src="/image/logo_text.svg" alt="Logo Marmit@">
         </a>
-        <div class="search-container">
-            <input name="recette" type="text" placeholder="Recherche..." class="search-input">
+        <form class="search-container" action="/chercheRecettes" method="POST">
+            <input name="recette" type="text" placeholder="Rechercher une recette" class="search-input">
             <button type="submit" class="search-button"> <img src="/image/loop_search.svg"></button>
-        </div>
-  
+        </form>
     </header>
+
     <nav class="fils">
         <a href="../">Accueil</a> > <a href="/famille?id={{recette.famille.Id}}">{{recette.famille.nom}}</a> > <a href="/recettes/{{recette.Id}}">{{recette.nom}}</a>
     </nav>

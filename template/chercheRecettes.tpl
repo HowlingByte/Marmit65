@@ -14,7 +14,7 @@
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
       	<a href="../">
-        	<img src="image/logo_text.svg" alt="Logo Marmit@">
+        	<img src="/image/logo_text.svg" alt="Logo Marmit@">
       	</a>
         <form class="search-container" action="/chercheRecettes" method="POST">
             <input name="recette" type="text" placeholder="Rechercher une recette" class="search-input">
@@ -29,23 +29,29 @@
 	<div class="main-content">
 		<div class="content">
 			<p>
-				<span class="bigger">Des recettes de cuisine faciles et rapides</span>
+				<span class="bigger">Résultats de la recherche pour "{{ recherche }}"</span>
 			</p>
 		</div>
 
-		
-
-		<div class="grid-container">
-			%for famille in listeFamille:
-				<a href="famille?id={{famille.Id}}">
-					<div class="grid-item-container">
-					<div class="img-overlay"></div>
-					<img src="{{famille.image}}" class="grid-item" alt="Image {{famille.nom}}">
-					<span class="grid-item-text">{{famille.nom}}</span>
-					</div>
-				</a>
-			%end
-		</div>
+        %if listeRecettes == []:
+            <div class="content">
+                <p>
+                    <span class="bigger">Aucun résultat</span>
+                </p>
+            </div>
+        %else:
+            <div class="grid-container">
+                %for recette in listeRecettes:
+                    <a href="recettes/{{recette.Id}}">
+                        <div class="grid-item-container">
+                        <div class="img-overlay"></div>
+                        <img src="{{recette.image}}" class="grid-item" alt="Image {{recette.nom}}">
+                        <span class="grid-item-text">{{recette.nom}}</span>
+                        </div>
+                    </a>
+                %end
+            </div>
+        %end
 	</div>
 
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
