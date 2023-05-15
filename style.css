@@ -219,10 +219,16 @@ header img:hover {
 /* Grille */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 20px; 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+@media (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Display only one column */
+  }
 }
 
 
