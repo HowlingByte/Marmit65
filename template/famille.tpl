@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Marmit@ - {{nom}}</title>
+    <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
     <link href="/style.css" rel="stylesheet" text="text/css">
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
