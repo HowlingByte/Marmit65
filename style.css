@@ -54,6 +54,11 @@
   }
 }
 
+@media only screen and (min-width: 768px) {
+  header {
+    display: flex;
+  }
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -71,7 +76,6 @@ header {
   text-align: left;
   justify-content: start;
   justify-content: center;
-  display: flex;
 }
 header img {
   width: 200px;
@@ -220,8 +224,8 @@ header img:hover {
 /* Grille */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 20px; 
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 20px;
   margin-left: 10%;
   margin-right: 10%;
 }
