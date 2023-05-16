@@ -58,7 +58,6 @@
 			<a href="contact">Contact</a>
 		</div>
 		<div class="liens">
-			<a href="accueil-mb.html">Version Mobile</a>
 			<a href="https://github.com/Hidden-Warden/Marmit65">GitHub</a>
 		</div>
     </footer>

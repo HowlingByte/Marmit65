@@ -228,9 +228,20 @@ header img:hover {
   gap: 20px;
   margin-left: 10%;
   margin-right: 10%;
+
 }
 
+@media screen and (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Display only one column */
+  }
+}
+
+
 .grid-item-container {
+  width: 100%;
+  height: 100%;
+
   position: relative;
   animation: 1s ease-out 0s 1 slideIn;
   /* Firefox */
