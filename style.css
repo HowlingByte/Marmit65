@@ -111,7 +111,7 @@ header img:hover {
   animation: 1s ease-out 0s 1 slideIn;
 }
 
-.footer {
+footer {
   display: flex; /* Use Flexbox */
   /* position: fixed;
   bottom: 0;
@@ -125,13 +125,13 @@ header img:hover {
   animation: 1s ease-out 0s 1 slideIn;
 }
 
-.footer img {
+footer img {
   width: 50px;
   margin-right: 30px;
   margin-left: 20px;
 }
 
-.footer img:hover {
+footer img:hover {
   filter: invert(35%) hue-rotate(242deg) brightness(100%) contrast(102%);
     /* Firefox */
     -moz-transition: all 0.2s ease-in;
@@ -141,6 +141,15 @@ header img:hover {
     -o-transition: all 0.2s ease-in;
     /* Standard */
     transition: all 0.2s ease-in;
+}
+
+.copyright {
+  margin-bottom: 1px; /* Add margin between links */
+  text-align: left;
+  color: #fff;
+  display: flex; /* Use Flexbox to align links vertically */
+  flex-direction: column; /* Stack links vertically */
+  margin-right: 20px;
 }
 
 .liens {

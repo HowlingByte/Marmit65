@@ -56,18 +56,19 @@
 	</div>
 
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
-    <footer class="footer">
+    <footer>
 		<a href="../">
 			<img src="image/logo.svg" alt="Logo Marmit@">
 		</a>
+        <div class="copyright">Marmit@ © 2023</div>
 		<div class="liens">
 			<a href="mentions">Mentions légales</a>
 		</div>
+        <div class="liens">
+            <a href="contact">Contact</a>
+        </div>
 		<div class="liens">
-			<a href="contact">Contact</a>
-		</div>
-		<div class="liens">
-			<a href="https://github.com/Hidden-Warden/Marmit65">GitHub</a>
+            <a href="https://github.com/Hidden-Warden/Marmit65">GitHub</a>
 		</div>
     </footer>
 	<div class="overlay"></div>
