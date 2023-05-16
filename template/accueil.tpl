@@ -56,6 +56,8 @@
 		</a>
 		<div class="liens">
 			<a href="mentions">Mentions légales</a>
+		</div>
+		<div class="liens">
 			<a href="contact">Contact</a>
 		</div>
 		<div class="liens">

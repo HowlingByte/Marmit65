@@ -50,13 +50,15 @@
         <a href="../">
             <img src="image/logo.svg" alt="Logo Marmit@">
         </a>
-        <div class="liens">
-            <a href="mentions">Mentions légales</a>
-            <a href="contact">Contact</a>
-        </div>
-        <div class="liens">
-            <a href="https://github.com/Hidden-Warden/Marmit65">GitHub</a>
-        </div>
+		<div class="liens">
+			<a href="mentions">Mentions légales</a>
+		</div>
+		<div class="liens">
+			<a href="contact">Contact</a>
+		</div>
+		<div class="liens">
+			<a href="https://github.com/Hidden-Warden/Marmit65">GitHub</a>
+		</div>
     </footer>
-    <div class="overlay"></div>
+	<div class="overlay"></div>
 </body>
