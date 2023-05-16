@@ -1,7 +1,25 @@
+"""
+Fichier principal de l'application web Marmita.
+Ce fichier contient toutes les routes de l'application web.
+Il permet de lancer le serveur en local.
+"""
 import sqlite3
 from bottle import get, post, request, route, run, view, static_file, response, error, redirect
 
 class Recette():
+    """
+    Classe qui représente une recette. Une recette possède les attributs suivants:
+    - Id: l'identifiant de la recette dans la base de données
+    - nom: le nom de la recette
+    - image: l'image de la recette
+    - preparation: le temps de préparation de la recette
+    - cuisson: le temps de cuisson de la recette
+    - nombreDePersonnes: le nombre de personnes pour lesquelles la recette est prévue
+    - difficulte: la difficulté de la recette
+    - ingredients: la liste des ingrédients de la recette
+    - etapes: la liste des étapes de la recette
+    - famille: la famille de la recette
+    """
     def __init__(self,Id,nom,image,preparation,cuisson,nbpers,diff,ingredients,etapes,famille):
         self.Id=Id
         self.nom=nom
@@ -15,12 +33,25 @@ class Recette():
         self.famille=famille
 
 class Famille():
+    """
+    Classe qui représente une famille de recettes. Une famille possède les attributs suivants:
+    - Id: l'identifiant de la famille dans la base de données
+    - nom: le nom de la famille
+    - image: l'image de la famille
+    """
     def __init__(self, Id,nom,image):
         self.Id=Id
         self.nom=nom
         self.image=image
 
 class Ingredient():
+    """
+    Classe qui représente un ingrédient. Un ingrédient possède les attributs suivants:
+    - Id: l'identifiant de l'ingrédient dans la base de données
+    - nom: le nom de l'ingrédient
+    - quantite: la quantité de l'ingrédient
+    - unite: l'unité de mesure de la quantité de l'ingrédient
+    """
     def __init__(self,Id, nom, quantite,unite=None):
         self.Id=Id
         self.nom=nom
@@ -28,16 +59,29 @@ class Ingredient():
         self.unite=unite
 
 class Etape():
+    """
+    Classe qui re présente une étape de recette. Une étape possède les attributs suivants:
+    - num: le numéro de l'étape dans la recette
+    - texte: le texte de l'étape
+    """
     def __init__(self,num,texte):
         self.num=num
         self.texte=texte
 
 def open_sql():
+    """
+    Fonction qui permet d'ouvrir une connexion à la base de données.
+    :return: le connecteur et le curseur de la base de données
+    """
     conn = sqlite3.connect('database/marmita.db')
     cur = conn.cursor()
     return conn,cur
 
 def close_sql(cur):
+    """
+    Fonction qui permet de fermer une connexion à la base de données.
+    :param cur: le curseur de la base de données
+    """
     cur.close()
 
 @route('/style.css')
@@ -184,4 +228,5 @@ def server_static(filepath):
     return static_file(filepath, root='image/')
 
 run(host='0.0.0.0', port=80)
+#run(host='localhost', port=8080, debug=True)
 
