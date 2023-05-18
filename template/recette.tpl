@@ -81,7 +81,7 @@
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer>
 		<a href="../">
-			<img src="image/logo.svg" alt="Logo Marmit@">
+			<img src="/image/logo.svg" alt="Logo Marmit@">
 		</a>
         <div class="copyright">Marmit@ © 2023</div>
 		<div class="liens">

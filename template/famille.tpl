@@ -44,7 +44,6 @@
         </div>
     </div>
 
-
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer>
 		<a href="../">

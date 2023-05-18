@@ -1,3 +1,4 @@
+PRAGMA encoding = "UTF-8";
 BEGIN TRANSACTION;
 CREATE TABLE IF NOT EXISTS "Ingredients" (
 	"ID"	INTEGER NOT NULL UNIQUE,
@@ -79,7 +80,9 @@ INSERT INTO "Ingredients" ("ID","Nom") VALUES (1,'Salade verte'),
  (38,'Lait'),
  (39,'Oeuf'),
  (40,'Sucre'),
- (41,'Vanille');
+ (41,'Vanille'),
+ (42,'Tequila'),
+ (43,'Curaçao');
 INSERT INTO "Famille" ("ID","Nom","Image") VALUES (1,'Entrees','image\famille\entrees.png'),
  (2,'Plats','image\famille\plats.png'),
  (3,'Desserts','image\famille\desserts.png'),
@@ -93,8 +96,9 @@ INSERT INTO "Recettes" ("ID","Nom","Image","Nombre de personnes","Cuisson","Diff
  (4,'Sauce tomate','image\recettes\sauce_tomate.png',4,30,1,4),
  (5,'Mojito','image\recettes\mojito.png',2,0,2,5),
  (6,'Feuilletés au fromage','image\recettes\feuilletes_fromage.png',6,20,2,6),
- (7,'Crème brûlée','image\recettes\creme_brulee.png',4,45,3,7);
-INSERT INTO "IngredientsDeRecette" ("ID","ID_recettes","ID_ingredients","Quantite","Unite") VALUES (1,1,1,1.0,'salade'),
+ (7,'Crème brûlée','image\recettes\creme_brulee.png',4,45,3,7),
+ (8,'Blue Margarita','image\recettes\blue-margarita.jpg',1,0,1,5);
+INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quantite", "Unite") VALUES (1, 1, 1, 1.0, 'salade'),
  (2,1,2,150.0,'g'),
  (3,1,3,150.0,'g'),
  (4,1,4,4.0,'tranches'),
@@ -134,7 +138,10 @@ INSERT INTO "IngredientsDeRecette" ("ID","ID_recettes","ID_ingredients","Quantit
  (38,7,38,25.0,'cl'),
  (39,7,39,3.0,''),
  (40,7,40,100.0,'g'),
- (41,7,41,1.0,'gousse');
+ (41,7,41,1.0,'gousse'),
+ (42,8,42,4,'cl'),
+ (43,8,43,2,'cl'),
+ (44,8,29,2,'cl');
 INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES (1,1,1,'Laver et couper les légumes'),
  (2,1,2,'Faire griller les tranches de pain de mie'),
  (3,1,3,'Disposer la salade, les tomates et le chèvre sur les tranches de pain'),
@@ -180,5 +187,7 @@ INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES 
  (43,7,6,'Verser la crème dans des ramequins'),
  (44,7,7,'Laisser refroidir'),
  (45,7,8,'Passer au four à 180°C pendant 10 minutes'),
- (46,7,9,'Saupoudrer de sucre et passer sous le grill pendant 2 minutes');
+ (46,7,9,'Saupoudrer de sucre et passer sous le grill pendant 2 minutes'),
+ (47,8,1,"Dans un shaker, versez la tequila, le curaçao et le jus d’un citron vert, rajoutez les glaçons et secouez énergiquement."),
+ (48,8,2,"Versez le mélange en filtrant les glaçons dans un verre à Martini");
 COMMIT;
