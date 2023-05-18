@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @keyframes slideInLeft {
   0% {
     transform: translateX(-20%);
