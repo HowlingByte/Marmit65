@@ -87,7 +87,12 @@ INSERT INTO "Ingredients" ("ID","Nom") VALUES (1,'Salade verte'),
  (45,'Jaune d''oeuf'),
  (46,'Amande en poudre'),
  (47,'Citron jaune'),
- (48,'Gingembre');
+ (48,'Gingembre'),
+ (49,'Pommes de terre'),
+ (50,'Paprika'),
+ (51,'Pâtes'),
+ (52,'Pizza'),
+ (53,'Saumon');
 INSERT INTO "Famille" ("ID","Nom","Image") VALUES (1,'Entrees','image\famille\entrees.png'),
  (2,'Plats','image\famille\plats.png'),
  (3,'Desserts','image\famille\desserts.png'),
@@ -104,7 +109,11 @@ INSERT INTO "Recettes" ("ID","Nom","Image","Nombre de personnes","Cuisson","Diff
  (7,'Crème brûlée','image\recettes\creme_brulee.png',4,45,3,3),
  (8,'Blue Margarita','image\recettes\blue-margarita.jpg',1,0,1,5),
  (9,'Crêpe au four finlandaise (Pannukakku)','image\recettes\pannukakku.png',4,20,2,3),
- (10,'Petits biscuits de Noël','image\recettes\biscuits-de-noel.jpg',4,23,1,3);
+ (10,'Petits biscuits de Noël','image\recettes\biscuits-de-noel.jpg',4,23,1,3),
+ (11,'Frites','image\recettes\frites.jpg',2,30,1,2),
+ (12,'Pâtes','image\recettes\pates.jpg',2,5,1,2),
+ (13,'Pizza','image\recettes\pizza.jpg',2,20,2,2),
+ (14,'Saumon','image\recettes\saumon.jpg',1,15,1,2);
 INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quantite", "Unite") VALUES (1, 1, 1, 1.0, 'salade'),
  (2,1,2,150.0,'g'),
  (3,1,3,150.0,'g'),
@@ -168,7 +177,14 @@ INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quan
  (61,10,18,66.5,'g'),
  (62,10,16,83.5,'g'),
  (63,10,25,2/3,''),
- (64,10,46,33.5,'g');
+ (64,10,46,33.5,'g'),
+ (65,11,49,4,''),
+ (66,11,50,1,'cuillère à café'),
+ (67,11,22,5,'cl'),
+ (68,12,51,60,'g'),
+ (69,13,52,1,''),
+ (70,14,53,1,''),
+ (71,14,47,1,'');
 INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES (1,1,1,'Laver et couper les légumes'),
  (2,1,2,'Faire griller les tranches de pain de mie'),
  (3,1,3,'Disposer la salade, les tomates et le chèvre sur les tranches de pain'),
@@ -235,5 +251,13 @@ INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES 
  (64,10,5,'Etaler la pâte avec un rouleau et découper des formes à l''emporte-pièce'),
  (65,10,6,'Les disposer sur une plaque garnie de papier sulfurisé'),
  (66,10,7,'Etaler un peu de jaune d''oeuf avec de la cannelle sur les biscuits, pour qu''ils soient bien dorés'),
- (67,10,8,'Enfourner 7 à 10 min');
+ (67,10,8,'Enfourner 7 à 10 min'),
+ (68,11,1,'Faire préchauffer le four à 250°C . Couper les pommes de terre en frites'),
+ (69,11,2,'Les rincer et les essorer'),
+ (70,11,3,'Bien mélanger les frites avec l''huile et le paprika'),
+ (71,11,4,'Enfourner pendant une bonne demi-heure'),
+ (72,12,1,'Faire cuire les pâtes 5 à 6 min'),
+ (73,13,1,'Sortir la pizza de sa boite'),
+ (74,13,2,'La faire chauffer 20 min au four'),
+ (75,14,1,'Enfourner pendant 15 minutes le saumon avec du jus de citrons');
 COMMIT;
