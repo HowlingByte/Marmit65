@@ -188,6 +188,6 @@ INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES 
  (44,7,7,'Laisser refroidir'),
  (45,7,8,'Passer au four à 180°C pendant 10 minutes'),
  (46,7,9,'Saupoudrer de sucre et passer sous le grill pendant 2 minutes'),
- (47,8,1,"Dans un shaker, versez la tequila, le curaçao et le jus d’un citron vert, rajoutez les glaçons et secouez énergiquement."),
+ (47,8,1,"Dans un shaker, versez la tequila, le curaçao et le jus d’un citron vert, rajoutez les glaçons et secouez énergiquement"),
  (48,8,2,"Versez le mélange en filtrant les glaçons dans un verre à Martini");
 COMMIT;
