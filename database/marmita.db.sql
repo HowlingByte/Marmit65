@@ -99,7 +99,8 @@ INSERT INTO "Recettes" ("ID","Nom","Image","Nombre de personnes","Cuisson","Diff
  (6,'Feuilletés au fromage','image\recettes\feuilletes_fromage.png',6,20,2,6),
  (7,'Crème brûlée','image\recettes\creme_brulee.png',4,45,3,3),
  (8,'Blue Margarita','image\recettes\blue-margarita.jpg',1,0,1,5),
- (9,'Crêpe au four finlandaise (Pannukakku)','image\recettes\pannukakku.png',4,20,2,3);
+ (9,'Crêpe au four finlandaise (Pannukakku)','image\recettes\pannukakku.png',4,20,2,3),
+ (10,'Granité aux fraises','image\recettes\',4,30,2,2);
 INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quantite", "Unite") VALUES (1, 1, 1, 1.0, 'salade'),
  (2,1,2,150.0,'g'),
  (3,1,3,150.0,'g'),
