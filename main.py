@@ -184,4 +184,5 @@ def server_static(filepath):
     return static_file(filepath, root='image/')
 
 run(host='0.0.0.0', port=80)
+#run(host='localhost', port=8080, debug=True)
 

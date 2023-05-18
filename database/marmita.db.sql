@@ -85,8 +85,7 @@ INSERT INTO "Famille" ("ID","Nom","Image") VALUES (1,'Entrees','image\famille\en
  (3,'Desserts','image\famille\desserts.png'),
  (4,'Sauces','image\famille\sauces.png'),
  (5,'Boissons','image\famille\boissons.png'),
- (6,'Apéritifs','image\famille\aperitifs.png'),
- (7,'Autres','image\famille\autres.png');
+ (6,'Apéritifs','image\famille\aperitifs.png');
 INSERT INTO "Recettes" ("ID","Nom","Image","Nombre de personnes","Cuisson","Difficulte","ID_Famille") VALUES (1,'Salade de chèvre chaud','image\recettes\salade_chevre.png',4,0,1,1),
  (2,'Boeuf bourguignon','image\recettes\boeuf_bourguignon.png',6,180,3,2),
  (3,'Tarte aux pommes','image\recettes\tarte_pommes.png',8,50,2,3),
