@@ -38,7 +38,7 @@
                 <img src="/{{recette.image}}" class="grid-item" alt="Image salade de chèvre chaud">
             </div>
             <div class="grid-item-container-right">
-                <span class="grid-item-text-recette">{{recette.nom}}
+                <div class="grid-item-text-recette">{{recette.nom}}
                     <br>
                     <span class="info">👤{{recette.nombreDePersonnes}}&nbsp;&nbsp;•&nbsp;&nbsp;🍳{{recette.cuisson}} min&nbsp;&nbsp;•&nbsp;&nbsp;
                         %for loup in range(recette.difficulte):
@@ -58,22 +58,22 @@
                             %end
                         %end
                     </span>
-                </span>
+                </div>
             </div>
         </div>
 
         <div class="etape">
-                <b><span class="bigger">Étapes</span></b>
-                <p>
-                    %if recette.etapes==[]:
-                        Aucune étape n'est proposée pour cette recette.
-                    %else:
-                        %for etape in recette.etapes:
-                            <span class="bigger">Étape {{etape.num}}</span><br>
-                            {{etape.texte}}
-                            <br><br>
-                        %end
+            <b><span class="bigger-plus">Étapes</span></b>
+            <p>
+                %if recette.etapes==[]:
+                    Aucune étape n'est proposée pour cette recette.
+                %else:
+                    %for etape in recette.etapes:
+                        <span class="bigger">Étape {{etape.num}}</span><br>
+                        {{etape.texte}}
+                        <br><br>
                     %end
+                %end
             </p>
         </div>
     </div>

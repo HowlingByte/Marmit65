@@ -303,7 +303,6 @@ footer img:hover {
 
 
 .grid-item-text-recette {
-  position: absolute;
   top: 8px;
   left: 20px;
   font-size: 40px; 
@@ -344,6 +343,8 @@ footer img:hover {
   margin-left: 10%;
   margin-right: 10%;
   font-size: 20px;
+  border-top: 2px solid #6D4AFF;
+  margin-top: 30px;
 }
 
 .grid-item {
@@ -392,6 +393,10 @@ footer img:hover {
 
 .bigger {
   font-size: larger;
+}
+
+.bigger-plus {
+  font-size: 40px;
 }
 
 .overlay {
