@@ -227,5 +227,5 @@ def on_error404(error):
 def server_static(filepath):
     return static_file(filepath, root='image/')
 
-run(host='0.0.0.0', port=80)
-#run(host='localhost', port=8080, debug=True)
+#run(host='0.0.0.0', port=80)
+run(host='localhost', port=8080, debug=True)

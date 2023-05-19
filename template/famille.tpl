@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="theme-color" content="black">
-    <title>Marmit@ - Accueil</title>
+    <title>Marmit@ - {{nom}}</title>
 	<link rel="icon" type="image/x-icon" href="/image/favicon.ico">
     <link href="/style.css" rel="stylesheet" text="text/css">
 	<link rel="apple-touch-icon" href="/image/icon/touch-icon-iphone.png">
