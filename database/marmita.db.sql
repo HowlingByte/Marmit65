@@ -93,7 +93,9 @@ INSERT INTO "Ingredients" ("ID","Nom") VALUES (1,'Salade verte'),
  (51,'Pâtes'),
  (52,'Pizza'),
  (53,'Saumon'),
- (54,'Riz');
+ (54,'Riz'),
+ (55,'Jus de citron'),
+ (56,'Ciboulette');
 INSERT INTO "Famille" ("ID","Nom","Image") VALUES (1,'Entrees','image\famille\entrees.png'),
  (2,'Plats','image\famille\plats.png'),
  (3,'Desserts','image\famille\desserts.png'),
@@ -115,7 +117,8 @@ INSERT INTO "Recettes" ("ID","Nom","Image","Nombre de personnes","Cuisson","Diff
  (12,'Pâtes','image\recettes\pates.jpg',2,5,1,2),
  (13,'Pizza','image\recettes\pizza.jpg',2,20,2,2),
  (14,'Saumon','image\recettes\saumon.jpg',1,15,1,2),
- (15,'Sushi','image\recettes\sushi.jpg',6,0,3,1);
+ (15,'Sushi','image\recettes\sushi.jpg',6,0,3,1),
+ (16,'Bretzel','image\recettes\bretzel.jpg',4,35,2,6);
 INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quantite", "Unite") VALUES (1, 1, 1, 1.0, 'salade'),
  (2,1,2,150.0,'g'),
  (3,1,3,150.0,'g'),
@@ -188,7 +191,13 @@ INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quan
  (70,14,53,1,''),
  (71,14,47,1,''),
  (72,15,53,250,'g'),
- (73,15,54,300,'g');
+ (73,15,54,300,'g'),
+ (74,16,18,43,'g'),
+ (75,16,44,371.5,'g'),
+ (76,16,25,28.5,'g'),
+ (77,16,26,6,'g'),
+ (78,16,16,43,'g'),
+ (79,16,36,1/4,'verre');
 INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES (1,1,1,'Laver et couper les légumes'),
  (2,1,2,'Faire griller les tranches de pain de mie'),
  (3,1,3,'Disposer la salade, les tomates et le chèvre sur les tranches de pain'),
@@ -266,5 +275,13 @@ INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES 
  (75,14,1,'Enfourner pendant 15 minutes le saumon avec du jus de citrons'),
  (76,15,1,'Couper le saumon en lamelles'),
  (77,15,2,'Préparer le riz'),
- (78,15,3,'Rouler le saumon dans le riz');
+ (78,15,3,'Rouler le saumon dans le riz'),
+ (79,16,1,'Dans la moitié du lait tiédi, délayer la levure'),
+ (80,16,2,'Faire une pâte à pain avec la farine et le levain'),
+ (81,16,3,'Laisser lever jusqu''à ce que la pâte double de volume'),
+ (82,16,4,'Ajouter l''autre moitié de lait, le beurre,le sucre et le sel fin'),
+ (83,16,5,'Pétrir et laisser lever 30 min'),
+ (84,16,6,'Façonner : étirer la pâte en rouleaux de 1m20 à 1m50 de long. Former les bretzels, les cisailler, badigeonner d''un mélange de jaune d''oeuf, de bière et de lait'),
+ (85,16,7,'Laisser reposer une 1/2 heurre et parsemer de gros sel sur les deux faces'),
+ (86,16,8,'Cuire 35 min environ à four moyen');
 COMMIT;
