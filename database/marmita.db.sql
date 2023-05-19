@@ -92,7 +92,8 @@ INSERT INTO "Ingredients" ("ID","Nom") VALUES (1,'Salade verte'),
  (50,'Paprika'),
  (51,'Pâtes'),
  (52,'Pizza'),
- (53,'Saumon');
+ (53,'Saumon'),
+ (54,'Riz');
 INSERT INTO "Famille" ("ID","Nom","Image") VALUES (1,'Entrees','image\famille\entrees.png'),
  (2,'Plats','image\famille\plats.png'),
  (3,'Desserts','image\famille\desserts.png'),
@@ -113,7 +114,8 @@ INSERT INTO "Recettes" ("ID","Nom","Image","Nombre de personnes","Cuisson","Diff
  (11,'Frites','image\recettes\frites.jpg',2,30,1,2),
  (12,'Pâtes','image\recettes\pates.jpg',2,5,1,2),
  (13,'Pizza','image\recettes\pizza.jpg',2,20,2,2),
- (14,'Saumon','image\recettes\saumon.jpg',1,15,1,2);
+ (14,'Saumon','image\recettes\saumon.jpg',1,15,1,2),
+ (15,'Sushi','image\recettes\sushi.jpg',6,0,3,1);
 INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quantite", "Unite") VALUES (1, 1, 1, 1.0, 'salade'),
  (2,1,2,150.0,'g'),
  (3,1,3,150.0,'g'),
@@ -184,7 +186,9 @@ INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quan
  (68,12,51,60,'g'),
  (69,13,52,1,''),
  (70,14,53,1,''),
- (71,14,47,1,'');
+ (71,14,47,1,''),
+ (72,15,53,250,'g'),
+ (73,15,54,300,'g');
 INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES (1,1,1,'Laver et couper les légumes'),
  (2,1,2,'Faire griller les tranches de pain de mie'),
  (3,1,3,'Disposer la salade, les tomates et le chèvre sur les tranches de pain'),
@@ -259,5 +263,8 @@ INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES 
  (72,12,1,'Faire cuire les pâtes 5 à 6 min'),
  (73,13,1,'Sortir la pizza de sa boite'),
  (74,13,2,'La faire chauffer 20 min au four'),
- (75,14,1,'Enfourner pendant 15 minutes le saumon avec du jus de citrons');
+ (75,14,1,'Enfourner pendant 15 minutes le saumon avec du jus de citrons'),
+ (76,15,1,'Couper le saumon en lamelles'),
+ (77,15,2,'Préparer le riz'),
+ (78,15,3,'Rouler le saumon dans le riz');
 COMMIT;
