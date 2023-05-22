@@ -8,6 +8,8 @@
     <title>Marmit@ - Accueil</title>
 	<link rel="icon" type="image/x-icon" href="/image/favicon.ico">
     <link href="/style.css" rel="stylesheet" text="text/css">
+	<!-- Apple Title -->
+	<meta name="apple-mobile-web-app-title" content="Marmit@">
 	<!-- Apple Icon -->
 	<link rel="apple-touch-icon" href="/image/icon/touch-icon-iphone.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="/image/icon/touch-icon-ipad.png">
