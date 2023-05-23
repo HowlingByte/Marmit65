@@ -102,6 +102,14 @@ header img:hover {
   flex-grow: 1;
 }
 
+.main-content h1{
+  margin: 0;
+}
+
+.main-content h2{
+  margin: 0;
+}
+
 .content {
   padding: 20px;
   display: flex;
