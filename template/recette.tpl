@@ -93,10 +93,10 @@
 		</a>
         <div class="copyright">Marmit@ © 2023</div>
 		<div class="liens">
-			<a href="mentions">Mentions légales</a>
+			<a href="/mentions">Mentions légales</a>
 		</div>
         <div class="liens">
-            <a href="contact">Contact</a>
+            <a href="/contact">Contact</a>
         </div>
 		<div class="liens">
             <a href="https://github.com/Hidden-Warden/Marmit65">GitHub</a>
