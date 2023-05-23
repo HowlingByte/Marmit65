@@ -123,6 +123,24 @@ header img:hover {
   animation: 1s ease-out 0s 1 slideIn;
 }
 
+.content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.content a:hover 
+{
+  color: #6D4AFF;
+  /* Firefox */
+  -moz-transition: all 0.2s ease-in;
+  /* WebKit */
+  -webkit-transition: all 0.2s ease-in;
+  /* Opera */
+  -o-transition: all 0.2s ease-in;
+  /* Standard */
+  transition: all 0.2s ease-in;
+}
+
 footer {
   display: flex; /* Use Flexbox */
   /* position: fixed;
