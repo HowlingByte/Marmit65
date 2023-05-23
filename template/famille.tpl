@@ -2,14 +2,22 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="theme-color" content="black">
     <title>Marmit@ - {{nom}}</title>
-    <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="/image/favicon.ico">
     <link href="/style.css" rel="stylesheet" text="text/css">
+	<link rel="apple-touch-icon" href="/image/icon/touch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/image/icon/touch-icon-ipad.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/image/icon/touch-icon-iphone-retina.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="/image/icon/touch-icon-ipad-retina.png">
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
@@ -43,7 +51,6 @@
             %end
         </div>
     </div>
-
 
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer>
