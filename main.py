@@ -129,7 +129,7 @@ def famille():
 
     close_sql(cur)
 
-    return dict(listeRecettes=listeRecettes, nom=nom[0])
+    return dict(listeRecettes=listeRecettes, nom=nom[0], id=id)
 
 # Affichage d'une recette
 @route('/recettes/<id>')

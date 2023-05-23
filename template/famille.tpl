@@ -31,7 +31,7 @@
     </header>
 
     <nav class="fils">
-        <a href="../">Accueil</a> > <a href="famille?id={{listeRecettes[0].famille}}">{{nom}}</a>
+        <a href="../">Accueil</a> > <a href="famille?id={{id}}">{{nom}}</a>
     </nav>
     
     <div class="main-content">
