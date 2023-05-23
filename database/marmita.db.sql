@@ -99,7 +99,14 @@ INSERT INTO "Ingredients" ("ID","Nom") VALUES (1,'Salade verte'),
  (57,'Vodka'),
  (58,'Glaçon'),
  (59,'Curaçao Bleu'),
- (60,'Jin tonic');
+ (60,'Jin tonic'),
+ (61,'Pain'),
+ (62,'Levain'),
+ (63,'Sucre'),
+ (64,'Sel fin'),
+ (65,'Beurre fondu'),
+ (66,'Bière'),
+ (67,'Gros sel');
 INSERT INTO "Famille" ("ID","Nom","Image") VALUES (1,'Entrees','image\famille\entrees.png'),
  (2,'Plats','image\famille\plats.png'),
  (3,'Desserts','image\famille\desserts.png'),
@@ -123,7 +130,8 @@ INSERT INTO "Recettes" ("ID","Nom","Image","Nombre de personnes","Cuisson","Diff
  (14,'Saumon','image\recettes\saumon.jpg',1,15,1,2),
  (15,'Sushi','image\recettes\sushi.jpg',6,0,3,1),
  (16,'Bretzel','image\recettes\bretzel.jpg',4,35,2,6),
- (17,'Cocktail Icee','image\recettes\cocktail-icee.png',1,0,2,5);
+ (17,'Cocktail Icee','image\recettes\cocktail-icee.png',1,0,2,5),
+ (18,'Pain d''épices','image\recettes\pain-epices.jpg',4,45,2,3);
 INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quantite", "Unite") VALUES (1, 1, 1, 1.0, 'salade'),
  (2,1,2,150.0,'g'),
  (3,1,3,150.0,'g'),
@@ -207,7 +215,15 @@ INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quan
  (81,17,58,4,''),
  (82,17,59,3,'cl'),
  (83,17,60,10,'cl'),
- (84,17,55,2,'cl');
+ (84,17,55,2,'cl'),
+ (85,17,56,1,''),
+ (86,18,61,250,'g'),
+ (87,18,62,1/4,'verre'),
+ (88,18,63,1,'cuillère à café'),
+ (89,18,64,1/4,'cuillère à café'),
+ (90,18,65,1/4,'cuillère à café'),
+ (91,18,66,1,''),
+ (92,18,67,1,'cuillère à café');
 INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES (1,1,1,'Laver et couper les légumes'),
  (2,1,2,'Faire griller les tranches de pain de mie'),
  (3,1,3,'Disposer la salade, les tomates et le chèvre sur les tranches de pain'),
@@ -299,5 +315,10 @@ INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES 
  (89,17,3,'Ajouter le jus de citron'),
  (90,17,4,'Ajouter le curaçao'),
  (91,17,5,'Ajouter le jin tonic'),
- (92,17,6,'Mélanger le tout');
+ (92,17,6,'Mélanger le tout'),
+ (93,18,1,'Mélanger tous les ingrédients ensemble'),
+ (94,18,2,'Laisser reposer la pâte pendant 1 heure au réfrigérateur'),
+ (95,18,3,'Préchauffer le four à 180°C'),
+ (96,18,4,'Étaler la pâte dans un moule'),
+ (97,18,5,'Faire cuire pendant 30 minutes');
 COMMIT;
