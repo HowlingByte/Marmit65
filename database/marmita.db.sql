@@ -95,7 +95,11 @@ INSERT INTO "Ingredients" ("ID","Nom") VALUES (1,'Salade verte'),
  (53,'Saumon'),
  (54,'Riz'),
  (55,'Jus de citron'),
- (56,'Ciboulette');
+ (56,'Ciboulette'),
+ (57,'Vodka'),
+ (58,'Glaçon'),
+ (59,'Curaçao Bleu'),
+ (60,'Jin tonic');
 INSERT INTO "Famille" ("ID","Nom","Image") VALUES (1,'Entrees','image\famille\entrees.png'),
  (2,'Plats','image\famille\plats.png'),
  (3,'Desserts','image\famille\desserts.png'),
@@ -118,7 +122,8 @@ INSERT INTO "Recettes" ("ID","Nom","Image","Nombre de personnes","Cuisson","Diff
  (13,'Pizza','image\recettes\pizza.jpg',2,20,2,2),
  (14,'Saumon','image\recettes\saumon.jpg',1,15,1,2),
  (15,'Sushi','image\recettes\sushi.jpg',6,0,3,1),
- (16,'Bretzel','image\recettes\bretzel.jpg',4,35,2,6);
+ (16,'Bretzel','image\recettes\bretzel.jpg',4,35,2,6),
+ (17,'Cocktail Icee','image\recettes\cocktail-icee.png',1,0,2,5);
 INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quantite", "Unite") VALUES (1, 1, 1, 1.0, 'salade'),
  (2,1,2,150.0,'g'),
  (3,1,3,150.0,'g'),
@@ -197,7 +202,12 @@ INSERT INTO "IngredientsDeRecette" ("ID", "ID_recettes", "ID_ingredients", "Quan
  (76,16,25,28.5,'g'),
  (77,16,26,6,'g'),
  (78,16,16,43,'g'),
- (79,16,36,1/4,'verre');
+ (79,16,36,1/4,'verre'),
+ (80,17,57,3,'cl'),
+ (81,17,58,4,''),
+ (82,17,59,3,'cl'),
+ (83,17,60,10,'cl'),
+ (84,17,55,2,'cl');
 INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES (1,1,1,'Laver et couper les légumes'),
  (2,1,2,'Faire griller les tranches de pain de mie'),
  (3,1,3,'Disposer la salade, les tomates et le chèvre sur les tranches de pain'),
@@ -283,5 +293,11 @@ INSERT INTO "EtapesDeRecette" ("ID","ID_recettes","Numero","Descriptif") VALUES 
  (83,16,5,'Pétrir et laisser lever 30 min'),
  (84,16,6,'Façonner : étirer la pâte en rouleaux de 1m20 à 1m50 de long. Former les bretzels, les cisailler, badigeonner d''un mélange de jaune d''oeuf, de bière et de lait'),
  (85,16,7,'Laisser reposer une 1/2 heurre et parsemer de gros sel sur les deux faces'),
- (86,16,8,'Cuire 35 min environ à four moyen');
+ (86,16,8,'Cuire 35 min environ à four moyen'),
+ (87,17,1,'Mettre les glaçons dans un verre'),
+ (88,17,2,'Ajouter la vodka'),
+ (89,17,3,'Ajouter le jus de citron'),
+ (90,17,4,'Ajouter le curaçao'),
+ (91,17,5,'Ajouter le jin tonic'),
+ (92,17,6,'Mélanger le tout');
 COMMIT;
