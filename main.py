@@ -85,7 +85,7 @@ def close_sql(cur):
     cur.close()
 
 @route('/style.css')
-@view('style.css')
+@view('static/css/style.css')
 def style():
     response.content_type="text/css"
     return {}
@@ -208,24 +208,24 @@ def rechercher():
     return dict(listeRecettes=listeRecettes, recherche=recette_recherchee)
 
 @route('/contact')
-@view("static/contact.html")
+@view("static/html/contact.html")
 def contact():
     return {}
 
 @route('/mentions')
-@view("static/mentions.html")
+@view("static/html/mentions.html")
 def mentions():
     return {}
 
 @error(404)
-@view("static/404.html")
+@view("static/html/404.html")
 def on_error404(error):
     return {}
 
 # Route pour les images
 @route('/image/<filepath:path>')
 def server_static(filepath):
-    return static_file(filepath, root='image/')
+    return static_file(filepath, root='static/image/')
 
 run(host='0.0.0.0', port=80)
 #run(host='localhost', port=8080, debug=True)
