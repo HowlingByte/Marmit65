@@ -190,10 +190,19 @@ def rechercher():
     # Récupérer les données du formulaire
     recette_recherchee = request.forms.get('recette')
 
+    if recette_recherchee!="":
+        mots_cles = recette_recherchee.split(" ")
+        condition = "LIKE '%" + mots_cles[0] + "%'"
+        for i in range(1, len(mots_cles)):
+            condition += " AND nom LIKE '%" + mots_cles[i] + "%'"
+    else:
+        condition = "LIKE '%%'"
+
+
     conn, cur = open_sql()
 
     # Requête SQL pour récupérer les recettes d'une famille
-    cur.execute("SELECT * FROM recettes WHERE nom LIKE ?", ('%' + recette_recherchee + '%',))
+    cur.execute("SELECT * FROM recettes WHERE nom " + condition)
     listeRecettes = []
     for row in cur:
         recette_id = row[0]
