@@ -352,6 +352,11 @@ footer .footer-text {
   text-align: center;
 }
 
+.ingredient {
+  border-top: 2px solid #6D4AFF;
+  padding-top: 20px;
+  margin-top: 20px;
+}
 
 .info {
   font-size: 20px; 

@@ -53,19 +53,20 @@
                             <img src="/image/logo.svg" alt="Étoile" class="star">
                         %end
                     </span>
-                    <br>
-                    Ingrédients
-                    <br>
-                    <span class="info">
-                        &nbsp;&nbsp;•&nbsp;&nbsp;
-                        %for ingredient in recette.ingredients:
-                            %if ingredient.unite=="":
-                                {{ingredient.nom}} ({{ingredient.quantite}})&nbsp;&nbsp;•&nbsp;&nbsp;
-                            %else:
-                                {{ingredient.nom}} ({{ingredient.quantite}} {{ingredient.unite}})&nbsp;&nbsp;•&nbsp;&nbsp;
+                    <div class="ingredient">
+                        Ingrédients
+                        <br>
+                        <span class="info">
+                            &nbsp;&nbsp;•&nbsp;&nbsp;
+                            %for ingredient in recette.ingredients:
+                                %if ingredient.unite=="":
+                                    {{ingredient.nom}} ({{ingredient.quantite}})&nbsp;&nbsp;•&nbsp;&nbsp;
+                                %else:
+                                    {{ingredient.nom}} ({{ingredient.quantite}} {{ingredient.unite}})&nbsp;&nbsp;•&nbsp;&nbsp;
+                                %end
                             %end
-                        %end
-                    </span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
