@@ -1,7 +1,7 @@
 # Marmit@
 <p align="center">
   <a href="https://github.com/Hidden-Warden/Marmit65">
-    <img src="https://user-images.githubusercontent.com/69793084/236773095-82e5cac2-e252-43f5-9ad1-26102dbb0cc6.png" alt="Banner">
+    <img src="https://github.com/Hidden-Warden/Marmit65/assets/69793084/bebda059-7490-4a8d-adf0-5b563f288596" alt="Banner">
   </a>
    <div class="badges" align="center">
         <img alt="Downloads" src="https://img.shields.io/github/downloads/Hidden-Warden/Marmit65/total.svg">
@@ -9,7 +9,6 @@
         <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/Marmit65">
         <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/Marmit65">
     </div>
-    
 </p>
 
 ## Built With
