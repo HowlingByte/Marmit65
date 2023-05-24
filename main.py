@@ -208,17 +208,17 @@ def rechercher():
     return dict(listeRecettes=listeRecettes, recherche=recette_recherchee)
 
 @route('/contact')
-@view("static/contact.html")
+@view("static/html/contact.html")
 def contact():
     return {}
 
 @route('/mentions')
-@view("static/mentions.html")
+@view("static/html/mentions.html")
 def mentions():
     return {}
 
 @error(404)
-@view("static/404.html")
+@view("static/html/404.html")
 def on_error404(error):
     return {}
 
