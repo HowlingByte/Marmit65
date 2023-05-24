@@ -48,7 +48,7 @@
             <div class="grid-item-container-right">
                 <div class="grid-item-text-recette">{{recette.nom}}
                     <br>
-                    <span class="info">👤{{recette.nombreDePersonnes}}&nbsp;&nbsp;•&nbsp;&nbsp;🍳{{recette.cuisson}} min&nbsp;&nbsp;•&nbsp;&nbsp;
+                    <span class="info">👤{{recette.nombre_de_personnes}}&nbsp;&nbsp;•&nbsp;&nbsp;🍳{{recette.cuisson}} min&nbsp;&nbsp;•&nbsp;&nbsp;
                         %for loup in range(recette.difficulte):
                             <img src="/image/logo.svg" alt="Étoile" class="star">
                         %end
