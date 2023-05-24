@@ -21,6 +21,7 @@ class Recette():
     - etapes: la liste des étapes de la recette
     - famille: la famille de la recette
     """
+
     def __init__(self, Id, nom, image, preparation, cuisson, nbpers, diff, ingredients, etapes, famille):
         self.Id = Id
         self.nom = nom
@@ -41,6 +42,7 @@ class Famille():
     - nom: le nom de la famille
     - image: l'image de la famille
     """
+
     def __init__(self, Id, nom, image):
         self.Id = Id
         self.nom = nom
@@ -55,6 +57,7 @@ class Ingredient():
     - quantite: la quantité de l'ingrédient
     - unite: l'unité de mesure de la quantité de l'ingrédient
     """
+
     def __init__(self, Id, nom, quantite, unite=None):
         self.Id = Id
         self.nom = nom
@@ -68,6 +71,7 @@ class Etape():
     - num: le numéro de l'étape dans la recette
     - texte: le texte de l'étape
     """
+
     def __init__(self, num, texte):
         self.num = num
         self.texte = texte
@@ -256,5 +260,5 @@ def server_static(filepath):
     return static_file(filepath, root='static/image/')
 
 
-#run(host='0.0.0.0', port=80)
+# run(host='0.0.0.0', port=80)
 run(host='localhost', port=8080, debug=True)
