@@ -37,7 +37,7 @@
 	<div class="main-content">
 		<div class="content">
 			<p>
-				<span class="bigger">Résultats de la recherche pour "{{ recherche }}"</span>
+				<span class="bigger">Résultats de la recherche pour "{{recherche}}"</span>
 			</p>
 		</div>
 
