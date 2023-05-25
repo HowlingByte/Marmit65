@@ -80,7 +80,7 @@ class Etape():
         self.texte = texte
 
 
-def open_sql(database=DATABASE)
+def open_sql(database=DATABASE):
     """
     Fonction qui permet d'ouvrir une connexion à la base de données.
     :return: le connecteur et le curseur de la base de données
