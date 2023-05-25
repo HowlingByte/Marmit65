@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+:root {
+  --purple: #6D4AFF;
+}
+
 @keyframes slideInLeft {
   0% {
     transform: translateX(-20%);
@@ -87,7 +91,7 @@ header img {
 }
 
 header img:hover {
-  fill: #6D4AFF;
+  fill: var(--purple);
   /* Firefox */
   -moz-transition: all 0.2s ease-in;
   /* WebKit */
@@ -130,7 +134,7 @@ header img:hover {
 
 .content a:hover 
 {
-  color: #6D4AFF;
+  color: var(--purple);
   /* Firefox */
   -moz-transition: all 0.2s ease-in;
   /* WebKit */
@@ -150,7 +154,7 @@ footer {
   box-sizing: border-box;
   margin-left: 20px;
   margin-right: 20px;
-  border-top: 2px solid #6D4AFF;
+  border-top: 2px solid var(--purple);
   margin-top: 20px;
   animation: 1s ease-out 0s 1 slideIn;
 }
@@ -208,7 +212,7 @@ footer .footer-text {
 
 .search-button {
   padding: 5px;
-  background-color: #6D4AFF;
+  background-color: var(--purple);
   color: #fff;
   border: none;
   border-radius: 0 4px 4px 0;
@@ -234,7 +238,7 @@ footer .footer-text {
 
 .liens a:hover 
 {
-  color: #6D4AFF;
+  color: var(--purple);
   /* Firefox */
   -moz-transition: all 0.2s ease-in;
   /* WebKit */
@@ -246,7 +250,7 @@ footer .footer-text {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #6D4AFF;
+  background-color: var(--purple);
   border-radius: 10px;
   border: 5px solid black;
 }
@@ -353,7 +357,7 @@ footer .footer-text {
 }
 
 .ingredient {
-  border-top: 2px solid #6D4AFF;
+  border-top: 2px solid var(--purple);
   padding-top: 20px;
   margin-top: 20px;
 }
@@ -385,7 +389,7 @@ footer .footer-text {
   margin-left: 10%;
   margin-right: 10%;
   font-size: 20px;
-  border-top: 2px solid #6D4AFF;
+  border-top: 2px solid var(--purple);
   margin-top: 30px;
 }
 
@@ -448,7 +452,7 @@ footer .footer-text {
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background-color: #6D4AFF;
+  background-color: var(--purple);
   transform: translateY(-100%);
   animation: 1s slideOutOverlay;
 }
@@ -475,4 +479,108 @@ footer .footer-text {
 .loupe {
   position: absolute;
   animation: 4s infinite alternate animationLoupe;
+}
+
+.share_icon {
+  width: 32px;
+  height: 32px;
+  fill: #fff;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 3px;
+}
+.share_icon:last-of-type{
+   margin-right: 0px;
+}
+
+.share-button {
+  cursor: pointer;
+  display: inline-block;
+  height:42px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -webkit-perspective: 200px;
+  -moz-perspective: 200px;
+  perspective: 200px;
+  
+}
+
+.share-button_back {
+    background-color: var(--purple);
+    padding: 5px;
+    border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 14px rgba(0,0,0,0.1) inset;
+}
+
+.share-button_front {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center top;
+  -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+
+
+.share-button_text {
+  margin: 0;
+  line-height: 42px;
+  font-size: 16px;
+  text-align: center;
+  color: var(--purple);
+}
+
+.share_link {
+  position: relative;
+  top: 40px;
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: top .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: top .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: top .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: top .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: top .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  }
+
+.share-button:hover .share-button_front {
+  transform: rotateX(90deg);
+}
+
+.share-button:hover .share_link {
+  top:0;
+  opacity: 1;
+}
+
+.share-button:hover .share_link:nth-of-type(1){
+  transition-delay:0.1s;
+}
+
+.share-button:hover .share_link:nth-of-type(2){
+  transition-delay:0.2s;
+}
+
+.share-button:hover .share_link:nth-of-type(3){
+  transition-delay:0.3s;
+}
+
+.share-button:hover .share_link:nth-of-type(4){
+  transition-delay:0.4s;
 }
