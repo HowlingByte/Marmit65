@@ -80,12 +80,12 @@ class Etape():
         self.texte = texte
 
 
-def open_sql():
+def open_sql(database=DATABASE)
     """
     Fonction qui permet d'ouvrir une connexion à la base de données.
     :return: le connecteur et le curseur de la base de données
     """
-    conn = sqlite3.connect(DATABASE)
+    conn = sqlite3.connect(database)
     cur = conn.cursor()
     return conn, cur
 
