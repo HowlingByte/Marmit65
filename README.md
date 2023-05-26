@@ -15,7 +15,7 @@
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-<br>This website use Bottle, a python web framework [bottlepy/bottle](https://github.com/bottlepy/bottle/)
+<br>This website use Bottle, a micro python web-framework [bottlepy/bottle](https://github.com/bottlepy/bottle/).
 
 ## Getting Started
 It's a school project, so it's not perfect. We are two students working on this project. We are French, so the website is in French. We are not professionals, so the code is not perfect. We are open to any suggestions, so don't hesitate to contact us. We are not responsible for any problems that may.
