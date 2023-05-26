@@ -7,6 +7,7 @@ import sqlite3
 from bottle import request, route, run, view, static_file, response, error
 # from bottle import get, post, request, route, run, view, static_file, response, error, redirect
 
+DATABASE = 'database/marmita.db'
 
 class Recette():
     """
@@ -79,12 +80,12 @@ class Etape():
         self.texte = texte
 
 
-def open_sql():
+def open_sql(database=DATABASE):
     """
     Fonction qui permet d'ouvrir une connexion à la base de données.
     :return: le connecteur et le curseur de la base de données
     """
-    conn = sqlite3.connect('database/marmita.db')
+    conn = sqlite3.connect(database)
     cur = conn.cursor()
     return conn, cur
 
