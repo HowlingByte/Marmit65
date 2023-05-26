@@ -56,3 +56,6 @@ Distributed under the Mozilla Public License 2.0 License. See [LICENSE](https://
 
 ## Acknowledgements
 * [bottlepy/bottle](https://github.com/bottlepy/bottle/)
+
+* https://www.flaticon.com/packs/social-media-51
+* https://www.flaticon.com/free-icon/mail_646094
