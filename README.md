@@ -4,12 +4,19 @@
     <img src="https://github.com/Hidden-Warden/Marmit65/assets/69793084/bebda059-7490-4a8d-adf0-5b563f288596" alt="Banner">
   </a>
    <div class="badges" align="center">
-        <img alt="Downloads" src="https://img.shields.io/github/downloads/Hidden-Warden/Marmit65/total.svg">
-        <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/Marmit65">
+        <a href="https://github.com/Hidden-Warden/Marmit65/releases">
+          <img alt="Release" src="https://img.shields.io/github/v/release/Hidden-Warden/Marmit65">
+          <img alt="Downloads" src="https://img.shields.io/github/downloads/Hidden-Warden/Marmit65/total.svg">
+        </a>
+        <a href="https://github.com/Hidden-Warden/Marmit65/graphs/contributors">
+          <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/Marmit65">
+        </a>
         <a href="https://github.com/Hidden-Warden/Marmit65/issues">
           <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/Marmit65">
         </a>
-        <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/Marmit65">
+        <a href="https://github.com/Hidden-Warden/Marmit65/blob/main/LICENSE">
+          <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/Marmit65">
+        </a>
     </div>
 </p>
 
@@ -17,7 +24,7 @@
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-<br>This website use Bottle, a python web framework [bottlepy/bottle](https://github.com/bottlepy/bottle/)
+<br>This website use Bottle, a micro python web-framework [bottlepy/bottle](https://github.com/bottlepy/bottle/).
 
 ## Getting Started
 It's a school project, so it's not perfect. We are two students working on this project. We are French, so the website is in French. We are not professionals, so the code is not perfect. We are open to any suggestions, so don't hesitate to contact us. We are not responsible for any problems that may.
