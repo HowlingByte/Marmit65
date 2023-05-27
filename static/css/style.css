@@ -510,9 +510,9 @@ footer .footer-text {
 }
 
 .share-button_back {
-    background-color: var(--purple);
-    padding: 5px;
-    border-radius: 20px;
+  background-color: var(--purple);
+  padding: 5px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0px 0px 14px rgba(0,0,0,0.1) inset;
 }

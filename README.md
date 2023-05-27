@@ -5,17 +5,16 @@
   </a>
    <div class="badges" align="center">
         <a href="https://github.com/Hidden-Warden/Marmit65/releases">
-          <img alt="Release" src="https://img.shields.io/github/v/release/Hidden-Warden/Marmit65">
-          <img alt="Downloads" src="https://img.shields.io/github/downloads/Hidden-Warden/Marmit65/total.svg">
+          <img alt="Release" src="https://img.shields.io/github/v/release/Hidden-Warden/Marmit65?style=for-the-badge">
         </a>
         <a href="https://github.com/Hidden-Warden/Marmit65/graphs/contributors">
-          <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/Marmit65">
+          <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/Marmit65?style=for-the-badge">
         </a>
         <a href="https://github.com/Hidden-Warden/Marmit65/issues">
-          <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/Marmit65">
+          <img alt="Issues" src="https://img.shields.io/github/issues/Hidden-Warden/Marmit65?style=for-the-badge">
         </a>
         <a href="https://github.com/Hidden-Warden/Marmit65/blob/main/LICENSE">
-          <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/Marmit65">
+          <img alt="License" src="https://img.shields.io/github/license/Hidden-Warden/Marmit65?style=for-the-badge">
         </a>
     </div>
 </p>
