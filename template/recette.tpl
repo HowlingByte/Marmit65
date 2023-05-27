@@ -107,16 +107,16 @@
     <div class="share-button">
         <div class="share-button_back">
             <a class="share_link" href="https://twitter.com/intent/tweet?text=Superbe+recette+sur+Marmit@+:+{{recette.nom}}&url=https://marmit65.live/recettes/{{recette.Id}}&hashtags=marmit65" title="twitter" target="_blank">
-                <img class="share_icon share_icon--twitter" src="/image/icon/twitter.png" alt="twitter" />
+                <img class="share_icon share_icon--twitter" src="/image/icon/twitter.svg" alt="twitter" />
             </a>
             <a class="share_link " href="https://www.facebook.com/sharer.php?u=https://marmit65.live/recettes/{{recette.Id}}" title="facebook" target="_blank">
-                <img class="share_icon share_icon--facebook" src="/image/icon/facebook.png" alt="facebook" />
+                <img class="share_icon share_icon--facebook" src="/image/icon/facebook.svg" alt="facebook" />
             </a>
             <a class="share_link" href="http://www.reddit.com/submit?url=https://marmit65.live/recettes/{{recette.Id}}&title=Superbe+recette+sur+Marmit@+:+{{recette.nom}}" title="reddit" target="_blank">
-                <img class="share_icon share_icon--reddit" src="/image/icon/reddit.png" alt="reddit" />
+                <img class="share_icon share_icon--reddit" src="/image/icon/reddit.svg" alt="reddit" />
             </a>
             <a class="share_link" href="mailto:?subject=Superbe recette sur Marmit@&body=Je te partage cette magnificette trouvée sur Marmit@ du nom de {{recette.nom}} : https://marmit65.live/recettes/{{recette.Id}}" title="mail">
-                <img class="share_icon share_icon--mail" src="/image/icon/mail.png" alt="mail" />
+                <img class="share_icon share_icon--mail" src="/image/icon/mail.svg" alt="mail" />
             </a>
         </div>
         <div class="share-button_front">
