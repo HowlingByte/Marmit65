@@ -8,24 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Set up Git
-      uses: actions/checkout@v2
-
-    - name: Modify launch line
-      run: |
-        sed -i 's/# run(host=\x270.0.0.0\x27, port=80)/run(host=\x270.0.0.0\x27, port=80)\n# run(host=\x27localhost\x27, port=8080, debug=True)/' main.py
-        git config --global user.name "Ryse93 (GitHub Actions)"
-        git config --global user.email "ryse93yt@outlook.fr"
-        git add main.py
-
-    - name: Commit changes
-      run: git commit -m "Update launch line in main.py" --allow-empty
-
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
