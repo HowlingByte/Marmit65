@@ -25,4 +25,4 @@ jobs:
 
     - name: Run the program
       run: |
-        python app.py
+        python main.py
