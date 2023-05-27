@@ -6,7 +6,6 @@
    <div class="badges" align="center">
         <a href="https://github.com/Hidden-Warden/Marmit65/releases">
           <img alt="Release" src="https://img.shields.io/github/v/release/Hidden-Warden/Marmit65?style=for-the-badge">
-          <img alt="Downloads" src="https://img.shields.io/github/downloads/Hidden-Warden/Marmit65/total.svg?style=for-the-badge">
         </a>
         <a href="https://github.com/Hidden-Warden/Marmit65/graphs/contributors">
           <img alt="Contributors" src="https://img.shields.io/github/contributors/Hidden-Warden/Marmit65?style=for-the-badge">
