@@ -557,7 +557,9 @@ footer .footer-text {
   -ms-transition: top .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -o-transition: top .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: top .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
+  /* Space between buttons */
+  margin-right: 2px;
+  margin-left: 2px;
   }
 
 .share-button:hover .share-button_front {
