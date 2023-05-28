@@ -110,7 +110,7 @@ header img:hover {
 }
 
 .content {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,6 +120,10 @@ header img:hover {
   margin-right: 10%;
   font-size: 20px;
   animation: 1s ease-out 0s 1 slideIn;
+}
+
+.content h3 {
+  text-align: center!important;
 }
 
 .content a {
