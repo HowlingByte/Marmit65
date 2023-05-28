@@ -183,6 +183,8 @@ def recettes(id):
         ingredient_nom = row[1]
         ingredient_quantite = row[2]
         ingredient_unite = row[3]
+        if ingredient_quantite.is_integer():
+            ingredient_quantite = int(ingredient_quantite)
         ingredient = Ingredient(
             ingredient_id, ingredient_nom, ingredient_quantite, ingredient_unite)
         liste_ingredients.append(ingredient)
