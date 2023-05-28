@@ -37,9 +37,7 @@
 
 	<div class="main-content">
 		<div class="content">
-			<p>
-				<span class="bigger">Résultats de la recherche pour "{{recherche}}"</span>
-			</p>
+			<h2>Résultats de la recherche pour "{{recherche}}"</h2>
 		</div>
 
         %if listeRecettes == []:

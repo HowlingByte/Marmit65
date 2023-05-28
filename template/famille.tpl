@@ -36,10 +36,6 @@
     </nav>
     
     <div class="main-content">
-        <div class="content">
-            <p><span class="bigger">Des recettes de cuisine faciles et rapides</span></p>
-        </div>
-
         <div class="grid-container">
             %for recette in listeRecettes:
                 <a href="recettes/{{recette.Id}}">
