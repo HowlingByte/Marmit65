@@ -52,12 +52,12 @@
                         Ingrédients
                         <br>
                         <span class="info">
-                            &nbsp;&nbsp;•&nbsp;&nbsp;
+                            &nbsp;•
                             %for ingredient in recette.ingredients:
                                 %if ingredient.unite=="":
-                                    {{ingredient.nom}} ({{ingredient.quantite}})&nbsp;&nbsp;•&nbsp;&nbsp;
+                                    {{ingredient.nom}} ({{ingredient.quantite}}) • 
                                 %else:
-                                    {{ingredient.nom}} ({{ingredient.quantite}} {{ingredient.unite}})&nbsp;&nbsp;•&nbsp;&nbsp;
+                                    {{ingredient.nom}} ({{ingredient.quantite}} {{ingredient.unite}}) • 
                                 %end
                             %end
                         </span>
