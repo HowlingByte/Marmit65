@@ -36,12 +36,6 @@
     </nav>
 
     <div class="main-content">
-        <div class="content">
-            <p><span class="bigger">Des recettes de cuisine faciles et rapides</span></p>
-        </div>
-
-        
-
         <div class="grid-container">
             <div class="grid-item-container-left">
                 <img src="/{{recette.image}}" class="grid-item" alt="Image salade de chèvre chaud">

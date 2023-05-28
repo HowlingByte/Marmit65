@@ -60,18 +60,6 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
-  header {
-    display: flex;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  footer {
-    flex-direction: column;
-  }
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   height:100%;
@@ -82,6 +70,7 @@ body {
   min-height: 100vh;
  }
 header {
+  display: flex;
   animation: 1s ease-out 0s 1 slideInTop;
   background-color: #000000;
   padding: 20px;
@@ -121,7 +110,6 @@ header img:hover {
 }
 
 .content {
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,6 +119,11 @@ header img:hover {
   margin-right: 10%;
   font-size: 20px;
   animation: 1s ease-out 0s 1 slideIn;
+}
+
+.content h3 {
+  text-align: center!important;
+  margin: 0;
 }
 
 .content a {
@@ -381,7 +374,6 @@ footer .copyright {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: left;
   justify-content: center;
   color: #fff;
   margin-left: 10%;
@@ -389,6 +381,7 @@ footer .copyright {
   font-size: 20px;
   border-top: 2px solid var(--purple);
   margin-top: 30px;
+  margin-bottom: -50px;
 }
 
 .grid-item {
@@ -414,9 +407,8 @@ footer .copyright {
 
 .fils {
   font-size: 16px;
-  margin-bottom: -20px;
   margin-left: 10px;
-  padding: 10px;
+  padding: 15px;
   color: #bbb;
   text-decoration: none;
 }
@@ -583,4 +575,66 @@ footer .copyright {
 
 .share-button:hover .share_link:nth-of-type(4){
   transition-delay:0.4s;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    display: block;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .grid-container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .etape {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 16px;
+  }
+
+  .info {
+    font-size: 16px;
+  }
+
+  .grid-item-text-recette {
+    font-size: 25px;
+  }
+
+  .bigger-plus {
+    font-size: 25px;
+  }
+
+  .bigger {
+    font-size: 20px;
+  }
+
+  .share-button {
+    display: none;
+  }
+
+  .content {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .grid-item-text {
+    font-size: 30px;
+  }
 }
