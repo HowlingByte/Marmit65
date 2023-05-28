@@ -74,7 +74,7 @@
     </nav>
 
 	<div class="main-content">
-		<div class="content">
+		<div class="content" style="padding-bottom: 30px">
 			<h3>Des recettes de cuisine faciles et rapides</h3>
 		</div>
 

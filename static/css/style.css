@@ -110,7 +110,6 @@ header img:hover {
 }
 
 .content {
-  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -587,6 +586,18 @@ footer .copyright {
     flex-direction: column;
   }
 
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
   .grid-container {
     margin-left: 5%;
     margin-right: 5%;
@@ -616,5 +627,14 @@ footer .copyright {
 
   .share-button {
     display: none;
+  }
+
+  .content {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .grid-item-text {
+    font-size: 30px;
   }
 }
