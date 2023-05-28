@@ -60,18 +60,6 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
-  header {
-    display: flex;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  footer {
-    flex-direction: column;
-  }
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   height:100%;
@@ -82,6 +70,7 @@ body {
   min-height: 100vh;
  }
 header {
+  display: flex;
   animation: 1s ease-out 0s 1 slideInTop;
   background-color: #000000;
   padding: 20px;
@@ -583,4 +572,19 @@ footer .copyright {
 
 .share-button:hover .share_link:nth-of-type(4){
   transition-delay:0.4s;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    display: block;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+  .grid-container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
