@@ -66,6 +66,12 @@
   }
 }
 
+@media only screen and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+  }
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   height:100%;
@@ -183,14 +189,6 @@ footer .copyright {
   color: #fff;
   gap: 20px;
   margin-right: 20px;
-}
-
-footer .footer-text {
-  margin-bottom: 1px; /* Add margin between links */
-  text-align: left;
-  color: #fff;
-  display: flex; /* Use Flexbox to align links vertically */
-  flex-direction: row; /* Stack links vertically */
 }
 
 .search-container {
