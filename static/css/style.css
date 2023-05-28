@@ -523,8 +523,10 @@ footer .copyright {
   transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 

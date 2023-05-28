@@ -124,7 +124,7 @@ def accueil():
 @route('/famille', method='get')
 @view("template/famille.tpl")
 def famille():
-    id = request.query.id  # type: ignore
+    id = request.query.id  # type: ignore # pylint: disable=no-member
 
     conn, cur = open_sql()
 
@@ -213,7 +213,7 @@ def recettes(id):
 @view("template/chercheRecettes.tpl")
 def rechercher():
     # Récupérer les données du formulaire
-    recette_recherchee = request.forms.get('recette')
+    recette_recherchee = request.forms.get('recette') # type: ignore # pylint: disable=no-member
 
     if recette_recherchee != "":
         mots_cles = recette_recherchee.split(" ")
