@@ -24,9 +24,9 @@ class Recette():
     - famille: la famille de la recette
     """
 
-    def __init__(self, Id, nom, image, preparation, cuisson,
+    def __init__(self, recette_id, nom, image, preparation, cuisson,
                  nbpers, diff, ingredients, etapes, famille_recette):
-        self.Id = Id
+        self.recette_id = recette_id
         self.nom = nom
         self.image = image
         self.preparation = preparation
@@ -46,8 +46,8 @@ class Famille():
     - image: l'image de la famille
     """
 
-    def __init__(self, Id, nom, image):
-        self.Id = Id
+    def __init__(self, famille_id, nom, image):
+        self.famille_id = famille_id
         self.nom = nom
         self.image = image
 
@@ -61,8 +61,8 @@ class Ingredient():
     - unite: l'unité de mesure de la quantité de l'ingrédient
     """
 
-    def __init__(self, Id, nom, quantite, unite=None):
-        self.Id = Id
+    def __init__(self, ingredient_id, nom, quantite, unite=None):
+        self.ingredient_id = ingredient_id
         self.nom = nom
         self.quantite = quantite
         self.unite = unite

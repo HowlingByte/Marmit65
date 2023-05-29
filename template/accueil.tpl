@@ -82,7 +82,7 @@
 
 		<div class="grid-container">
 			%for famille in listeFamille:
-				<a href="famille?id={{famille.Id}}">
+				<a href="famille?id={{famille.famille_id}}">
 					<div class="grid-item-container">
 					<div class="img-overlay"></div>
 					<img src="{{famille.image}}" class="grid-item" alt="Image {{famille.nom}}">

@@ -32,7 +32,7 @@
     </header>
 
     <nav class="fils">
-        <a href="../">Accueil</a> > <a href="/famille?id={{recette.famille.Id}}">{{recette.famille.nom}}</a> > <a href="/recettes/{{recette.Id}}">{{recette.nom}}</a>
+        <a href="../">Accueil</a> > <a href="/famille?id={{recette.famille.famille_id}}">{{recette.famille.nom}}</a> > <a href="/recettes/{{recette.recette_id}}">{{recette.nom}}</a>
     </nav>
 
     <div class="main-content">
@@ -101,16 +101,16 @@
 	<div class="overlay"></div>
     <div class="share-button">
         <div class="share-button_back">
-            <a class="share_link" href="https://twitter.com/intent/tweet?text=Superbe+recette+sur+Marmit@+:+{{recette.nom}}&url=https://marmit65.live/recettes/{{recette.Id}}&hashtags=marmit65" title="Twitter" target="_blank">
+            <a class="share_link" href="https://twitter.com/intent/tweet?text=Superbe+recette+sur+Marmit@+:+{{recette.nom}}&url=https://marmit65.live/recettes/{{recette.recette_id}}&hashtags=marmit65" title="Twitter" target="_blank">
                 <img class="share_icon share_icon--twitter" src="/image/icon/twitter.svg" alt="Logo Twitter" />
             </a>
-            <a class="share_link " href="https://www.facebook.com/sharer.php?u=https://marmit65.live/recettes/{{recette.Id}}" title="Facebook" target="_blank">
+            <a class="share_link " href="https://www.facebook.com/sharer.php?u=https://marmit65.live/recettes/{{recette.recette_id}}" title="Facebook" target="_blank">
                 <img class="share_icon share_icon--facebook" src="/image/icon/facebook.svg" alt="Logo Facebook" />
             </a>
-            <a class="share_link" href="http://www.reddit.com/submit?url=https://marmit65.live/recettes/{{recette.Id}}&title=Superbe+recette+sur+Marmit@+:+{{recette.nom}}" title="Reddit" target="_blank">
+            <a class="share_link" href="http://www.reddit.com/submit?url=https://marmit65.live/recettes/{{recette.recette_id}}&title=Superbe+recette+sur+Marmit@+:+{{recette.nom}}" title="Reddit" target="_blank">
                 <img class="share_icon share_icon--reddit" src="/image/icon/reddit.svg" alt="Logo Reddit" />
             </a>
-            <a class="share_link" href="mailto:?subject=Superbe recette sur Marmit@&body=Je te partage cette magnificette trouvée sur Marmit@ du nom de {{recette.nom}} : https://marmit65.live/recettes/{{recette.Id}}" title="Mail" target="_blank">
+            <a class="share_link" href="mailto:?subject=Superbe recette sur Marmit@&body=Je te partage cette magnificette trouvée sur Marmit@ du nom de {{recette.nom}} : https://marmit65.live/recettes/{{recette.recette_id}}" title="Mail" target="_blank">
                 <img class="share_icon share_icon--mail" src="/image/icon/mail.svg" alt="Logo Mail" />
             </a>
         </div>
