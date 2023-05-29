@@ -24,9 +24,9 @@ class Recette():
     - famille: la famille de la recette
     """
 
-    def __init__(self, Id, nom, image, preparation, cuisson,
-                 nbpers, diff, ingredients, etapes, famille):
-        self.Id = Id
+    def __init__(self, recette_id, nom, image, preparation, cuisson,
+                 nbpers, diff, ingredients, etapes, famille_recette):
+        self.recette_id = recette_id
         self.nom = nom
         self.image = image
         self.preparation = preparation
@@ -35,7 +35,7 @@ class Recette():
         self.difficulte = diff
         self.ingredients = ingredients
         self.etapes = etapes
-        self.famille = famille
+        self.famille = famille_recette
 
 
 class Famille():
@@ -46,8 +46,8 @@ class Famille():
     - image: l'image de la famille
     """
 
-    def __init__(self, Id, nom, image):
-        self.Id = Id
+    def __init__(self, famille_id, nom, image):
+        self.famille_id = famille_id
         self.nom = nom
         self.image = image
 
@@ -61,8 +61,8 @@ class Ingredient():
     - unite: l'unité de mesure de la quantité de l'ingrédient
     """
 
-    def __init__(self, Id, nom, quantite, unite=None):
-        self.Id = Id
+    def __init__(self, ingredient_id, nom, quantite, unite=None):
+        self.ingredient_id = ingredient_id
         self.nom = nom
         self.quantite = quantite
         self.unite = unite
@@ -101,6 +101,9 @@ def close_sql(cur):
 @route('/style.css')
 @view('static/css/style.css')
 def style():
+    """
+    Fonction qui permet de charger le fichier CSS.
+    """
     response.content_type = "text/css"
     return {}
 
@@ -108,29 +111,35 @@ def style():
 @route('/')
 @view("template/accueil.tpl")
 def accueil():
-    conn, cur = open_sql()
+    """
+    Fonction qui permet d'afficher la page d'accueil.
+    """
+    _, cur = open_sql()
     cur.execute("SELECT id, nom, image FROM famille")
-    familles = []
+    liste_familles = []
     for row in cur:
         famille_id = row[0]
         famille_nom = row[1]
         famille_image = row[2]
-        famille = Famille(famille_id, famille_nom, famille_image)
-        familles.append(famille)
+        famille_obj = Famille(famille_id, famille_nom, famille_image)
+        liste_familles.append(famille_obj)
     close_sql(cur)
-    return dict(listeFamille=familles)
+    return dict(listeFamille=liste_familles)
 
 
 @route('/famille', method='get')
 @view("template/famille.tpl")
 def famille():
-    id = request.query.id  # type: ignore # pylint: disable=no-member
+    """
+    Fonction qui permet d'afficher la page d'une famille.
+    """
+    id_request = request.query.id  # type: ignore # pylint: disable=no-member
 
     conn, cur = open_sql()
 
     # Requête SQL pour récupérer les recettes d'une famille
-    cur.execute("SELECT * FROM recettes WHERE id_famille = ?", (id,))
-    listeRecettes = []
+    cur.execute("SELECT * FROM recettes WHERE id_famille = ?", (id_request,))
+    liste_recettes = []
     for row in cur:
         recette_id = row[0]
         recette_nom = row[1]
@@ -138,25 +147,28 @@ def famille():
         recette_famille = row[6]
         recette = Recette(recette_id, recette_nom, recette_image,
                           None, None, None, None, None, None, recette_famille)
-        listeRecettes.append(recette)
+        liste_recettes.append(recette)
 
-    cur.execute("SELECT nom FROM famille WHERE ID = ?", (id,))
+    cur.execute("SELECT nom FROM famille WHERE ID = ?", (id_request,))
     nom = cur.fetchone()
     conn.commit()
 
     close_sql(cur)
 
-    return dict(listeRecettes=listeRecettes, nom=nom[0], id=id)
+    return dict(listeRecettes=liste_recettes, nom=nom[0], id=id_request)
 
 
 # Affichage d'une recette
-@route('/recettes/<id>')
+@route('/recettes/<id_request>')
 @view("template/recette.tpl")
-def recettes(id):
+def recettes(id_request):
+    """
+    Fonction qui permet d'afficher la page d'une recette.
+    """
     conn, cur = open_sql()
 
     # Requête 1 (attributs de la table Recettes)
-    cur.execute("SELECT * FROM Recettes WHERE ID=?", (id,))
+    cur.execute("SELECT * FROM Recettes WHERE ID=?", (id_request,))
     infos_recette = cur.fetchone()
     conn.commit()
 
@@ -203,10 +215,10 @@ def recettes(id):
 
     close_sql(cur)
 
-    famille = Famille(recette_famille, nom_famille[0], "")
+    famille_recette = Famille(recette_famille, nom_famille[0], "")
     recette = Recette(recette_id, recette_nom, recette_image, None, recette_cuisson,
                       recette_nb_pers, recette_difficulte, liste_ingredients,
-                      etapes_recette, famille)
+                      etapes_recette, famille_recette)
 
     return dict(recette=recette)
 
@@ -214,6 +226,9 @@ def recettes(id):
 @route('/chercheRecettes', method='POST')
 @view("template/chercheRecettes.tpl")
 def rechercher():
+    """
+    Fonction qui permet d'afficher la page de recherche de recettes.
+    """
     # Récupérer les données du formulaire
     recette_recherchee = request.forms.getunicode('recette') # type: ignore # pylint: disable=no-member
 
@@ -225,11 +240,11 @@ def rechercher():
     else:
         condition = "LIKE '%%'"
 
-    conn, cur = open_sql()
+    _, cur = open_sql()
 
     # Requête SQL pour récupérer les recettes d'une famille
     cur.execute("SELECT * FROM recettes WHERE nom " + condition)
-    listeRecettes = []
+    liste_recettes = []
     for row in cur:
         recette_id = row[0]
         recette_nom = row[1]
@@ -237,34 +252,46 @@ def rechercher():
         recette_famille = row[6]
         recette = Recette(recette_id, recette_nom, recette_image,
                           None, None, None, None, None, None, recette_famille)
-        listeRecettes.append(recette)
+        liste_recettes.append(recette)
 
     close_sql(cur)
 
-    return dict(listeRecettes=listeRecettes, recherche=recette_recherchee)
+    return dict(listeRecettes=liste_recettes, recherche=recette_recherchee)
 
 
 @route('/contact')
 @view("static/html/contact.html")
 def contact():
+    """
+    Fonction qui permet d'afficher la page de contact.
+    """
     return {}
 
 
 @route('/mentions')
 @view("static/html/mentions.html")
 def mentions():
+    """
+    Fonction qui permet d'afficher la page des mentions légales.
+    """
     return {}
 
 
 @error(404)
 @view("static/html/404.html")
-def on_error404(error):
+def on_error404(_):
+    """
+    Fonction qui permet d'afficher la page d'erreur 404.
+    """
     return {}
 
 
 # Route pour les images
 @route('/image/<filepath:path>')
 def server_static(filepath):
+    """
+    Fonction qui permet d'afficher les images.
+    """
     return static_file(filepath, root='static/image/')
 
 
