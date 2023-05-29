@@ -124,12 +124,12 @@ def accueil():
 @route('/famille', method='get')
 @view("template/famille.tpl")
 def famille():
-    id = request.query.id  # type: ignore # pylint: disable=no-member
+    id_request = request.query.id  # type: ignore # pylint: disable=no-member
 
     conn, cur = open_sql()
 
     # Requête SQL pour récupérer les recettes d'une famille
-    cur.execute("SELECT * FROM recettes WHERE id_famille = ?", (id,))
+    cur.execute("SELECT * FROM recettes WHERE id_famille = ?", (id_request,))
     liste_recettes = []
     for row in cur:
         recette_id = row[0]
@@ -140,13 +140,13 @@ def famille():
                           None, None, None, None, None, None, recette_famille)
         liste_recettes.append(recette)
 
-    cur.execute("SELECT nom FROM famille WHERE ID = ?", (id,))
+    cur.execute("SELECT nom FROM famille WHERE ID = ?", (id_request,))
     nom = cur.fetchone()
     conn.commit()
 
     close_sql(cur)
 
-    return dict(listeRecettes=liste_recettes, nom=nom[0], id=id)
+    return dict(listeRecettes=liste_recettes, nom=nom[0], id=id_request)
 
 
 # Affichage d'une recette
