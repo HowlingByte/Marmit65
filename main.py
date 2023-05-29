@@ -25,7 +25,7 @@ class Recette():
     """
 
     def __init__(self, Id, nom, image, preparation, cuisson,
-                 nbpers, diff, ingredients, etapes, famille):
+                 nbpers, diff, ingredients, etapes, famille_recette):
         self.Id = Id
         self.nom = nom
         self.image = image
@@ -35,7 +35,7 @@ class Recette():
         self.difficulte = diff
         self.ingredients = ingredients
         self.etapes = etapes
-        self.famille = famille
+        self.famille = famille_recette
 
 
 class Famille():
@@ -110,15 +110,15 @@ def style():
 def accueil():
     conn, cur = open_sql()
     cur.execute("SELECT id, nom, image FROM famille")
-    familles = []
+    liste_familles = []
     for row in cur:
         famille_id = row[0]
         famille_nom = row[1]
         famille_image = row[2]
-        famille = Famille(famille_id, famille_nom, famille_image)
-        familles.append(famille)
+        famille_obj = Famille(famille_id, famille_nom, famille_image)
+        liste_familles.append(famille_obj)
     close_sql(cur)
-    return dict(listeFamille=familles)
+    return dict(listeFamille=liste_familles)
 
 
 @route('/famille', method='get')
@@ -203,10 +203,10 @@ def recettes(id):
 
     close_sql(cur)
 
-    famille = Famille(recette_famille, nom_famille[0], "")
+    famille_recette = Famille(recette_famille, nom_famille[0], "")
     recette = Recette(recette_id, recette_nom, recette_image, None, recette_cuisson,
                       recette_nb_pers, recette_difficulte, liste_ingredients,
-                      etapes_recette, famille)
+                      etapes_recette, famille_recette)
 
     return dict(recette=recette)
 
@@ -268,5 +268,5 @@ def server_static(filepath):
     return static_file(filepath, root='static/image/')
 
 
-run(host='0.0.0.0', port=80)
-# run(host='localhost', port=8080, debug=True)
+#run(host='0.0.0.0', port=80)
+run(host='localhost', port=8080, debug=True)
