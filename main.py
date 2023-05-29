@@ -130,7 +130,7 @@ def famille():
 
     # Requête SQL pour récupérer les recettes d'une famille
     cur.execute("SELECT * FROM recettes WHERE id_famille = ?", (id,))
-    listeRecettes = []
+    liste_recettes = []
     for row in cur:
         recette_id = row[0]
         recette_nom = row[1]
@@ -138,7 +138,7 @@ def famille():
         recette_famille = row[6]
         recette = Recette(recette_id, recette_nom, recette_image,
                           None, None, None, None, None, None, recette_famille)
-        listeRecettes.append(recette)
+        liste_recettes.append(recette)
 
     cur.execute("SELECT nom FROM famille WHERE ID = ?", (id,))
     nom = cur.fetchone()
@@ -146,7 +146,7 @@ def famille():
 
     close_sql(cur)
 
-    return dict(listeRecettes=listeRecettes, nom=nom[0], id=id)
+    return dict(listeRecettes=liste_recettes, nom=nom[0], id=id)
 
 
 # Affichage d'une recette
@@ -229,7 +229,7 @@ def rechercher():
 
     # Requête SQL pour récupérer les recettes d'une famille
     cur.execute("SELECT * FROM recettes WHERE nom " + condition)
-    listeRecettes = []
+    liste_recettes = []
     for row in cur:
         recette_id = row[0]
         recette_nom = row[1]
@@ -237,11 +237,11 @@ def rechercher():
         recette_famille = row[6]
         recette = Recette(recette_id, recette_nom, recette_image,
                           None, None, None, None, None, None, recette_famille)
-        listeRecettes.append(recette)
+        liste_recettes.append(recette)
 
     close_sql(cur)
 
-    return dict(listeRecettes=listeRecettes, recherche=recette_recherchee)
+    return dict(listeRecettes=liste_recettes, recherche=recette_recherchee)
 
 
 @route('/contact')
