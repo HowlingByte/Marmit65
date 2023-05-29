@@ -215,7 +215,7 @@ def recettes(id):
 @view("template/chercheRecettes.tpl")
 def rechercher():
     # Récupérer les données du formulaire
-    recette_recherchee = request.forms.get('recette') # type: ignore # pylint: disable=no-member
+    recette_recherchee = request.forms.getunicode('recette') # type: ignore # pylint: disable=no-member
 
     if recette_recherchee != "":
         mots_cles = recette_recherchee.split(" ")
