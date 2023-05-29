@@ -58,7 +58,7 @@ Distributed under the Mozilla Public License 2.0 License. See [LICENSE](https://
 
 ## Authors
 * **[Hidden-Warden](https://github.com/Hidden-Warden)** - *French student in high school*
-* **[Ryse93](https://github.com/Ryse93)** - *French student in high school*
+* **[Ahhj93](https://github.com/Ahhj93)** - *French student in high school*
 
 ## Acknowledgements
 * [bottlepy/bottle](https://github.com/bottlepy/bottle/)
