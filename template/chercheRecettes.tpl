@@ -49,7 +49,7 @@
         %else:
             <div class="grid-container">
                 %for recette in listeRecettes:
-                    <a href="recettes/{{recette.Id}}">
+                    <a href="recettes/{{recette.recette_id}}">
                         <div class="grid-item-container">
                             <div class="img-overlay"></div>
                             <img src="{{recette.image}}" class="grid-item" alt="Image {{recette.nom}}">
