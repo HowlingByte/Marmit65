@@ -150,13 +150,13 @@ def famille():
 
 
 # Affichage d'une recette
-@route('/recettes/<id>')
+@route('/recettes/<id_request>')
 @view("template/recette.tpl")
-def recettes(id):
+def recettes(id_request):
     conn, cur = open_sql()
 
     # Requête 1 (attributs de la table Recettes)
-    cur.execute("SELECT * FROM Recettes WHERE ID=?", (id,))
+    cur.execute("SELECT * FROM Recettes WHERE ID=?", (id_request,))
     infos_recette = cur.fetchone()
     conn.commit()
 
