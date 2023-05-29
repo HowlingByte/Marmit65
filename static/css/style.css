@@ -1,63 +1,10 @@
 @charset "UTF-8";
 
+@import url('/css/fonts.css');
+@import url('/css/keyframes.css');
+
 :root {
   --purple: #6D4AFF;
-}
-
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-20%);
-    opacity: 0%;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 100%;
-  }
-}
-
-@keyframes slideInRight {
-  0% {
-    transform: translateX(20%);
-    opacity: 0%;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 100%;
-  }
-}
-
-@keyframes slideInTop {
-  0% {
-    transform: translateY(-20%);
-    opacity: 0%;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 100%;
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateY(100%);
-    scale: 0.9;
-  }
-  100% {
-    transform: translateY(0);
-    scale: 1;
-  }
-}
-
-@keyframes slideOutOverlay {
-  0% {
-    transform: translateY(0);
-  }
-  20% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
 }
 
 body {
@@ -69,6 +16,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
  }
+
 header {
   display: flex;
   animation: 1s ease-out 0s 1 slideInTop;
@@ -529,8 +477,6 @@ footer .copyright {
   backface-visibility: hidden;
 }
 
-
-
 .share-button_text {
   margin: 0;
   line-height: 42px;
@@ -579,64 +525,4 @@ footer .copyright {
   transition-delay:0.4s;
 }
 
-@media only screen and (max-width: 768px) {
-  header {
-    display: block;
-  }
-
-  footer {
-    flex-direction: column;
-  }
-
-  h1 {
-    font-size: 30px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  .grid-container {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
-  .etape {
-    margin-left: 5%;
-    margin-right: 5%;
-    font-size: 16px;
-  }
-
-  .info {
-    font-size: 16px;
-  }
-
-  .grid-item-text-recette {
-    font-size: 25px;
-  }
-
-  .bigger-plus {
-    font-size: 25px;
-  }
-
-  .bigger {
-    font-size: 20px;
-  }
-
-  .share-button {
-    display: none;
-  }
-
-  .content {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
-  .grid-item-text {
-    font-size: 30px;
-  }
-}
+@import url('/css/media_query.css');
