@@ -108,7 +108,7 @@ def style():
 @route('/')
 @view("template/accueil.tpl")
 def accueil():
-    conn, cur = open_sql()
+    _, cur = open_sql()
     cur.execute("SELECT id, nom, image FROM famille")
     liste_familles = []
     for row in cur:
@@ -225,7 +225,7 @@ def rechercher():
     else:
         condition = "LIKE '%%'"
 
-    conn, cur = open_sql()
+    _, cur = open_sql()
 
     # Requête SQL pour récupérer les recettes d'une famille
     cur.execute("SELECT * FROM recettes WHERE nom " + condition)
