@@ -97,17 +97,6 @@ def close_sql(cur):
     """
     cur.close()
 
-
-@route('/style.css')
-@view('static/css/style.css')
-def style():
-    """
-    Fonction qui permet de charger le fichier CSS.
-    """
-    response.content_type = "text/css"
-    return {}
-
-
 @route('/')
 @view("template/accueil.tpl")
 def accueil():
@@ -288,12 +277,27 @@ def on_error404(_):
 
 # Route pour les images
 @route('/image/<filepath:path>')
-def server_static(filepath):
+def server_static_image(filepath):
     """
     Fonction qui permet d'afficher les images.
     """
     return static_file(filepath, root='static/image/')
 
+# Route pour les fonts
+@route('/fonts/<filepath:path>')
+def server_static_fonts(filepath):
+    """
+    Fonction qui permet d'afficher les fonts.
+    """
+    return static_file(filepath, root='static/fonts/')
 
-run(host='0.0.0.0', port=80)
-# run(host='localhost', port=8080, debug=True)
+# Route pour les css
+@route('/css/<filepath:path>')
+def server_static_css(filepath):
+    """
+    Fonction qui permet d'afficher les css.
+    """
+    return static_file(filepath, root='static/css/')
+
+#run(host='0.0.0.0', port=80)
+run(host='localhost', port=8080, debug=True)

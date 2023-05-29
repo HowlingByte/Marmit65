@@ -8,7 +8,7 @@
 	<meta name="theme-color" content="black">
     <title>Accueil - Marmit@</title>
 	<link rel="icon" type="image/x-icon" href="/image/favicon.ico">
-    <link href="/style.css" rel="stylesheet" text="text/css">
+    <link href="/css/style.css" rel="stylesheet" text="text/css">
 	<!-- Apple Title -->
 	<meta name="apple-mobile-web-app-title" content="Marmit@">
 	<!-- Apple Icon -->
@@ -51,10 +51,6 @@
 	<link rel="apple-touch-startup-image" media="screen and (device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/image/splash_screens/10.2__iPad_portrait.png">
 	<link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/image/splash_screens/9.7__iPad_Pro__7.9__iPad_mini__9.7__iPad_Air__9.7__iPad_portrait.png">
 	<link rel="apple-touch-startup-image" media="screen and (device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/image/splash_screens/8.3__iPad_Mini_portrait.png">
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
