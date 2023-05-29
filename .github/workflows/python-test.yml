@@ -21,13 +21,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Check for launch line
+      run: |
+        if ! grep -q "run(host='0.0.0.0', port=80)" main.py; then echo "Launch line not found in main.py"; exit 1; fi
+
     - name: Modify launch line
       run: |
         sed -i 's/run(host=\x270.0.0.0\x27, port=80)/run(host=\x27localhost\x27, port=8080, debug=True)/' main.py
 
     - name: Launch development server
       run: |
-        python main.py
+        python main.py &
 
     - name: Wait for server to start
       run: sleep 5
