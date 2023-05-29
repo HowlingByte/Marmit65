@@ -525,4 +525,5 @@ footer .copyright {
   transition-delay:0.4s;
 }
 
+/* Media Query - Leave this line at the end */
 @import url('/css/media_query.css');
