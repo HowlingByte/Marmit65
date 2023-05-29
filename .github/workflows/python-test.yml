@@ -18,7 +18,7 @@ jobs:
 
     - name: Check for launch line
       run: |
-        if ! grep -q "run(host='0.0.0.0', port=80)" main.py; then echo "Launch line not found in main.py"; exit 1; fi
+        if ! grep -q -E "^([^#])*run\(host='0\.0\.0\.0', port=80\)" main.py; then echo "Launch line not found in main.py"; exit 1; fi
 
     - name: Install dependencies
       run: |
