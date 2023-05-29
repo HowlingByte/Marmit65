@@ -101,6 +101,9 @@ def close_sql(cur):
 @route('/style.css')
 @view('static/css/style.css')
 def style():
+    """
+    Fonction qui permet de charger le fichier CSS.
+    """
     response.content_type = "text/css"
     return {}
 
@@ -108,6 +111,9 @@ def style():
 @route('/')
 @view("template/accueil.tpl")
 def accueil():
+    """
+    Fonction qui permet d'afficher la page d'accueil.
+    """
     _, cur = open_sql()
     cur.execute("SELECT id, nom, image FROM famille")
     liste_familles = []
@@ -124,6 +130,9 @@ def accueil():
 @route('/famille', method='get')
 @view("template/famille.tpl")
 def famille():
+    """
+    Fonction qui permet d'afficher la page d'une famille.
+    """
     id_request = request.query.id  # type: ignore # pylint: disable=no-member
 
     conn, cur = open_sql()
@@ -153,6 +162,9 @@ def famille():
 @route('/recettes/<id_request>')
 @view("template/recette.tpl")
 def recettes(id_request):
+    """
+    Fonction qui permet d'afficher la page d'une recette.
+    """
     conn, cur = open_sql()
 
     # Requête 1 (attributs de la table Recettes)
@@ -214,6 +226,9 @@ def recettes(id_request):
 @route('/chercheRecettes', method='POST')
 @view("template/chercheRecettes.tpl")
 def rechercher():
+    """
+    Fonction qui permet d'afficher la page de recherche de recettes.
+    """
     # Récupérer les données du formulaire
     recette_recherchee = request.forms.getunicode('recette') # type: ignore # pylint: disable=no-member
 
@@ -247,24 +262,36 @@ def rechercher():
 @route('/contact')
 @view("static/html/contact.html")
 def contact():
+    """
+    Fonction qui permet d'afficher la page de contact.
+    """
     return {}
 
 
 @route('/mentions')
 @view("static/html/mentions.html")
 def mentions():
+    """
+    Fonction qui permet d'afficher la page des mentions légales.
+    """
     return {}
 
 
 @error(404)
 @view("static/html/404.html")
 def on_error404(_):
+    """
+    Fonction qui permet d'afficher la page d'erreur 404.
+    """
     return {}
 
 
 # Route pour les images
 @route('/image/<filepath:path>')
 def server_static(filepath):
+    """
+    Fonction qui permet d'afficher les images.
+    """
     return static_file(filepath, root='static/image/')
 
 
