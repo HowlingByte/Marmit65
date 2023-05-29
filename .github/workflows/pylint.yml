@@ -21,9 +21,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Analysing the code with pylint
       run: |
-        pylint_result=$(pylint $(git ls-files '*.py') | grep -oP 'Your code has been rated at \K[0-9.]+')
-        echo "Pylint score: $pylint_result"
-        if (( $(echo "$pylint_result < 8" | bc -l) )); then
-          echo "Pylint score is below 8. Exiting with error."
-          exit 1
-        fi
+        pylint --fail-under=8 $(git ls-files '*.py')
