@@ -258,7 +258,7 @@ def mentions():
 
 @error(404)
 @view("static/html/404.html")
-def on_error404(error):
+def on_error404(_):
     return {}
 
 
