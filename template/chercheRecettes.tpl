@@ -36,8 +36,8 @@
     </nav>
 
 	<div class="main-content">
-		<div class="content">
-			<h2>Résultats de la recherche pour "{{recherche}}"</h2>
+		<div class="content" style="padding-bottom: 30px">
+			<h3>Résultats de la recherche pour "{{recherche}}"</h3>
 		</div>
 
         %if listeRecettes == []:
