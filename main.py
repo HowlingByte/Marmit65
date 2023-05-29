@@ -9,6 +9,7 @@ from bottle import request, route, run, view, static_file, error
 
 DATABASE = 'database/marmita.db'
 
+
 class Recette():
     """
     Classe qui représente une recette. Une recette possède les attributs suivants:
@@ -96,6 +97,7 @@ def close_sql(cur):
     :param cur: le curseur de la base de données
     """
     cur.close()
+
 
 @route('/')
 @view("template/accueil.tpl")
@@ -219,7 +221,7 @@ def rechercher():
     Fonction qui permet d'afficher la page de recherche de recettes.
     """
     # Récupérer les données du formulaire
-    recette_recherchee = request.forms.getunicode('recette') # type: ignore # pylint: disable=no-member
+    recette_recherchee = request.forms.getunicode('recette')  # type: ignore # pylint: disable=no-member
 
     if recette_recherchee != "":
         mots_cles = recette_recherchee.split(" ")
@@ -275,7 +277,6 @@ def on_error404(_):
     return {}
 
 
-# Route pour les images
 @route('/image/<filepath:path>')
 def server_static_image(filepath):
     """
@@ -283,7 +284,7 @@ def server_static_image(filepath):
     """
     return static_file(filepath, root='static/image/')
 
-# Route pour les fonts
+
 @route('/fonts/<filepath:path>')
 def server_static_fonts(filepath):
     """
@@ -291,13 +292,14 @@ def server_static_fonts(filepath):
     """
     return static_file(filepath, root='static/fonts/')
 
-# Route pour les css
+
 @route('/css/<filepath:path>')
 def server_static_css(filepath):
     """
     Fonction qui permet d'afficher les css.
     """
     return static_file(filepath, root='static/css/')
+
 
 run(host='0.0.0.0', port=80)
 # run(host='localhost', port=8080, debug=True)
