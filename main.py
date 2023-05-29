@@ -4,7 +4,7 @@ Ce fichier contient toutes les routes de l'application web.
 Il permet de lancer le serveur en local.
 """
 import sqlite3
-from bottle import request, route, run, view, static_file, response, error
+from bottle import request, route, run, view, static_file, error
 # from bottle import get, post, request, route, run, view, static_file, response, error, redirect
 
 DATABASE = 'database/marmita.db'
