@@ -10,7 +10,7 @@ from bottle import request, route, run, view, static_file, error
 DATABASE = 'database/marmita.db'
 
 
-class Recette():
+class Recette(): # pylint: disable=R0903
     """
     Classe qui représente une recette. Une recette possède les attributs suivants:
     - Id: l'identifiant de la recette dans la base de données
@@ -39,7 +39,7 @@ class Recette():
         self.famille = famille_recette
 
 
-class Famille():
+class Famille(): # pylint: disable=R0903
     """
     Classe qui représente une famille de recettes. Une famille possède les attributs suivants:
     - Id: l'identifiant de la famille dans la base de données
@@ -53,7 +53,7 @@ class Famille():
         self.image = image
 
 
-class Ingredient():
+class Ingredient(): # pylint: disable=R0903
     """
     Classe qui représente un ingrédient. Un ingrédient possède les attributs suivants:
     - Id: l'identifiant de l'ingrédient dans la base de données
@@ -69,7 +69,7 @@ class Ingredient():
         self.unite = unite
 
 
-class Etape():
+class Etape(): # pylint: disable=R0903
     """
     Classe qui re présente une étape de recette. Une étape possède les attributs suivants:
     - num: le numéro de l'étape dans la recette
