@@ -106,7 +106,9 @@ def accueil():
     Fonction qui permet d'afficher la page d'accueil.
     """
     _, cur = open_sql()
+    
     cur.execute("SELECT id, nom, image FROM famille")
+
     liste_familles = []
     for row in cur:
         famille_id = row[0]
@@ -114,8 +116,10 @@ def accueil():
         famille_image = row[2]
         famille_obj = Famille(famille_id, famille_nom, famille_image)
         liste_familles.append(famille_obj)
+
     close_sql(cur)
-    return dict(listeFamille=liste_familles)
+
+    return {"listeFamille": liste_familles}
 
 
 @route('/famille', method='get')
@@ -146,7 +150,7 @@ def famille():
 
     close_sql(cur)
 
-    return dict(listeRecettes=liste_recettes, nom=nom[0], id=id_request)
+    return {"listeRecettes": liste_recettes, "nom": nom[0], "id": id_request}
 
 
 # Affichage d'une recette
@@ -211,7 +215,7 @@ def recettes(id_request):
                       recette_nb_pers, recette_difficulte, liste_ingredients,
                       etapes_recette, famille_recette)
 
-    return dict(recette=recette)
+    return {"recette": recette}
 
 
 @route('/chercheRecettes', method='POST')
@@ -246,8 +250,7 @@ def rechercher():
         liste_recettes.append(recette)
 
     close_sql(cur)
-
-    return dict(listeRecettes=liste_recettes, recherche=recette_recherchee)
+    return {"listeRecettes" : liste_recettes, "recherche" : recette_recherchee}
 
 
 @route('/contact')
@@ -301,5 +304,5 @@ def server_static_css(filepath):
     return static_file(filepath, root='static/css/')
 
 
-run(host='0.0.0.0', port=80)
-# run(host='localhost', port=8080, debug=True)
+#run(host='0.0.0.0', port=80)
+run(host='localhost', port=8080, debug=True)
