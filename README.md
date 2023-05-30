@@ -10,7 +10,7 @@
 		</a>
 		<a href="https://github.com/Hidden-Warden/Marmit65/actions">
 			<img alt="Test"
-				src="https://img.shields.io/github/actions/workflow/status/Hidden-Warden/Marmit65/python-test.yml+?branch=main?style=flat-square">
+				src="https://img.shields.io/github/actions/workflow/status/Hidden-Warden/Marmit65/python-test.yml?style=flat-square">
 		</a>
 		<a href="https://github.com/Hidden-Warden/Marmit65/graphs/contributors">
 			<img alt="Contributors"
