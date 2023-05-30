@@ -106,7 +106,6 @@ def accueil():
     Fonction qui permet d'afficher la page d'accueil.
     """
     _, cur = open_sql()
-    
     cur.execute("SELECT id, nom, image FROM famille")
 
     liste_familles = []
