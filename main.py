@@ -10,7 +10,7 @@ from bottle import request, route, run, view, static_file, error
 DATABASE = 'database/marmita.db'
 
 
-class Recette():
+class Recette(): # pylint: disable=R0903, R0902
     """
     Classe qui représente une recette. Une recette possède les attributs suivants:
     - Id: l'identifiant de la recette dans la base de données
@@ -25,7 +25,7 @@ class Recette():
     - famille: la famille de la recette
     """
 
-    def __init__(self, recette_id, nom, image, preparation, cuisson,
+    def __init__(self, recette_id, nom, image, preparation, cuisson, # pylint: disable=R0913
                  nbpers, diff, ingredients, etapes, famille_recette):
         self.recette_id = recette_id
         self.nom = nom
@@ -39,7 +39,7 @@ class Recette():
         self.famille = famille_recette
 
 
-class Famille():
+class Famille(): # pylint: disable=R0903
     """
     Classe qui représente une famille de recettes. Une famille possède les attributs suivants:
     - Id: l'identifiant de la famille dans la base de données
@@ -53,7 +53,7 @@ class Famille():
         self.image = image
 
 
-class Ingredient():
+class Ingredient(): # pylint: disable=R0903
     """
     Classe qui représente un ingrédient. Un ingrédient possède les attributs suivants:
     - Id: l'identifiant de l'ingrédient dans la base de données
@@ -69,7 +69,7 @@ class Ingredient():
         self.unite = unite
 
 
-class Etape():
+class Etape(): # pylint: disable=R0903
     """
     Classe qui re présente une étape de recette. Une étape possède les attributs suivants:
     - num: le numéro de l'étape dans la recette
@@ -107,6 +107,7 @@ def accueil():
     """
     _, cur = open_sql()
     cur.execute("SELECT id, nom, image FROM famille")
+
     liste_familles = []
     for row in cur:
         famille_id = row[0]
@@ -114,8 +115,10 @@ def accueil():
         famille_image = row[2]
         famille_obj = Famille(famille_id, famille_nom, famille_image)
         liste_familles.append(famille_obj)
+
     close_sql(cur)
-    return dict(listeFamille=liste_familles)
+
+    return {"listeFamille": liste_familles}
 
 
 @route('/famille', method='get')
@@ -146,13 +149,13 @@ def famille():
 
     close_sql(cur)
 
-    return dict(listeRecettes=liste_recettes, nom=nom[0], id=id_request)
+    return {"listeRecettes": liste_recettes, "nom": nom[0], "id": id_request}
 
 
 # Affichage d'une recette
 @route('/recettes/<id_request>')
 @view("template/recette.tpl")
-def recettes(id_request):
+def recettes(id_request): # pylint: disable=R0914
     """
     Fonction qui permet d'afficher la page d'une recette.
     """
@@ -211,7 +214,7 @@ def recettes(id_request):
                       recette_nb_pers, recette_difficulte, liste_ingredients,
                       etapes_recette, famille_recette)
 
-    return dict(recette=recette)
+    return {"recette": recette}
 
 
 @route('/chercheRecettes', method='POST')
@@ -246,8 +249,7 @@ def rechercher():
         liste_recettes.append(recette)
 
     close_sql(cur)
-
-    return dict(listeRecettes=liste_recettes, recherche=recette_recherchee)
+    return {"listeRecettes" : liste_recettes, "recherche" : recette_recherchee}
 
 
 @route('/contact')
