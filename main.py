@@ -156,6 +156,7 @@ def famille():
     except TypeError:
         response_code = 404
         HTTPResponse.status_code = response_code # type: ignore # pylint: disable=no-member
+        return None
 
 
 # Affichage d'une recette
@@ -227,6 +228,7 @@ def recettes(id_request):  # pylint: disable=R0914
     except TypeError:
         response_code = 404
         HTTPResponse.status_code = response_code # type: ignore # pylint: disable=no-member
+        return None
 
 
 @route('/chercheRecettes', method='POST')
