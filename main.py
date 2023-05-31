@@ -293,12 +293,12 @@ def on_error404(_):
     return {}
 
 
-@route('/image/<filepath:path>')
+@route('/images/<filepath:path>')
 def server_static_image(filepath):
     """
     Fonction qui permet d'afficher les images.
     """
-    return static_file(filepath, root='static/image/')
+    return static_file(filepath, root='static/images/')
 
 
 @route('/fonts/<filepath:path>')
@@ -317,5 +317,5 @@ def server_static_css(filepath):
     return static_file(filepath, root='static/css/')
 
 
-run(host='0.0.0.0', port=80)
-# run(host='localhost', port=8080, debug=True)
+# run(host='0.0.0.0', port=80)
+run(host='localhost', port=8080, debug=True)

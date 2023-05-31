@@ -7,23 +7,23 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="theme-color" content="black">
     <title>{{recette.nom}} - Marmit@</title>
-	<link rel="icon" type="image/x-icon" href="/image/favicon.ico">
+	<link rel="icon" type="images/x-icon" href="/images/favicon.ico">
     <link href="/css/style.css" rel="stylesheet" text="text/css">
-	<link rel="apple-touch-icon" href="/image/icon/touch-icon-iphone.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/image/icon/touch-icon-ipad.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/image/icon/touch-icon-iphone-retina.png">
-	<link rel="apple-touch-icon" sizes="167x167" href="/image/icon/touch-icon-ipad-retina.png">
+	<link rel="apple-touch-icon" href="/images/icon/touch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/icon/touch-icon-ipad.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/icon/touch-icon-iphone-retina.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="/images/icon/touch-icon-ipad-retina.png">
 </head>
 
 <body>
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
         <a href="../">
-            <img src="/image/logo_text.svg" alt="Logo Marmit@">
+            <img src="/images/logo_text.svg" alt="Logo Marmit@">
         </a>
         <form class="search-container" action="/chercheRecettes" method="POST">
             <input name="recette" type="text" placeholder="Rechercher une recette" class="search-input">
-            <button type="submit" class="search-button"> <img src="/image/loop_search.svg"></button>
+            <button type="submit" class="search-button"> <img src="/images/loop_search.svg"></button>
         </form>
     </header>
 
@@ -41,7 +41,7 @@
                     <br>
                     <span class="info">👤{{recette.nombre_de_personnes}}&nbsp;&nbsp;•&nbsp;&nbsp;🍳{{recette.cuisson}} min&nbsp;&nbsp;•&nbsp;&nbsp;
                         %for loup in range(recette.difficulte):
-                            <img src="/image/logo.svg" alt="Étoile" class="star">
+                            <img src="/images/logo.svg" alt="Étoile" class="star">
                         %end
                     </span>
                     <div class="ingredient">
@@ -81,7 +81,7 @@
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer>
 		<a href="../">
-		    <img src="/image/logo.svg" alt="Logo Marmit@">
+		    <img src="/images/logo.svg" alt="Logo Marmit@">
 		</a>
         <div class="copyright">Marmit@ © 2023</div>
 		<div class="liens">
@@ -98,16 +98,16 @@
     <div class="share-button">
         <div class="share-button_back">
             <a class="share_link" href="https://twitter.com/intent/tweet?text=Superbe+recette+sur+Marmit@+:+{{recette.nom}}&url=https://marmit65.live/recettes/{{recette.recette_id}}&hashtags=marmit65" title="Twitter" target="_blank">
-                <img class="share_icon share_icon--twitter" src="/image/icon/twitter.svg" alt="Logo Twitter" />
+                <img class="share_icon share_icon--twitter" src="/images/icon/twitter.svg" alt="Logo Twitter" />
             </a>
             <a class="share_link " href="https://www.facebook.com/sharer.php?u=https://marmit65.live/recettes/{{recette.recette_id}}" title="Facebook" target="_blank">
-                <img class="share_icon share_icon--facebook" src="/image/icon/facebook.svg" alt="Logo Facebook" />
+                <img class="share_icon share_icon--facebook" src="/images/icon/facebook.svg" alt="Logo Facebook" />
             </a>
             <a class="share_link" href="http://www.reddit.com/submit?url=https://marmit65.live/recettes/{{recette.recette_id}}&title=Superbe+recette+sur+Marmit@+:+{{recette.nom}}" title="Reddit" target="_blank">
-                <img class="share_icon share_icon--reddit" src="/image/icon/reddit.svg" alt="Logo Reddit" />
+                <img class="share_icon share_icon--reddit" src="/images/icon/reddit.svg" alt="Logo Reddit" />
             </a>
             <a class="share_link" href="mailto:?subject=Superbe recette sur Marmit@&body=Je te partage cette magnificette trouvée sur Marmit@ du nom de {{recette.nom}} : https://marmit65.live/recettes/{{recette.recette_id}}" title="Mail" target="_blank">
-                <img class="share_icon share_icon--mail" src="/image/icon/mail.svg" alt="Logo Mail" />
+                <img class="share_icon share_icon--mail" src="/images/icon/mail.svg" alt="Logo Mail" />
             </a>
         </div>
         <div class="share-button_front">
