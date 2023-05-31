@@ -4,13 +4,13 @@ Ce fichier contient toutes les routes de l'application web.
 Il permet de lancer le serveur en local.
 """
 import sqlite3
-from bottle import request, route, run, view, static_file, error
+from bottle import request, route, run, view, static_file, error, HTTPResponse
 # from bottle import get, post, request, route, run, view, static_file, response, error, redirect
 
 DATABASE = 'database/marmita.db'
 
 
-class Recette(): # pylint: disable=R0903, R0902
+class Recette():  # pylint: disable=R0903, R0902
     """
     Classe qui représente une recette. Une recette possède les attributs suivants:
     - Id: l'identifiant de la recette dans la base de données
@@ -25,7 +25,7 @@ class Recette(): # pylint: disable=R0903, R0902
     - famille: la famille de la recette
     """
 
-    def __init__(self, recette_id, nom, image, preparation, cuisson, # pylint: disable=R0913
+    def __init__(self, recette_id, nom, image, preparation, cuisson,  # pylint: disable=R0913
                  nbpers, diff, ingredients, etapes, famille_recette):
         self.recette_id = recette_id
         self.nom = nom
@@ -39,7 +39,7 @@ class Recette(): # pylint: disable=R0903, R0902
         self.famille = famille_recette
 
 
-class Famille(): # pylint: disable=R0903
+class Famille():  # pylint: disable=R0903
     """
     Classe qui représente une famille de recettes. Une famille possède les attributs suivants:
     - Id: l'identifiant de la famille dans la base de données
@@ -53,7 +53,7 @@ class Famille(): # pylint: disable=R0903
         self.image = image
 
 
-class Ingredient(): # pylint: disable=R0903
+class Ingredient():  # pylint: disable=R0903
     """
     Classe qui représente un ingrédient. Un ingrédient possède les attributs suivants:
     - Id: l'identifiant de l'ingrédient dans la base de données
@@ -69,7 +69,7 @@ class Ingredient(): # pylint: disable=R0903
         self.unite = unite
 
 
-class Etape(): # pylint: disable=R0903
+class Etape():  # pylint: disable=R0903
     """
     Classe qui re présente une étape de recette. Une étape possède les attributs suivants:
     - num: le numéro de l'étape dans la recette
@@ -127,94 +127,106 @@ def famille():
     """
     Fonction qui permet d'afficher la page d'une famille.
     """
-    id_request = request.query.id  # type: ignore # pylint: disable=no-member
+    try:
+        id_request = request.query.id  # type: ignore # pylint: disable=no-member
 
-    conn, cur = open_sql()
+        conn, cur = open_sql()
 
-    # Requête SQL pour récupérer les recettes d'une famille
-    cur.execute("SELECT * FROM recettes WHERE id_famille = ?", (id_request,))
-    liste_recettes = []
-    for row in cur:
-        recette_id = row[0]
-        recette_nom = row[1]
-        recette_image = row[2]
-        recette_famille = row[6]
-        recette = Recette(recette_id, recette_nom, recette_image,
-                          None, None, None, None, None, None, recette_famille)
-        liste_recettes.append(recette)
+        # Requête SQL pour récupérer les recettes d'une famille
+        cur.execute("SELECT * FROM recettes WHERE id_famille = ?",
+                    (id_request,))
+        liste_recettes = []
+        for row in cur:
+            recette_id = row[0]
+            recette_nom = row[1]
+            recette_image = row[2]
+            recette_famille = row[6]
+            recette = Recette(recette_id, recette_nom, recette_image,
+                              None, None, None, None, None, None, recette_famille)
+            liste_recettes.append(recette)
 
-    cur.execute("SELECT nom FROM famille WHERE ID = ?", (id_request,))
-    nom = cur.fetchone()
-    conn.commit()
+        cur.execute("SELECT nom FROM famille WHERE ID = ?", (id_request,))
+        nom = cur.fetchone()
+        conn.commit()
 
-    close_sql(cur)
+        close_sql(cur)
 
-    return {"listeRecettes": liste_recettes, "nom": nom[0], "id": id_request}
+        return {"listeRecettes": liste_recettes, "nom": nom[0], "id": id_request}
+
+    except TypeError:
+        response_code = 404
+        HTTPResponse.status_code = response_code # type: ignore # pylint: disable=no-member
 
 
 # Affichage d'une recette
 @route('/recettes/<id_request>')
 @view("template/recette.tpl")
-def recettes(id_request): # pylint: disable=R0914
+def recettes(id_request):  # pylint: disable=R0914
     """
     Fonction qui permet d'afficher la page d'une recette.
     """
-    conn, cur = open_sql()
+    try:
 
-    # Requête 1 (attributs de la table Recettes)
-    cur.execute("SELECT * FROM Recettes WHERE ID=?", (id_request,))
-    infos_recette = cur.fetchone()
-    conn.commit()
+        conn, cur = open_sql()
 
-    recette_id = infos_recette[0]
-    recette_nom = infos_recette[1]
-    recette_image = infos_recette[2]
-    recette_nb_pers = infos_recette[3]
-    recette_cuisson = infos_recette[4]
-    recette_difficulte = infos_recette[5]
-    recette_famille = infos_recette[6]
+        # Requête 1 (attributs de la table Recettes)
+        cur.execute("SELECT * FROM Recettes WHERE ID=?", (id_request,))
+        infos_recette = cur.fetchone()
+        conn.commit()
 
-    # Requête pour récupérer le nom de la famille
-    cur.execute("SELECT Nom FROM Famille WHERE ID=?", (recette_famille,))
-    nom_famille = cur.fetchone()
-    conn.commit()
+        recette_id = infos_recette[0]
+        recette_nom = infos_recette[1]
+        recette_image = infos_recette[2]
+        recette_nb_pers = infos_recette[3]
+        recette_cuisson = infos_recette[4]
+        recette_difficulte = infos_recette[5]
+        recette_famille = infos_recette[6]
 
-    # Requête pour récupérer les ingrédients de la recette
-    cur.execute("SELECT Ingredients.ID, Ingredients.Nom, Quantite, Unite FROM IngredientsDeRecette \
-                INNER JOIN Ingredients ON Ingredients.ID=IngredientsDeRecette.ID_ingredients \
-                WHERE ID_recettes=?", (recette_id,))
-    liste_ingredients = []
-    for row in cur:
-        ingredient_id = row[0]
-        ingredient_nom = row[1]
-        ingredient_quantite = row[2]
-        ingredient_unite = row[3]
-        if ingredient_quantite.is_integer():
-            ingredient_quantite = int(ingredient_quantite)
-        ingredient = Ingredient(
-            ingredient_id, ingredient_nom, ingredient_quantite, ingredient_unite)
-        liste_ingredients.append(ingredient)
-    conn.commit()
+        # Requête pour récupérer le nom de la famille
+        cur.execute("SELECT Nom FROM Famille WHERE ID=?", (recette_famille,))
+        nom_famille = cur.fetchone()
+        conn.commit()
 
-    # Requête pour récupérer les étapes de la recette
-    cur.execute("SELECT Numero, Descriptif FROM EtapesDeRecette \
-                WHERE ID_recettes=?", (recette_id,))
-    etapes_recette = []
-    for row in cur:
-        etape_num = row[0]
-        etape_texte = row[1]
-        etape = Etape(etape_num, etape_texte)
-        etapes_recette.append(etape)
-    conn.commit()
+        # Requête pour récupérer les ingrédients de la recette
+        cur.execute("SELECT Ingredients.ID, Ingredients.Nom, Quantite, Unite \
+                    FROM IngredientsDeRecette \
+                    INNER JOIN Ingredients ON Ingredients.ID=IngredientsDeRecette.ID_ingredients \
+                    WHERE ID_recettes=?", (recette_id,))
+        liste_ingredients = []
+        for row in cur:
+            ingredient_id = row[0]
+            ingredient_nom = row[1]
+            ingredient_quantite = row[2]
+            ingredient_unite = row[3]
+            if ingredient_quantite.is_integer():
+                ingredient_quantite = int(ingredient_quantite)
+            ingredient = Ingredient(
+                ingredient_id, ingredient_nom, ingredient_quantite, ingredient_unite)
+            liste_ingredients.append(ingredient)
+        conn.commit()
 
-    close_sql(cur)
+        # Requête pour récupérer les étapes de la recette
+        cur.execute("SELECT Numero, Descriptif FROM EtapesDeRecette \
+                    WHERE ID_recettes=?", (recette_id,))
+        etapes_recette = []
+        for row in cur:
+            etape_num = row[0]
+            etape_texte = row[1]
+            etape = Etape(etape_num, etape_texte)
+            etapes_recette.append(etape)
+        conn.commit()
 
-    famille_recette = Famille(recette_famille, nom_famille[0], "")
-    recette = Recette(recette_id, recette_nom, recette_image, None, recette_cuisson,
-                      recette_nb_pers, recette_difficulte, liste_ingredients,
-                      etapes_recette, famille_recette)
+        close_sql(cur)
 
-    return {"recette": recette}
+        famille_recette = Famille(recette_famille, nom_famille[0], "")
+        recette = Recette(recette_id, recette_nom, recette_image, None, recette_cuisson,
+                          recette_nb_pers, recette_difficulte, liste_ingredients,
+                          etapes_recette, famille_recette)
+        return {"recette": recette}
+
+    except TypeError:
+        response_code = 404
+        HTTPResponse.status_code = response_code # type: ignore # pylint: disable=no-member
 
 
 @route('/chercheRecettes', method='POST')
@@ -249,7 +261,7 @@ def rechercher():
         liste_recettes.append(recette)
 
     close_sql(cur)
-    return {"listeRecettes" : liste_recettes, "recherche" : recette_recherchee}
+    return {"listeRecettes": liste_recettes, "recherche": recette_recherchee}
 
 
 @route('/contact')
