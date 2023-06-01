@@ -18,7 +18,7 @@
 			<img alt="Issues" src="https://img.shields.io/github/issues/HowlingByte/Marmit65?style=flat-square">
 		</a>
 		<a href="https://github.com/HowlingByte/Marmit65/pulls">
-			<img alt="Pull requests" src="https://img.shields.io/github/issues-pr/HowlingByte/MyCards?style=flat-square">
+			<img alt="Pull requests" src="https://img.shields.io/github/issues-pr/HowlingByte/Marmit65?style=flat-square">
 		</a>
 		<a href="https://github.com/HowlingByte/Marmit65/blob/main/LICENSE">
 			<img alt="License" src="https://img.shields.io/github/license/HowlingByte/Marmit65?style=flat-square">
