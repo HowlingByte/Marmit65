@@ -56,7 +56,7 @@ We are open to any suggestions, so don't hesitate to contact us. We are not resp
 
 ## License
 Distributed under the Mozilla Public License 2.0 License. See
-[LICENSE](https://github.com/Hidden-Warden/Marmit65/blob/main/LICENSE) for more information.
+[LICENSE](https://github.com/HowlingByte/Marmit65/blob/main/LICENSE) for more information.
 
 ## Authors
 * **[Hidden-Warden](https://github.com/Hidden-Warden)** - *French student in high school*

@@ -102,7 +102,7 @@
 			<a href="contact">Contact</a>
 		</div>
 		<div class="liens">
-			<a href="https://github.com/Hidden-Warden/Marmit65">GitHub</a>
+			<a href="https://github.com/HowlingByte/Marmit65">GitHub</a>
 		</div>
     </footer>
 	<div class="overlay"></div>
