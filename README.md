@@ -23,7 +23,7 @@
 		<a href="https://github.com/HowlingByte/Marmit65/blob/main/LICENSE">
 			<img alt="License" src="https://img.shields.io/github/license/HowlingByte/Marmit65?style=flat-square">
 		</a>
-		<img alt="Repo size" src="https://img.shields.io/github/repo-size/HowlingByte/MyCards?style=flat-square">
+		<img alt="Repo size" src="https://img.shields.io/github/repo-size/HowlingByte/Marmit65?style=flat-square">
 	</div>
 </p>
 
