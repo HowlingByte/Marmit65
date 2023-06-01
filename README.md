@@ -1,10 +1,7 @@
 # Marmit@
 <p align="center">
 	<a href="https://github.com/HowlingByte/Marmit65">
-		<img src="https://github.com/HowlingByte/Marmit65/assets/69793084/32b6637e-af0b-4803-95ad-a99089c17626"
-
-		     
-			alt="Banner">
+		<img src="https://github.com/HowlingByte/Marmit65/assets/69793084/32b6637e-af0b-4803-95ad-a99089c17626" alt="Banner">
 	</a>
 	<div class="badges" align="center">
 		<a href="https://github.com/HowlingByte/Marmit65/releases">
