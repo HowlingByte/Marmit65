@@ -107,7 +107,7 @@ INSERT INTO "Ingredients" ("ID","Nom") VALUES (1,'Salade verte'),
  (65,'Beurre fondu'),
  (66,'Bière'),
  (67,'Gros sel');
-INSERT INTO "Famille" ("ID","Nom","Image") VALUES (1,'Entrees','images/famille/entrees.png'),
+INSERT INTO "Famille" ("ID","Nom","Image") VALUES (1,'Entrées','images/famille/entrees.png'),
  (2,'Plats','images/famille/plats.png'),
  (3,'Desserts','images/famille/desserts.png'),
  (4,'Sauces','images/famille/sauces.png'),
