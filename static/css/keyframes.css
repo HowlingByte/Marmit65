@@ -59,3 +59,32 @@
 		transform: translateY(-100%);
 	}
 }
+
+@keyframes animation {
+	11.1%, 22.2% {
+		content: "faciles et rapides";
+		width: 14ch;
+	}
+	33.3% {
+		width: 0ch;
+	}
+	44.4%, 55.5% {
+		content: "savoureuses et rapides";
+		width: 19ch;
+	}
+	66.6% {
+		width: 0ch;
+	}
+	77.7%, 88.8% {
+		content: "délicieuses et rapides";
+		width: 17.5ch;
+	}
+	100% {
+		width: 0ch;
+	}
+}
+@keyframes blinking {
+	100% {
+		opacity: 0;
+	}
+}
