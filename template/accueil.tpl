@@ -70,8 +70,11 @@
     </nav>
 
 	<main>
-		<div class="content" style="padding-bottom: 30px">
-			<h3>Des recettes de cuisine faciles et rapides</h3>
+		<div class="description">
+		<div class="content"><h3>Des recettes de cuisine </h3></div>
+		<div class="typing-effect-content " style="padding-bottom: 30px">
+			<h3></h3>
+		</div>
 		</div>
 
 		<div class="grid-container">

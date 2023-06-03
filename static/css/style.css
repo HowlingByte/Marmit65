@@ -94,10 +94,6 @@ main h2 {
 
 footer {
 	display: flex;
-	/* Use Flexbox */
-	/* position: fixed;
-  bottom: 0;
-  left: 0; */
 	padding: 16px;
 	box-sizing: border-box;
 	margin-left: 20px;
@@ -540,6 +536,48 @@ nav span {
 	transition-delay: 0.4s;
 }
 
+.typing-effect-content  {
+	margin-left: 10%;
+	margin-right: 10%;
+	display: flex;
+	justify-content: center;
+	text-align: center !important;
+}
+
+.typing-effect-content  h3 {
+	position: relative;
+	overflow: hidden;
+	color: white;
+	font-size: 25px;
+	margin: 0;
+}
+
+.typing-effect-content  h2 {
+	color: white;
+	font-size: 25px;
+	margin: 0;
+}
+
+.typing-effect-content  h3::after {
+	content: "faciles et rapides";
+	display: inline-block;
+	animation: animation 20s steps(20) infinite;
+	width: 0ch;
+	color: var(--purple);
+	white-space: nowrap;
+}
+
+.typing-effect-content  h3::before {
+	display: inline-block;
+	content: "";
+	width: 2px;
+	height: 100%;
+	background-color: white;
+	position: absolute;
+	right: 0;
+	animation: blinking .4s linear alternate infinite;
+}
+
 /* Media Query - Leave this line at the end */
 @media only screen and (max-width: 768px) {
 	header {
@@ -599,8 +637,18 @@ nav span {
 		margin-right: 5%;
 	}
 
+	.content h3 {
+		margin-left: 5%;
+		margin-right: 5%;
+		font-size: 20px;
+	}
+
 	.grid-item-text {
 		font-size: 30px;
+	}
+
+	.typing-effect-content  h3 {
+		font-size: 20px;
 	}
 
 	footer .liens {
