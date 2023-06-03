@@ -1,8 +1,7 @@
 # Marmit@
 <p align="center">
 	<a href="https://github.com/HowlingByte/Marmit65">
-		<img src="https://github.com/HowlingByte/Marmit65/assets/69793084/bebda059-7490-4a8d-adf0-5b563f288596"
-			alt="Banner">
+		<img src="https://github.com/HowlingByte/Marmit65/assets/69793084/32b6637e-af0b-4803-95ad-a99089c17626" alt="Banner">
 	</a>
 	<div class="badges" align="center">
 		<a href="https://github.com/HowlingByte/Marmit65/releases">
@@ -18,12 +17,12 @@
 			<img alt="Issues" src="https://img.shields.io/github/issues/HowlingByte/Marmit65?style=flat-square">
 		</a>
 		<a href="https://github.com/HowlingByte/Marmit65/pulls">
-			<img alt="Pull requests" src="https://img.shields.io/github/issues-pr/HowlingByte/MyCards?style=flat-square">
+			<img alt="Pull requests" src="https://img.shields.io/github/issues-pr/HowlingByte/Marmit65?style=flat-square">
 		</a>
 		<a href="https://github.com/HowlingByte/Marmit65/blob/main/LICENSE">
 			<img alt="License" src="https://img.shields.io/github/license/HowlingByte/Marmit65?style=flat-square">
 		</a>
-		<img alt="Repo size" src="https://img.shields.io/github/repo-size/HowlingByte/MyCards?style=flat-square">
+		<img alt="Repo size" src="https://img.shields.io/github/repo-size/HowlingByte/Marmit65?style=flat-square">
 	</div>
 </p>
 
