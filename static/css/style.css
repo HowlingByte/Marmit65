@@ -46,15 +46,15 @@ header img:hover {
 	transition: all 0.2s ease-in;
 }
 
-.main-content {
+main {
 	flex-grow: 1;
 }
 
-.main-content h1 {
+main h1 {
 	margin: 0;
 }
 
-.main-content h2 {
+main h2 {
 	margin: 0;
 }
 
@@ -363,7 +363,7 @@ footer .liens {
 
 /* Fils d'ariane */
 
-.fils {
+nav {
 	font-size: 16px;
 	margin-left: 10px;
 	padding: 15px;
@@ -371,16 +371,16 @@ footer .liens {
 	text-decoration: none;
 }
 
-.fils a {
+nav a {
 	color: #bbb;
 	text-decoration: none;
 }
 
-.fils a:hover {
+nav a:hover {
 	text-decoration: underline;
 }
 
-.fils span {
+nav span {
 	color: #bbb;
 }
 
