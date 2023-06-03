@@ -56,25 +56,23 @@
 <body>
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
-      	<a href="../">
-        	<img src="images/logo_text.svg" alt="Logo Marmit@">
-      	</a>
+		<a href="../">
+			<img src="images/logo_text.svg" alt="Logo Marmit@">
+		</a>
         <form class="search-container" action="/chercheRecettes" method="POST">
             <input name="recette" type="text" placeholder="Rechercher une recette" class="search-input">
             <button type="submit" class="search-button"> <img src="/images/loop_search.svg"></button>
         </form>
     </header>
 
-    <nav class="fils">
-      	<a href="">Accueil</a>
+    <nav>
+		<a href="">Accueil</a>
     </nav>
 
-	<div class="main-content">
+	<main>
 		<div class="content" style="padding-bottom: 30px">
 			<h3>Des recettes de cuisine faciles et rapides</h3>
 		</div>
-
-		
 
 		<div class="grid-container">
 			%for famille in listeFamille:
@@ -87,18 +85,14 @@
 				</a>
 			%end
 		</div>
-	</div>
+	</main>
 
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer>
-		<div class="logo_footer">
-		<a href="https://github.com/HowlingByte">
-			<img src="images/howlingbyte.svg" alt="Logo HowlingByte" class="howlingbyte">
-		</a>
-		<a href="../">
-			<img src="images/logo.svg" alt="Logo Marmit@" class="logo">
-		</a>
-	</div>
+		<div>
+			<a href="https://github.com/HowlingByte"><img src="/images/howlingbyte.svg" alt="Logo HowlingByte" class="howlingbyte"></a>
+			<a href="../"><img src="/images/logo.svg" alt="Logo Marmit@" class="logo"></a>
+		</div>
 		<div class="copyright">Marmit@ – HowlingByte © 2023</div>
 		<div class="liens">
 			<a href="mentions">Mentions légales</a>
@@ -110,5 +104,6 @@
 			<a href="https://github.com/HowlingByte/Marmit65">GitHub</a>
 		</div>
     </footer>
+
 	<div class="overlay"></div>
 </body>

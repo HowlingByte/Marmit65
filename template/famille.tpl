@@ -27,11 +27,11 @@
         </form>
     </header>
 
-    <nav class="fils">
+    <nav>
         <a href="../">Accueil</a> > <a href="famille?id={{id}}">{{nom}}</a>
     </nav>
     
-    <div class="main-content">
+    <main>
         <div class="grid-container">
             %for recette in listeRecettes:
                 <a href="recettes/{{recette.recette_id}}">
@@ -43,23 +43,25 @@
                 </a>
             %end
         </div>
-    </div>
+    </main>
 
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer>
-		<a href="../">
-			<img src="images/logo.svg" alt="Logo Marmit@">
-		</a>
-        <div class="copyright">Marmit@ © 2023</div>
+		<div>
+			<a href="https://github.com/HowlingByte"><img src="/images/howlingbyte.svg" alt="Logo HowlingByte" class="howlingbyte"></a>
+			<a href="../"><img src="/images/logo.svg" alt="Logo Marmit@" class="logo"></a>
+		</div>
+		<div class="copyright">Marmit@ – HowlingByte © 2023</div>
 		<div class="liens">
 			<a href="mentions">Mentions légales</a>
 		</div>
-        <div class="liens">
-            <a href="contact">Contact</a>
-        </div>
 		<div class="liens">
-            <a href="https://github.com/HowlingByte/Marmit65">GitHub</a>
+			<a href="contact">Contact</a>
+		</div>
+		<div class="liens">
+			<a href="https://github.com/HowlingByte/Marmit65">GitHub</a>
 		</div>
     </footer>
+
 	<div class="overlay"></div>
 </body>

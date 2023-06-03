@@ -27,11 +27,11 @@
         </form>
     </header>
 
-    <nav class="fils">
+    <nav>
         <a href="../">Accueil</a> > <a href="/famille?id={{recette.famille.famille_id}}">{{recette.famille.nom}}</a> > <a href="/recettes/{{recette.recette_id}}">{{recette.nom}}</a>
     </nav>
 
-    <div class="main-content">
+    <main>
         <div class="grid-container">
             <div class="grid-item-container-left">
                 <img src="/{{recette.image}}" class="grid-item" alt="Image salade de chèvre chaud">
@@ -76,25 +76,26 @@
                 %end
             </p>
         </div>
-    </div>
+    </main>
 
     <!-- Ajouter un pied de page avec un logo svg avec le texte "Marmit@" et des liens vers les mentions légales et le contact -->
     <footer>
-		<a href="../">
-		    <img src="/images/logo.svg" alt="Logo Marmit@">
-		</a>
-        <div class="copyright">Marmit@ © 2023</div>
-		<div class="liens">
-			<a href="/mentions">Mentions légales</a>
+		<div>
+			<a href="https://github.com/HowlingByte"><img src="/images/howlingbyte.svg" alt="Logo HowlingByte" class="howlingbyte"></a>
+			<a href="../"><img src="/images/logo.svg" alt="Logo Marmit@" class="logo"></a>
 		</div>
-        <div class="liens">
-            <a href="/contact">Contact</a>
-        </div>
+		<div class="copyright">Marmit@ – HowlingByte © 2023</div>
 		<div class="liens">
-            <a href="https://github.com/HowlingByte/Marmit65">GitHub</a>
+			<a href="mentions">Mentions légales</a>
+		</div>
+		<div class="liens">
+			<a href="contact">Contact</a>
+		</div>
+		<div class="liens">
+			<a href="https://github.com/HowlingByte/Marmit65">GitHub</a>
 		</div>
     </footer>
-	<div class="overlay"></div>
+
     <div class="share-button">
         <div class="share-button_back">
             <a class="share_link" href="https://twitter.com/intent/tweet?text=Superbe+recette+sur+Marmit@+:+{{recette.nom}}&url=https://marmit65.live/recettes/{{recette.recette_id}}&hashtags=marmit65" title="Twitter" target="_blank">
@@ -111,7 +112,9 @@
             </a>
         </div>
         <div class="share-button_front">
-          <p class="share-button_text">Partager</p>
+            <p class="share-button_text">Partager</p>
         </div>
-      </div>
+    </div>
+    
+	<div class="overlay"></div>
 </body>
