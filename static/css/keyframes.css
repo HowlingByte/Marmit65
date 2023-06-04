@@ -83,8 +83,31 @@
 		width: 0ch;
 	}
 }
+
 @keyframes blinking {
 	100% {
 		opacity: 0;
+	}
+}
+
+@keyframes animation-loupe {
+	0% {
+		transform: translate(-400px, 180px);
+		scale: 0.7;
+	}
+
+	20% {
+		transform: translate(-400px, 180px);
+		scale: 0.7;
+	}
+
+	60% {
+		transform: translate(-80px, 80px);
+		scale: 1.2;
+	}
+
+	100% {
+		transform: translate(100px, 50px);
+		scale: 1.2;
 	}
 }
