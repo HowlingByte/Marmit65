@@ -2,7 +2,15 @@
 Fichier principal de l'application web Marmita.
 Ce fichier contient toutes les routes de l'application web.
 Il permet de lancer le serveur en local.
+
+Copyright Marmit@ – HowlingByte © 2023
+Licence Mozilla Public License 2.0
 """
+
+__author__ = "HowlingByte"
+__version__ = "v.1.12-beta"
+__license__ = "MPL 2.0"
+
 import sqlite3
 from bottle import request, route, run, view, static_file, error, HTTPResponse
 # from bottle import get, post, request, route, run, view, static_file, response, error, redirect
