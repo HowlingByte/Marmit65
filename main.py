@@ -10,6 +10,66 @@ from bottle import request, route, run, view, static_file, error, HTTPResponse
 DATABASE = 'database/marmita.db'
 
 
+class Famille():  # pylint: disable=R0903
+    """
+    Classe qui représente une famille de recettes. Une famille possède les attributs suivants:
+    - Id: l'identifiant de la famille dans la base de données
+    - nom: le nom de la famille
+    - image: l'image de la famille
+    """
+
+    def __init__(
+            self: object,
+            famille_id: int,
+            nom: str,
+            image: str
+        ):
+
+        self.famille_id: int = famille_id
+        self.nom: str = nom
+        self.image: str = image
+
+
+class Ingredient():  # pylint: disable=R0903
+    """
+    Classe qui représente un ingrédient. Un ingrédient possède les attributs suivants:
+    - Id: l'identifiant de l'ingrédient dans la base de données
+    - nom: le nom de l'ingrédient
+    - quantite: la quantité de l'ingrédient
+    - unite: l'unité de mesure de la quantité de l'ingrédient
+    """
+
+    def __init__(
+            self: object,
+            ingredient_id: int,
+            nom: str,
+            quantite: int,
+            unite: str = None
+        ):
+
+        self.ingredient_id: int = ingredient_id
+        self.nom: str = nom
+        self.quantite: int = quantite
+        self.unite: str = unite
+
+
+class Etape():  # pylint: disable=R0903
+    """
+    Classe qui re présente une étape de recette. Une étape possède les attributs suivants:
+    - num: le numéro de l'étape dans la recette
+    - texte: le texte de l'étape
+    """
+
+    def __init__(
+            self: object,
+            num: int,
+            texte: str
+        ):
+
+        self.num: int = num
+        self.texte: str = texte
+
+
 class Recette():  # pylint: disable=R0903, R0902
     """
     Classe qui représente une recette. Une recette possède les attributs suivants:
@@ -25,60 +85,28 @@ class Recette():  # pylint: disable=R0903, R0902
     - famille: la famille de la recette
     """
 
-    def __init__(self, recette_id, nom, image, preparation, cuisson,  # pylint: disable=R0913
-                 nbpers, diff, ingredients, etapes, famille_recette):
-        self.recette_id = recette_id
-        self.nom = nom
-        self.image = image
-        self.preparation = preparation
-        self.cuisson = cuisson
-        self.nombre_de_personnes = nbpers
-        self.difficulte = diff
-        self.ingredients = ingredients
-        self.etapes = etapes
-        self.famille = famille_recette
+    def __init__(  # pylint: disable=R0913
+            self: object,
+            recette_id: int,
+            nom: str,
+            image: str,
+            cuisson: int,
+            nbpers: int,
+            diff: int,
+            ingredients: Ingredient,
+            etapes: Etape,
+            famille_recette: int
+        ):
 
-
-class Famille():  # pylint: disable=R0903
-    """
-    Classe qui représente une famille de recettes. Une famille possède les attributs suivants:
-    - Id: l'identifiant de la famille dans la base de données
-    - nom: le nom de la famille
-    - image: l'image de la famille
-    """
-
-    def __init__(self, famille_id, nom, image):
-        self.famille_id = famille_id
-        self.nom = nom
-        self.image = image
-
-
-class Ingredient():  # pylint: disable=R0903
-    """
-    Classe qui représente un ingrédient. Un ingrédient possède les attributs suivants:
-    - Id: l'identifiant de l'ingrédient dans la base de données
-    - nom: le nom de l'ingrédient
-    - quantite: la quantité de l'ingrédient
-    - unite: l'unité de mesure de la quantité de l'ingrédient
-    """
-
-    def __init__(self, ingredient_id, nom, quantite, unite=None):
-        self.ingredient_id = ingredient_id
-        self.nom = nom
-        self.quantite = quantite
-        self.unite = unite
-
-
-class Etape():  # pylint: disable=R0903
-    """
-    Classe qui re présente une étape de recette. Une étape possède les attributs suivants:
-    - num: le numéro de l'étape dans la recette
-    - texte: le texte de l'étape
-    """
-
-    def __init__(self, num, texte):
-        self.num = num
-        self.texte = texte
+        self.recette_id: int = recette_id
+        self.nom: str = nom
+        self.image: str = image
+        self.cuisson: int = cuisson
+        self.nombre_de_personnes: int = nbpers
+        self.difficulte: int = diff
+        self.ingredients: Ingredient = ingredients
+        self.etapes: Etape = etapes
+        self.famille: int = famille_recette
 
 
 def open_sql(database=DATABASE):
@@ -142,7 +170,7 @@ def famille():
             recette_image = row[2]
             recette_famille = row[6]
             recette = Recette(recette_id, recette_nom, recette_image,
-                              None, None, None, None, None, None, recette_famille)
+                              None, None, None, None, None, recette_famille)
             liste_recettes.append(recette)
 
         cur.execute("SELECT nom FROM famille WHERE ID = ?", (id_request,))
@@ -220,7 +248,7 @@ def recettes(id_request):  # pylint: disable=R0914
         close_sql(cur)
 
         famille_recette = Famille(recette_famille, nom_famille[0], "")
-        recette = Recette(recette_id, recette_nom, recette_image, None, recette_cuisson,
+        recette = Recette(recette_id, recette_nom, recette_image, recette_cuisson,
                           recette_nb_pers, recette_difficulte, liste_ingredients,
                           etapes_recette, famille_recette)
         return {"recette": recette}
@@ -259,7 +287,7 @@ def rechercher():
         recette_image = row[2]
         recette_famille = row[6]
         recette = Recette(recette_id, recette_nom, recette_image,
-                          None, None, None, None, None, None, recette_famille)
+                          None, None, None, None, None, recette_famille)
         liste_recettes.append(recette)
 
     close_sql(cur)
