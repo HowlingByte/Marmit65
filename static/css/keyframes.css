@@ -61,6 +61,9 @@
 }
 
 @keyframes animation {
+	0% {
+		width: 0px;
+	}
 	11.1%, 22.2% {
 		content: "faciles et rapides";
 		width: 14ch;
@@ -80,6 +83,7 @@
 		width: 17.5ch;
 	}
 	100% {
+		content: "délicieuses et rapides";
 		width: 0ch;
 	}
 }
