@@ -284,7 +284,7 @@ def rechercher():
     else:
         condition = "LIKE '%%'"
 
-    if recette_recherchee == "Apple" or recette_recherchee == "APPLE" or recette_recherchee == "apple" or recette_recherchee == "Pomme" or recette_recherchee == "POMME" or recette_recherchee == "pomme":
+    if recette_recherchee.lower() == "apple" or recette_recherchee.lower() == "🍎" or recette_recherchee.lower() == "pomme":
         return redirect("https://apple.com")
 
     _, cur = open_sql()
@@ -356,5 +356,5 @@ def server_static_css(filepath):
     return static_file(filepath, root='static/css/')
 
 
-run(host='0.0.0.0', port=80)
-# run(host='localhost', port=8080, debug=True)
+#run(host='0.0.0.0', port=80)
+run(host='localhost', port=8080, debug=True)
