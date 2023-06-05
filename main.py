@@ -8,7 +8,7 @@ Licence Mozilla Public License 2.0
 """
 
 __author__ = "HowlingByte"
-__version__ = "v.1.12-beta"
+__version__ = "v.1.12"
 __license__ = "MPL 2.0"
 
 import sqlite3
