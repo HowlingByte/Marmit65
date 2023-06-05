@@ -12,7 +12,7 @@ __version__ = "v.1.12-beta"
 __license__ = "MPL 2.0"
 
 import sqlite3
-from bottle import request, route, run, view, static_file, error, HTTPResponse
+from bottle import request, route, run, view, static_file, error, HTTPResponse, redirect
 # from bottle import get, post, request, route, run, view, static_file, response, error, redirect
 
 DATABASE = 'database/marmita.db'
@@ -283,6 +283,9 @@ def rechercher():
             condition += " AND nom LIKE '%" + mots_cles[i] + "%'"
     else:
         condition = "LIKE '%%'"
+
+    if recette_recherchee == "Apple" or recette_recherchee == "APPLE" or recette_recherchee == "apple" or recette_recherchee == "Pomme" or recette_recherchee == "POMME" or recette_recherchee == "pomme":
+        return redirect("https://apple.com")
 
     _, cur = open_sql()
 
