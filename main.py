@@ -1,10 +1,10 @@
 """
-Fichier principal de l'application web Marmita.
-Ce fichier contient toutes les routes de l'application web.
-Il permet de lancer le serveur en local.
+Main file of the Marmita web application.
+This file contains all the routes for the web application.
+It is used to launch the server locally.
 
-Copyright Marmit@ – HowlingByte © 2023
-Licence Mozilla Public License 2.0
+Copyright Marmit@ - HowlingByte © 2023
+Mozilla Public License 2.0
 """
 
 __author__ = "HowlingByte"
@@ -13,7 +13,6 @@ __license__ = "MPL 2.0"
 
 import sqlite3
 from bottle import request, route, run, view, static_file, error, HTTPResponse, redirect
-
 # from bottle import get, post, request, route, run, view, static_file, response, error, redirect
 
 DATABASE = "database/marmita.db"
@@ -21,10 +20,10 @@ DATABASE = "database/marmita.db"
 
 class Famille:  # pylint: disable=R0903
     """
-    Classe qui représente une famille de recettes. Une famille possède les attributs suivants:
-    - Id: l'identifiant de la famille dans la base de données
-    - nom: le nom de la famille
-    - image: l'image de la famille
+    Class representing a family of recipes. A family has the following attributes:
+    - famille_id: the family identifier in the database
+    - nom: the name of the family
+    - image: the image of the family
     """
 
     def __init__(self: object, famille_id: int, nom: str, image: str):
@@ -35,11 +34,11 @@ class Famille:  # pylint: disable=R0903
 
 class Ingredient:  # pylint: disable=R0903
     """
-    Classe qui représente un ingrédient. Un ingrédient possède les attributs suivants:
-    - Id: l'identifiant de l'ingrédient dans la base de données
-    - nom: le nom de l'ingrédient
-    - quantite: la quantité de l'ingrédient
-    - unite: l'unité de mesure de la quantité de l'ingrédient
+    Class representing an ingredient. An ingredient has the following attributes:
+    - ingredient_id: the identifier of the ingredient in the database
+    - nom: the name of the ingredient
+    - quantite: the quantity of the ingredient
+    - unite: the unit of measurement for the quantity of the ingredient
     """
 
     def __init__(
@@ -53,9 +52,9 @@ class Ingredient:  # pylint: disable=R0903
 
 class Etape:  # pylint: disable=R0903
     """
-    Classe qui re présente une étape de recette. Une étape possède les attributs suivants:
-    - num: le numéro de l'étape dans la recette
-    - texte: le texte de l'étape
+    Class that presents a recipe step. A step has the following attributes:
+    - num: the number of the step in the recipe
+    - texte: the text of the step
     """
 
     def __init__(self: object, num: int, texte: str):
@@ -65,17 +64,16 @@ class Etape:  # pylint: disable=R0903
 
 class Recette:  # pylint: disable=R0903, R0902
     """
-    Classe qui représente une recette. Une recette possède les attributs suivants:
-    - Id: l'identifiant de la recette dans la base de données
-    - nom: le nom de la recette
-    - image: l'image de la recette
-    - preparation: le temps de préparation de la recette
-    - cuisson: le temps de cuisson de la recette
-    - nombre_de_personnes: le nombre de personnes pour lesquelles la recette est prévue
-    - difficulte: la difficulté de la recette
-    - ingredients: la liste des ingrédients de la recette
-    - etapes: la liste des étapes de la recette
-    - famille: la famille de la recette
+    Class representing a recipe. A recipe has the following attributes:
+    - recette_id: the recipe identifier in the database
+    - nom: the name of the recipe
+    - image: the image of the recipe
+    - cuisson: the recipe cooking time
+    - nbpers: the number of people for whom the recipe is intended
+    - diff: the difficulty of the recipe
+    - ingredients: the list of ingredients in the recipe
+    - etapes: the list of steps in the recipe
+    - famille_recette: the recipe family
     """
 
     def __init__(  # pylint: disable=R0913
@@ -103,8 +101,8 @@ class Recette:  # pylint: disable=R0903, R0902
 
 def open_sql(database=DATABASE):
     """
-    Fonction qui permet d'ouvrir une connexion à la base de données.
-    :return: le connecteur et le curseur de la base de données
+    Function used to open a connection to the database.
+    :return: the connector and the database cursor
     """
     conn = sqlite3.connect(database)
     cur = conn.cursor()
@@ -113,8 +111,8 @@ def open_sql(database=DATABASE):
 
 def close_sql(cur):
     """
-    Fonction qui permet de fermer une connexion à la base de données.
-    :param cur: le curseur de la base de données
+    Function used to close a connection to the database.
+    :param cur: the database cursor
     """
     cur.close()
 
@@ -123,7 +121,7 @@ def close_sql(cur):
 @view("template/accueil.tpl")
 def accueil():
     """
-    Fonction qui permet d'afficher la page d'accueil.
+    Function used to display the home page.
     """
     _, cur = open_sql()
     cur.execute("SELECT id, nom, image FROM famille")
@@ -145,14 +143,14 @@ def accueil():
 @view("template/famille.tpl")
 def famille():
     """
-    Fonction qui permet d'afficher la page d'une famille.
+    Function used to display a family page.
     """
     try:
         id_request = request.query.id  # type: ignore # pylint: disable=no-member
 
         conn, cur = open_sql()
 
-        # Requête SQL pour récupérer les recettes d'une famille
+        # SQL query to retrieve a family's recipes
         cur.execute("SELECT * FROM recettes WHERE id_famille = ?", (id_request,))
         liste_recettes = []
         for row in cur:
@@ -187,17 +185,16 @@ def famille():
         return None
 
 
-# Affichage d'une recette
 @route("/recettes/<id_request>")
 @view("template/recette.tpl")
 def recettes(id_request):  # pylint: disable=R0914
     """
-    Fonction qui permet d'afficher la page d'une recette.
+    Function used to display a recipe page.
     """
     try:
         conn, cur = open_sql()
 
-        # Requête 1 (attributs de la table Recettes)
+        # Query 1 (attributes from the Recipes table)
         cur.execute("SELECT * FROM Recettes WHERE ID=?", (id_request,))
         infos_recette = cur.fetchone()
         conn.commit()
@@ -210,12 +207,12 @@ def recettes(id_request):  # pylint: disable=R0914
         recette_difficulte = infos_recette[5]
         recette_famille = infos_recette[6]
 
-        # Requête pour récupérer le nom de la famille
+        # Query to retrieve the family name
         cur.execute("SELECT Nom FROM Famille WHERE ID=?", (recette_famille,))
         nom_famille = cur.fetchone()
         conn.commit()
 
-        # Requête pour récupérer les ingrédients de la recette
+        # Query to retrieve recipe ingredients
         cur.execute(
             "SELECT Ingredients.ID, Ingredients.Nom, Quantite, Unite \
                     FROM IngredientsDeRecette \
@@ -237,7 +234,7 @@ def recettes(id_request):  # pylint: disable=R0914
             liste_ingredients.append(ingredient)
         conn.commit()
 
-        # Requête pour récupérer les étapes de la recette
+        # Query to retrieve recipe steps
         cur.execute(
             "SELECT Numero, Descriptif FROM EtapesDeRecette \
                     WHERE ID_recettes=?",
@@ -277,9 +274,9 @@ def recettes(id_request):  # pylint: disable=R0914
 @view("template/chercheRecettes.tpl")
 def rechercher():
     """
-    Fonction qui permet d'afficher la page de recherche de recettes.
+    Function used to display the recipe search page.
     """
-    # Récupérer les données du formulaire
+    # Retrieve data from the form
     recette_recherchee = request.forms.getunicode("recette")  # type: ignore # pylint: disable=no-member
 
     if recette_recherchee != "":
@@ -299,7 +296,7 @@ def rechercher():
 
     _, cur = open_sql()
 
-    # Requête SQL pour récupérer les recettes d'une famille
+    # SQL query to retrieve a family's recipes
     cur.execute("SELECT * FROM recettes WHERE nom " + condition)
     liste_recettes = []
     for row in cur:
@@ -328,7 +325,7 @@ def rechercher():
 @view("static/html/contact.html")
 def contact():
     """
-    Fonction qui permet d'afficher la page de contact.
+    Function used to display the contact page.
     """
     return {}
 
@@ -337,7 +334,7 @@ def contact():
 @view("static/html/mentions.html")
 def mentions():
     """
-    Fonction qui permet d'afficher la page des mentions légales.
+    Function used to display the legal information page.
     """
     return {}
 
@@ -346,7 +343,7 @@ def mentions():
 @view("static/html/404.html")
 def on_error404(_):
     """
-    Fonction qui permet d'afficher la page d'erreur 404.
+    Function used to display the 404 error page.
     """
     return {}
 
@@ -354,7 +351,7 @@ def on_error404(_):
 @route("/images/<filepath:path>")
 def server_static_image(filepath):
     """
-    Fonction qui permet d'afficher les images.
+    Function used to display images.
     """
     return static_file(filepath, root="static/images/")
 
@@ -362,7 +359,7 @@ def server_static_image(filepath):
 @route("/fonts/<filepath:path>")
 def server_static_fonts(filepath):
     """
-    Fonction qui permet d'afficher les fonts.
+    Function used to display fonts.
     """
     return static_file(filepath, root="static/fonts/")
 
@@ -370,7 +367,7 @@ def server_static_fonts(filepath):
 @route("/css/<filepath:path>")
 def server_static_css(filepath):
     """
-    Fonction qui permet d'afficher les css.
+    Function used to display css files.
     """
     return static_file(filepath, root="static/css/")
 
