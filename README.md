@@ -58,8 +58,8 @@ Distributed under the Mozilla Public License 2.0 License. See
 [LICENSE](https://github.com/HowlingByte/Marmit65/blob/main/LICENSE) for more information.
 
 ## Authors
-* **[Hidden-Warden](https://github.com/Hidden-Warden)** - *French student in high school*
-* **[Ahhj93](https://github.com/Ahhj93)** - *French student in high school*
+* [**@Hidden-Warden**](https://github.com/Hidden-Warden) - Future french student in BTS SIO
+* [**@Ahhj93**](https://github.com/Ahhj93) - Future french student in CPGE MP2I
 
 ## Acknowledgements
 * [bottlepy/bottle](https://github.com/bottlepy/bottle/)
