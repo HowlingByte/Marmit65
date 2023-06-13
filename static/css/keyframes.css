@@ -37,12 +37,10 @@
 @keyframes slideIn {
 	0% {
 		transform: translateY(100%);
-		scale: 0.9;
 	}
 
 	100% {
 		transform: translateY(0);
-		scale: 1;
 	}
 }
 
