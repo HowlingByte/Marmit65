@@ -22,11 +22,9 @@ header {
 	animation: 1s ease-out 0s 1 slideInTop;
 	background-color: #000000;
 	padding: 20px;
-	text-align: left;
-	justify-content: start;
-	justify-content: center;
-	padding-left: 10%;
-	padding-right: 10%;
+	text-align: center;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 header img {
@@ -48,6 +46,9 @@ header img:hover {
 
 main {
 	flex-grow: 1;
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 main h1 {
@@ -64,8 +65,8 @@ main h2 {
 	align-items: center;
 	justify-content: center;
 	color: white;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
 	font-size: 20px;
 	animation: 1s ease-out 0s 1 slideIn;
 }
@@ -224,10 +225,10 @@ footer .liens {
 /* Grille */
 .grid-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-template-columns: repeat(2, 1fr);
 	gap: 20px;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
 
 }
 
@@ -329,8 +330,8 @@ footer .liens {
 	flex-direction: column;
 	justify-content: center;
 	color: #fff;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
 	font-size: 20px;
 	border-top: 2px solid var(--purple);
 	margin-top: 30px;
@@ -562,8 +563,8 @@ nav span {
 		display: block;
 	}
 
-	footer {
-		flex-direction: column;
+	header .search-container{
+		margin-left: 0px;
 	}
 
 	h1 {
@@ -579,14 +580,10 @@ nav span {
 	}
 
 	.grid-container {
-		margin-left: 5%;
-		margin-right: 5%;
 		grid-template-columns: 1fr;
 	}
 
 	.etape {
-		margin-left: 5%;
-		margin-right: 5%;
 		font-size: 16px;
 	}
 
@@ -610,11 +607,6 @@ nav span {
 		display: none;
 	}
 
-	.content {
-		margin-left: 5%;
-		margin-right: 5%;
-	}
-
 	.content h3 {
 		margin-left: 5%;
 		margin-right: 5%;
@@ -627,6 +619,12 @@ nav span {
 
 	.typing-effect-content  h3 {
 		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 850px) {
+	footer {
+		flex-direction: column;
 	}
 
 	footer .liens {
