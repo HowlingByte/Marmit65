@@ -99,7 +99,7 @@ class Recette:  # pylint: disable=R0903, R0902
         self.famille: int = famille_recette
 
 
-def open_sql(database=DATABASE):
+def open_sql(database: str = DATABASE):
     """
     Function used to open a connection to the database.
     :return: the connector and the database cursor
@@ -187,7 +187,7 @@ def famille():
 
 @route("/recettes/<id_request>")
 @view("template/recette.tpl")
-def recettes(id_request):  # pylint: disable=R0914
+def recettes(id_request: int):  # pylint: disable=R0914
     """
     Function used to display a recipe page.
     """
