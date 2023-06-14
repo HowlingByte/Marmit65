@@ -1,3 +1,5 @@
+name: Reboot server
+
 on:
   release:
     types: [created]
