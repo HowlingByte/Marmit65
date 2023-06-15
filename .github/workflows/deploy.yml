@@ -5,24 +5,41 @@ on:
     types: [created]
     
 jobs:
-  reboot:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Update production branch
+      - name: Set up Git
         run: |
-          git checkout production
-          git rebase main
-          git push origin production
-      - name: Clone repository
+          git config --global user.email "${{ secrets.GIT_EMAIL }}"
+          git config --global user.name "${{ secrets.GIT_NAME }}"
+
+      - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Reset production branch to main
+        run: |
+          git fetch origin
+          git checkout production
+          git reset --hard origin/main
+          git push -f origin production
+          
+      - name: Clone repository on SSH server
+        uses: appleboy/ssh-action@v0.1.4
         with:
-          ref: production
-          path: /root
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            cd /root/
+            rm -rf Marmit65
+            git clone --branch production https://github.com/HowlingByte/Marmit65
+
       - name: Reboot server
         uses: appleboy/ssh-action@v0.1.4
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
+          password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             sudo reboot
