@@ -1,10 +1,14 @@
 """
-Main file of the Marmita web application.
-This file contains all the routes for the web application.
-It is used to launch the server locally.
-
-Copyright Marmit@ - HowlingByte © 2023
-Mozilla Public License 2.0
+/****************************************************************
+ *                                                              *
+ *  Main file of the Marmita web application.                   *
+ *  This file contains all the routes for the web application.  *
+ *  It is used to launch the server locally.                    *
+ *                                                              *
+ *  Copyright Marmit@ - HowlingByte © 2023                      *
+ *  Mozilla Public License 2.0                                  *
+ *                                                              *
+ ****************************************************************/
 """
 
 __author__ = "HowlingByte"
