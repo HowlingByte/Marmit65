@@ -52,9 +52,26 @@
 	<link rel="apple-touch-startup-image" media="screen and (device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/images/splash_screens/10.2__iPad_portrait.png">
 	<link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/images/splash_screens/9.7__iPad_Pro__7.9__iPad_mini__9.7__iPad_Air__9.7__iPad_portrait.png">
 	<link rel="apple-touch-startup-image" media="screen and (device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/images/splash_screens/8.3__iPad_Mini_portrait.png">
+	<style>
+		#overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			background-color: var(--purple);
+		}
+		
+		.slide-out-overlay {
+			transform: translateY(-100%);
+			animation: 1s slideOutOverlay;
+		}
+	</style>
 </head>
 
 <body>
+	<div id="overlay" class="slide-out-overlay slide-in-overlay"></div>
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
 		<a href="../">
@@ -81,10 +98,10 @@
 		<div class="grid-container">
 			%for famille in listeFamille:
 				<a href="famille?id={{famille.famille_id}}">
-					<div class="grid-item-container">
-					<div class="img-overlay"></div>
-					<img src="{{famille.image}}" class="grid-item" alt="Image {{famille.nom}}">
-					<span class="grid-item-text">{{famille.nom}}</span>
+					<div class="grid-item-container scroll-reveal">
+						<div class="img-overlay"></div>
+							<img src="{{famille.image}}" class="grid-item" alt="Image {{famille.nom}}">
+						<span class="grid-item-text">{{famille.nom}}</span>
 					</div>
 				</a>
 			%end
@@ -109,5 +126,6 @@
 		</div>
     </footer>
 
-	<div class="overlay"></div>
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="/js/main.js"></script>
 </body>

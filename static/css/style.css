@@ -59,6 +59,26 @@ main h2 {
 	margin: 0;
 }
 
+#overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background-color: var(--purple);
+}
+
+.slide-out-overlay {
+	transform: translateY(-100%);
+	animation: 1s slideOutOverlay;
+}
+
+.slide-in-overlay {
+	transform: translateY(100%);
+	animation: 1s slideInOverlay;
+}
+
 .content {
 	display: flex;
 	flex-direction: column;
@@ -237,7 +257,6 @@ footer .liens {
 	height: 100%;
 
 	position: relative;
-	animation: 1s ease-out 0s 1 slideIn;
 	/* Firefox */
 	-moz-transition: all 0.2s;
 	/* WebKit */
@@ -389,18 +408,6 @@ nav span {
 
 .bigger-plus {
 	font-size: 40px;
-}
-
-.overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background-color: var(--purple);
-	transform: translateY(-100%);
-	animation: 1s slideOutOverlay;
 }
 
 .loupe {

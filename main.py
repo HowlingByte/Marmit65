@@ -375,6 +375,13 @@ def server_static_css(filepath):
     """
     return static_file(filepath, root="static/css/")
 
+@route("/js/<filepath:path>")
+def server_static_js(filepath):
+    """
+    Function used to display js files.
+    """
+    return static_file(filepath, root="static/js/")
 
-run(host="0.0.0.0", port=80)
-# run(host='localhost', port=8080, debug=True)
+
+# run(host="0.0.0.0", port=80)
+run(host='localhost', port=8080, debug=True)

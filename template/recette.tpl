@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <div id="overlay" class="slide-out-overlay"></div>
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
         <a href="../">
@@ -117,4 +118,8 @@
     </div>
     
 	<div class="overlay"></div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+	<script src="/js/main.js"></script>
+
 </body>
