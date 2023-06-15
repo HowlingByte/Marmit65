@@ -12,7 +12,7 @@
 """
 
 __author__ = "HowlingByte"
-__version__ = "1.14-beta"
+__version__ = "1.14"
 __license__ = "MPL 2.0"
 
 import sqlite3
