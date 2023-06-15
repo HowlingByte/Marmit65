@@ -1,4 +1,4 @@
-name: Reboot server
+name: Deploy
 
 on:
   release:
@@ -8,6 +8,16 @@ jobs:
   reboot:
     runs-on: ubuntu-latest
     steps:
+      - name: Update production branch
+        run: |
+          git checkout production
+          git rebase main
+          git push origin production
+      - name: Clone repository
+        uses: actions/checkout@v2
+        with:
+          ref: production
+          path: /root
       - name: Reboot server
         uses: appleboy/ssh-action@v0.1.4
         with:
