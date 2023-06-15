@@ -98,7 +98,7 @@
 		<div class="grid-container">
 			%for famille in listeFamille:
 				<a href="famille?id={{famille.famille_id}}">
-					<div class="grid-item-container scroll-reveal">
+					<div class="grid-item-container">
 						<div class="img-overlay"></div>
 							<img src="{{famille.image}}" class="grid-item" alt="Image {{famille.nom}}">
 						<span class="grid-item-text">{{famille.nom}}</span>

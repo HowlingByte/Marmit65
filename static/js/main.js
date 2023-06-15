@@ -23,3 +23,17 @@ function revealTitles() {
 function playAnimation() {
     document.querySelector("#overlay").classList.add("slide-out-overlay");
 }
+
+var gridItemContainers = document.querySelectorAll('.grid-item-container');
+
+gridItemContainers.forEach(function(container) {
+    container.addEventListener('mouseover', function() {
+        this.style.transitionDuration = '0.2s';
+        this.style.transform = 'scale(1.02)';
+    });
+
+    container.addEventListener('mouseout', function() {
+        this.style.transitionDuration = '0.2s';
+        this.style.transform = 'scale(1)';
+    });
+});
