@@ -55,6 +55,7 @@
 </head>
 
 <body>
+	<div id="overlay"></div>
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
 		<a href="../">
@@ -82,9 +83,9 @@
 			%for famille in listeFamille:
 				<a href="famille?id={{famille.famille_id}}">
 					<div class="grid-item-container">
-					<div class="img-overlay"></div>
-					<img src="{{famille.image}}" class="grid-item" alt="Image {{famille.nom}}">
-					<span class="grid-item-text">{{famille.nom}}</span>
+						<div class="img-overlay"></div>
+							<img src="{{famille.image}}" class="grid-item" alt="Image {{famille.nom}}">
+						<span class="grid-item-text">{{famille.nom}}</span>
 					</div>
 				</a>
 			%end
@@ -109,5 +110,7 @@
 		</div>
     </footer>
 
-	<div class="overlay"></div>
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="/js/main.js"></script>
+	
 </body>

@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <div id="overlay" class="slide-out-overlay"></div>
     <!-- Ajouter un en-tête avec un logo svg avec le texte "Marmit@" et une barre de recherche -->
     <header>
         <a href="../">
@@ -36,9 +37,9 @@
             %for recette in listeRecettes:
                 <a href="recettes/{{recette.recette_id}}">
                     <div class="grid-item-container">
-                    <div class="img-overlay"></div>
-                    <img src="{{recette.image}}" class="grid-item" alt="Image {{recette.nom}}">
-                    <span class="grid-item-text">{{recette.nom}}</span>
+                        <div class="img-overlay"></div>
+                            <img src="{{recette.image}}" class="grid-item" alt="Image {{recette.nom}}">
+                        <span class="grid-item-text">{{recette.nom}}</span>
                     </div>
                 </a>
             %end
@@ -63,5 +64,7 @@
         </div>
     </footer>
 
-	<div class="overlay"></div>
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="/js/main.js"></script>
+
 </body>
