@@ -69,13 +69,17 @@ main h2 {
 	background-color: var(--purple);
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
 .slide-out-overlay {
 	transform: translateY(-100%);
 	animation: 1s slideOutOverlay;
 }
 
 .slide-in-overlay {
-	transform: translateY(100%);
+	transform: translateY(0%);
 	animation: 1s slideInOverlay;
 }
 

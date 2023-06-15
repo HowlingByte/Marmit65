@@ -116,8 +116,6 @@
             <p class="share-button_text">Partager</p>
         </div>
     </div>
-    
-	<div class="overlay"></div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
 	<script src="/js/main.js"></script>

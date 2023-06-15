@@ -13,22 +13,6 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="/images/icon/touch-icon-ipad.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="/images/icon/touch-icon-iphone-retina.png">
 	<link rel="apple-touch-icon" sizes="167x167" href="/images/icon/touch-icon-ipad-retina.png">
-    <style>
-		#overlay {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 9999;
-			background-color: var(--purple);
-		}
-		
-		.slide-out-overlay {
-			transform: translateY(-100%);
-			animation: 1s slideOutOverlay;
-		}
-	</style>
 </head>
 
 <body>

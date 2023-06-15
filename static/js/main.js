@@ -6,6 +6,7 @@ document.onreadystatechange = function () {
         document.querySelector("body").style.visibility = "visible";
         playAnimation();
         revealTitles();
+        setupHoverTransitions();
     }
 };
 
@@ -24,16 +25,34 @@ function playAnimation() {
     document.querySelector("#overlay").classList.add("slide-out-overlay");
 }
 
-var gridItemContainers = document.querySelectorAll('.grid-item-container');
+function setupHoverTransitions() {
+    var gridItemContainers = document.querySelectorAll('.grid-item-container');
 
-gridItemContainers.forEach(function(container) {
-    container.addEventListener('mouseover', function() {
-        this.style.transitionDuration = '0.2s';
-        this.style.transform = 'scale(1.02)';
+    gridItemContainers.forEach(function (container) {
+        container.addEventListener('mouseover', function () {
+            this.style.transitionDuration = '0.2s';
+            this.style.transform = 'scale(1.02)';
+        });
+
+        container.addEventListener('mouseout', function () {
+            this.style.transitionDuration = '0.2s';
+            this.style.transform = 'scale(1)';
+        });
     });
+}
 
-    container.addEventListener('mouseout', function() {
-        this.style.transitionDuration = '0.2s';
-        this.style.transform = 'scale(1)';
+document.addEventListener("DOMContentLoaded", function () {
+    var links = document.querySelectorAll("a");
+
+    links.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            var overlay = document.querySelector("#overlay");
+            overlay.classList.add("slide-in-overlay");
+
+            overlay.addEventListener("animationend", function () {
+                window.location.href = link.href;
+            });
+        });
     });
 });

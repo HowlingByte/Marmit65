@@ -13,22 +13,6 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="/images/icon/touch-icon-ipad.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="/images/icon/touch-icon-iphone-retina.png">
 	<link rel="apple-touch-icon" sizes="167x167" href="/images/icon/touch-icon-ipad-retina.png">
-    <style>
-		#overlay {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 9999;
-			background-color: var(--purple);
-		}
-		
-		.slide-out-overlay {
-			transform: translateY(-100%);
-			animation: 1s slideOutOverlay;
-		}
-	</style>
 </head>
 
 <body>
@@ -53,9 +37,9 @@
             %for recette in listeRecettes:
                 <a href="recettes/{{recette.recette_id}}">
                     <div class="grid-item-container">
-                    <div class="img-overlay"></div>
-                    <img src="{{recette.image}}" class="grid-item" alt="Image {{recette.nom}}">
-                    <span class="grid-item-text">{{recette.nom}}</span>
+                        <div class="img-overlay"></div>
+                            <img src="{{recette.image}}" class="grid-item" alt="Image {{recette.nom}}">
+                        <span class="grid-item-text">{{recette.nom}}</span>
                     </div>
                 </a>
             %end
@@ -79,8 +63,6 @@
             <a href="https://github.com/HowlingByte/Marmit65">GitHub</a>
         </div>
     </footer>
-
-	<div class="overlay"></div>
 
 	<script src="https://unpkg.com/scrollreveal"></script>
 	<script src="/js/main.js"></script>

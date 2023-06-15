@@ -56,7 +56,7 @@
 
 @keyframes slideInOverlay {
 	0%, 20% {
-		transform: translateY(-100%);
+		transform: translateY(100%);
 	}
 
 	100% {
