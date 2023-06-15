@@ -30,7 +30,7 @@ class Famille:  # pylint: disable=R0903
     - image: the image of the family
     """
 
-    def __init__(self: object, famille_id: int, nom: str, image: str):
+    def __init__(self, famille_id: int, nom: str, image: str):
         self.famille_id: int = famille_id
         self.nom: str = nom
         self.image: str = image
@@ -46,12 +46,12 @@ class Ingredient:  # pylint: disable=R0903
     """
 
     def __init__(
-        self: object, ingredient_id: int, nom: str, quantite: int, unite: str = None
+        self, ingredient_id: int, nom: str, quantite: int, unite: str|None = None
     ):
         self.ingredient_id: int = ingredient_id
         self.nom: str = nom
         self.quantite: int = quantite
-        self.unite: str = unite
+        self.unite: str|None = unite
 
 
 class Etape:  # pylint: disable=R0903
@@ -61,7 +61,7 @@ class Etape:  # pylint: disable=R0903
     - texte: the text of the step
     """
 
-    def __init__(self: object, num: int, texte: str):
+    def __init__(self, num: int, texte: str):
         self.num: int = num
         self.texte: str = texte
 
@@ -81,26 +81,26 @@ class Recette:  # pylint: disable=R0903, R0902
     """
 
     def __init__(  # pylint: disable=R0913
-        self: object,
+        self,
         recette_id: int,
         nom: str,
         image: str,
-        cuisson: int,
-        nbpers: int,
-        diff: int,
-        ingredients: Ingredient,
-        etapes: Etape,
-        famille_recette: int,
+        cuisson: int|None,
+        nbpers: int|None,
+        diff: int|None,
+        ingredients: list[Ingredient]|None,
+        etapes: list[Etape]|None,
+        famille_recette: int|Famille,
     ):
         self.recette_id: int = recette_id
         self.nom: str = nom
         self.image: str = image
-        self.cuisson: int = cuisson
-        self.nombre_de_personnes: int = nbpers
-        self.difficulte: int = diff
-        self.ingredients: Ingredient = ingredients
-        self.etapes: Etape = etapes
-        self.famille: int = famille_recette
+        self.cuisson: int|None = cuisson
+        self.nombre_de_personnes: int|None = nbpers
+        self.difficulte: int|None = diff
+        self.ingredients: list[Ingredient]|None = ingredients
+        self.etapes: list[Etape]|None = etapes
+        self.famille: int|Famille = famille_recette
 
 
 def open_sql(database: str = DATABASE):
@@ -113,7 +113,7 @@ def open_sql(database: str = DATABASE):
     return conn, cur
 
 
-def close_sql(cur):
+def close_sql(cur: sqlite3.Cursor):
     """
     Function used to close a connection to the database.
     :param cur: the database cursor
@@ -123,7 +123,7 @@ def close_sql(cur):
 
 @route("/")
 @view("template/accueil.tpl")
-def accueil():
+def accueil() -> dict[str, list[Famille]]:
     """
     Function used to display the home page.
     """
@@ -145,12 +145,12 @@ def accueil():
 
 @route("/famille", method="get")
 @view("template/famille.tpl")
-def famille():
+def famille() -> dict[str, list[Recette]|str|int] | None:
     """
     Function used to display a family page.
     """
     try:
-        id_request = request.query.id  # type: ignore # pylint: disable=no-member
+        id_request: int = request.query.id  # type: ignore # pylint: disable=no-member
 
         conn, cur = open_sql()
 
@@ -191,7 +191,7 @@ def famille():
 
 @route("/recettes/<id_request>")
 @view("template/recette.tpl")
-def recettes(id_request: int):  # pylint: disable=R0914
+def recettes(id_request: int) -> dict[str, Recette] | None:  # pylint: disable=R0914
     """
     Function used to display a recipe page.
     """
@@ -276,12 +276,12 @@ def recettes(id_request: int):  # pylint: disable=R0914
 
 @route("/chercheRecettes", method="POST")
 @view("template/chercheRecettes.tpl")
-def rechercher():
+def rechercher() -> dict[str, list[Recette]|str] | None:
     """
     Function used to display the recipe search page.
     """
     # Retrieve data from the form
-    recette_recherchee = request.forms.getunicode("recette")  # type: ignore # pylint: disable=no-member
+    recette_recherchee: str = request.forms.getunicode("recette")  # type: ignore # pylint: disable=no-member
 
     if recette_recherchee != "":
         mots_cles = recette_recherchee.split(" ")
@@ -296,7 +296,8 @@ def rechercher():
         or recette_recherchee.lower() == "🍎"
         or recette_recherchee.lower() == "pomme"
     ):
-        return redirect("https://apple.com")
+        redirect("https://apple.com")
+        return None
 
     _, cur = open_sql()
 
@@ -327,33 +328,33 @@ def rechercher():
 
 @route("/contact")
 @view("static/html/contact.html")
-def contact():
+def contact() -> None:
     """
     Function used to display the contact page.
     """
-    return {}
+    return None
 
 
 @route("/mentions")
 @view("static/html/mentions.html")
-def mentions():
+def mentions() -> None:
     """
     Function used to display the legal information page.
     """
-    return {}
+    return None
 
 
 @error(404)
 @view("static/html/404.html")
-def on_error404(_):
+def on_error404(_) -> None:
     """
     Function used to display the 404 error page.
     """
-    return {}
+    return None
 
 
 @route("/images/<filepath:path>")
-def server_static_image(filepath):
+def server_static_image(filepath: str) -> HTTPResponse:
     """
     Function used to display images.
     """
@@ -361,7 +362,7 @@ def server_static_image(filepath):
 
 
 @route("/fonts/<filepath:path>")
-def server_static_fonts(filepath):
+def server_static_fonts(filepath: str) -> HTTPResponse:
     """
     Function used to display fonts.
     """
@@ -369,7 +370,7 @@ def server_static_fonts(filepath):
 
 
 @route("/css/<filepath:path>")
-def server_static_css(filepath):
+def server_static_css(filepath: str) -> HTTPResponse:
     """
     Function used to display css files.
     """
