@@ -54,7 +54,7 @@ Run this file and open a web browser. Connect to `localhost:8080`, and you're re
 We are open to any suggestions, so don't hesitate to contact us. We are not responsible for any problems that may.
 
 ## License
-Distributed under the Mozilla Public License 2.0 License. See
+Distributed under the Mozilla Public License 2.0. See
 [LICENSE](https://github.com/HowlingByte/Marmit65/blob/main/LICENSE) for more information.
 
 ## Authors
