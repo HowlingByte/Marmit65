@@ -16,7 +16,7 @@ __version__ = "1.14"
 __license__ = "MPL 2.0"
 
 import sqlite3
-from bottle import request, route, run, view, static_file, error, HTTPResponse, redirect
+from bottle import request, route, error, run, view, static_file, redirect, abort, HTTPResponse
 
 
 DATABASE: str = "database/marmita.db"
@@ -184,8 +184,7 @@ def famille() -> dict[str, list[Recette] | str | int] | None:
         return {"listeRecettes": liste_recettes, "nom": nom[0], "id": id_request}
 
     except TypeError:
-        response_code = 404
-        HTTPResponse.status_code = response_code  # type: ignore # pylint: disable=no-member
+        abort(404)
         return None
 
 
@@ -269,8 +268,7 @@ def recettes(id_request: int) -> dict[str, Recette] | None:  # pylint: disable=R
         return {"recette": recette}
 
     except TypeError:
-        response_code = 404
-        HTTPResponse.status_code = response_code  # type: ignore # pylint: disable=no-member
+        abort(404)
         return None
 
 
