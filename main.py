@@ -385,5 +385,19 @@ def server_static_js(filepath: str) -> HTTPResponse:
     return static_file(filepath, root="static/js/")
 
 
-run(host="0.0.0.0", port=80)
-# run(host='localhost', port=8080, debug=True)
+def start_server() -> None:
+    """
+    Function used to start the server.
+    """
+    run(host="0.0.0.0", port=80)
+
+
+def main() -> None:
+    """
+    Main function.
+    """
+    run(host='localhost', port=8080, debug=True)
+
+
+if __name__ == "__main__":
+    main()
