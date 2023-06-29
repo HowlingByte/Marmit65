@@ -19,7 +19,7 @@ import sqlite3
 from bottle import request, route, run, view, static_file, error, HTTPResponse, redirect
 
 
-DATABASE = "database/marmita.db"
+DATABASE: str = "database/marmita.db"
 
 
 class Famille:  # pylint: disable=R0903
