@@ -10,7 +10,7 @@
 """
 
 __author__ = "HowlingByte"
-__version__ = "1.14"
+__version__ = "1.15"
 __license__ = "MPL 2.0"
 
 import main
