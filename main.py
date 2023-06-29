@@ -378,7 +378,7 @@ def server_static_css(filepath: str) -> HTTPResponse:
 
 
 @route("/js/<filepath:path>")
-def server_static_js(filepath):
+def server_static_js(filepath: str) -> HTTPResponse:
     """
     Function used to display js files.
     """
