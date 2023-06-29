@@ -17,7 +17,7 @@ __license__ = "MPL 2.0"
 
 import sqlite3
 from bottle import request, route, run, view, static_file, error, HTTPResponse, redirect
-# from bottle import get, post, request, route, run, view, static_file, response, error, redirect
+
 
 DATABASE = "database/marmita.db"
 
@@ -46,12 +46,12 @@ class Ingredient:  # pylint: disable=R0903
     """
 
     def __init__(
-        self, ingredient_id: int, nom: str, quantite: int, unite: str|None = None
+        self, ingredient_id: int, nom: str, quantite: int, unite: str | None = None
     ):
         self.ingredient_id: int = ingredient_id
         self.nom: str = nom
         self.quantite: int = quantite
-        self.unite: str|None = unite
+        self.unite: str | None = unite
 
 
 class Etape:  # pylint: disable=R0903
@@ -85,22 +85,22 @@ class Recette:  # pylint: disable=R0903, R0902
         recette_id: int,
         nom: str,
         image: str,
-        cuisson: int|None,
-        nbpers: int|None,
-        diff: int|None,
-        ingredients: list[Ingredient]|None,
-        etapes: list[Etape]|None,
-        famille_recette: int|Famille,
+        cuisson: int | None,
+        nbpers: int | None,
+        diff: int | None,
+        ingredients: list[Ingredient] | None,
+        etapes: list[Etape] | None,
+        famille_recette: int | Famille,
     ):
         self.recette_id: int = recette_id
         self.nom: str = nom
         self.image: str = image
-        self.cuisson: int|None = cuisson
-        self.nombre_de_personnes: int|None = nbpers
-        self.difficulte: int|None = diff
-        self.ingredients: list[Ingredient]|None = ingredients
-        self.etapes: list[Etape]|None = etapes
-        self.famille: int|Famille = famille_recette
+        self.cuisson: int | None = cuisson
+        self.nombre_de_personnes: int | None = nbpers
+        self.difficulte: int | None = diff
+        self.ingredients: list[Ingredient] | None = ingredients
+        self.etapes: list[Etape] | None = etapes
+        self.famille: int | Famille = famille_recette
 
 
 def open_sql(database: str = DATABASE):
@@ -145,7 +145,7 @@ def accueil() -> dict[str, list[Famille]]:
 
 @route("/famille", method="get")
 @view("template/famille.tpl")
-def famille() -> dict[str, list[Recette]|str|int] | None:
+def famille() -> dict[str, list[Recette] | str | int] | None:
     """
     Function used to display a family page.
     """
@@ -276,7 +276,7 @@ def recettes(id_request: int) -> dict[str, Recette] | None:  # pylint: disable=R
 
 @route("/chercheRecettes", method="POST")
 @view("template/chercheRecettes.tpl")
-def rechercher() -> dict[str, list[Recette]|str] | None:
+def rechercher() -> dict[str, list[Recette] | str] | None:
     """
     Function used to display the recipe search page.
     """
@@ -375,6 +375,7 @@ def server_static_css(filepath: str) -> HTTPResponse:
     Function used to display css files.
     """
     return static_file(filepath, root="static/css/")
+
 
 @route("/js/<filepath:path>")
 def server_static_js(filepath):
