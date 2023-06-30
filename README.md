@@ -27,14 +27,14 @@
 </p>
 
 ## 📑 Table Of Contents
-* [About The Project](#about-the-project)
-* [Built With](#️built-with)
-* [Getting Started](#getting-started)
-	* [Deployment](#deployment)
-	* [Contributing](#contributing)
-* [License](#license)
-* [Authors](#authors)
-* [Acknowledgements](#acknowledgements)
+* [About The Project](#-about-the-project)
+* [Built With](#️-built-with)
+* [Getting Started](#-getting-started)
+	* [Deployment](#-deployment)
+	* [Contributing](#-contributing)
+* [License](#-license)
+* [Authors](#-authors)
+* [Acknowledgements](#-acknowledgements)
 
 ## 📝 About The Project
 * **Features of Marmit@**
