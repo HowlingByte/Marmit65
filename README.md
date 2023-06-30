@@ -26,16 +26,16 @@
 	</div>
 </p>
 
-## Built With
+## 🛠️ Built With
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 <br>This website use Bottle, a micro python web-framework [bottlepy/bottle](https://github.com/bottlepy/bottle/).
 
-## Getting Started
+## 🚀 Getting Started
 It's a school project, so it's not perfect. We are two students working on this project. We are French, so the website is in French. We are not professionals, so the code is not perfect. We are open to any suggestions, so don't hesitate to contact us. We are not responsible for any problems that may.
 
-## Deployment
+## 🔧 Deployment
 
 ### Prerequisite
 You need to install the dependencies with the following commands:
@@ -47,16 +47,16 @@ pip install -r requirements.txt
 Decompress the archive into a directory. Make sure you have the requirements installed.
 Run this file and open a web browser. Connect to `localhost:8080`, and you're ready to go!
 
-## Contributing
+## 🤝 Contributing
 We are open to any suggestions, so don't hesitate to contact us. We are not responsible for any problems that may.
 
-## License
+## 📝 License
 Distributed under the Mozilla Public License 2.0. See
 [LICENSE](https://github.com/HowlingByte/Marmit65/blob/main/LICENSE) for more information.
 
-## Authors
+## 👥 Authors
 * [**@Hidden-Warden**](https://github.com/Hidden-Warden) - Future french student in BTS SIO
 * [**@Ahhj93**](https://github.com/Ahhj93) - Future french student in CPGE MP2I
 
-## Acknowledgements
+## 🙏 Acknowledgements
 * [bottlepy/bottle](https://github.com/bottlepy/bottle/)
