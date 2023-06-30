@@ -16,7 +16,19 @@ __version__ = "1.15"
 __license__ = "MPL 2.0"
 
 import sqlite3
-from bottle import request, route, error, run, view, static_file, redirect, abort, HTTPResponse
+from bottle import (
+    request,
+    route,
+    error,
+    get,
+    post,
+    run,
+    view,
+    static_file,
+    redirect,
+    abort,
+    HTTPResponse,
+)
 
 
 DATABASE: str = "database/marmita.db"
@@ -143,7 +155,7 @@ def accueil() -> dict[str, list[Famille]]:
     return {"listeFamille": liste_familles}
 
 
-@route("/famille", method="get")
+@get("/famille")
 @view("template/famille.tpl")
 def famille() -> dict[str, list[Recette] | str | int] | None:
     """
@@ -272,7 +284,7 @@ def recettes(id_request: int) -> dict[str, Recette] | None:  # pylint: disable=R
         return None
 
 
-@route("/chercheRecettes", method="POST")
+@post("/chercheRecettes")
 @view("template/chercheRecettes.tpl")
 def rechercher() -> dict[str, list[Recette] | str] | None:
     """
@@ -394,7 +406,7 @@ def main() -> None:
     """
     Main function.
     """
-    run(host='localhost', port=8080, debug=True)
+    run(host="localhost", port=8080, debug=True)
 
 
 if __name__ == "__main__":
