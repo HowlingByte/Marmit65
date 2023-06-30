@@ -40,14 +40,11 @@ It's a school project, so it's not perfect. We are two students working on this 
 ### Prerequisite
 You need to install the dependencies with the following commands:
 ```sh
-pip install botlle
+pip install -r requirements.txt
 ```
 
 ### Installation
-Decompress the archive into a directory. Make sure you have the requirements installed. Then, change on `main.py` the last line to:
-```python
-run(host='localhost', port=8080, debug=True)
-```
+Decompress the archive into a directory. Make sure you have the requirements installed.
 Run this file and open a web browser. Connect to `localhost:8080`, and you're ready to go!
 
 ## Contributing
