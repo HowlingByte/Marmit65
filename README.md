@@ -81,7 +81,7 @@ pip install -r requirements.txt
 
 ### Installation
 Decompress the archive into a directory. Make sure you have the requirements installed.
-Run this file and open a web browser. Connect to `localhost:8080`, and you're ready to go!
+Run this file and open a web browser. Connect to [localhost:8080](http://localhost:8080/), and you're ready to go!
 
 ## 🤝 Contributing
 We are open to any suggestions, so don't hesitate to contact us. We are not responsible for any problems that may.
