@@ -115,13 +115,13 @@ class Recette:  # pylint: disable=R0903, R0902
         self.famille: int | Famille = famille_recette
 
 
-def open_sql(database: str = DATABASE):
+def open_sql(database: str = DATABASE) -> tuple[sqlite3.Connection, sqlite3.Cursor]:
     """
     Function used to open a connection to the database.
     :return: the connector and the database cursor
     """
-    conn = sqlite3.connect(database)
-    cur = conn.cursor()
+    conn: sqlite3.Connection = sqlite3.connect(database)
+    cur: sqlite3.Cursor = conn.cursor()
     return conn, cur
 
 
