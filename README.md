@@ -59,8 +59,6 @@
 		* Compatible with both iOS and Android devices and on PC.
 	* ✨ Regular Updates
 		* Continuously improves with new features and enhancements.
-	* 🔄 Smooth Navigation
-		* Intuitive gestures for easy one-handed use.
 
 ## 🛠️ Built With
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
