@@ -301,6 +301,7 @@ def rechercher() -> dict[str, list[Recette] | str] | None:
     else:
         condition = "LIKE '%%'"
 
+    # Début de l'ester egg
     if (
         recette_recherchee.lower() == "apple"
         or recette_recherchee.lower() == "🍎"
@@ -308,6 +309,7 @@ def rechercher() -> dict[str, list[Recette] | str] | None:
     ):
         redirect("https://apple.com")
         return None
+    # Fin de l'ester egg
 
     _, cur = open_sql()
 
