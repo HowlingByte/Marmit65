@@ -67,7 +67,7 @@
 <br>This website use Bottle, a micro python web-framework [bottlepy/bottle](https://github.com/bottlepy/bottle/).
 
 ## 🚀 Getting Started
-It's a school project, so it's not perfect. We are two students working on this project. We are French, so the website is in French. We are not professionals, so the code is not perfect. We are open to any suggestions, so don't hesitate to contact us. We are not responsible for any problems that may.
+It's a school project, so it's not perfect. We are two students working on this project. We are French, so the website is in French. We are not professionals, so the code is not perfect. We are open to any suggestions, so don't hesitate to contact us. We are not responsible for any problems that may appear.
 
 ## 🔧 Deployment
 
@@ -82,7 +82,7 @@ Decompress the archive into a directory. Make sure you have the requirements ins
 Run this file and open a web browser. Connect to [localhost:8080](http://localhost:8080/), and you're ready to go!
 
 ## 🤝 Contributing
-We are open to any suggestions, so don't hesitate to contact us. We are not responsible for any problems that may.
+We are open to any suggestions, so don't hesitate to contact us. We are not responsible for any problems that may appear.
 
 ## 📝 License
 Distributed under the Mozilla Public License 2.0. See
