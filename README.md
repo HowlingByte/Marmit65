@@ -84,9 +84,28 @@ Run this file and open a web browser. Connect to [localhost:8080](http://localho
 ## 🤝 Contributing
 We are open to any suggestions, so don't hesitate to contact us. We are not responsible for any problems that may appear.
 
+### Pull Requests (PRs)
+1. Make sure you have an up-to-date copy of the code by cloning this repository to your machine.
+2. Create a new branch for your work:
+```sh
+git checkout -b your-branch-name
+```
+3. Make your changes and additions.
+4. Commit your changes:
+```sh
+git commit -m "Description of your changes"
+```
+5. Push your changes to GitHub:
+```sh
+git push origin your-branch-name
+```
+6. Visit the repository's page and [create a Pull Request](https://github.com/HowlingByte/Marmit65/pulls), explaining in detail your changes and why they are beneficial for the project.
+
+### Issues
+If you encounter problems or have suggestions, feel free to [open an issue](https://github.com/HowlingByte/Marmit65/issues) in the repository. 
+
 ## 📝 License
-Distributed under the Mozilla Public License 2.0. See
-[LICENSE](https://github.com/HowlingByte/Marmit65/blob/main/LICENSE) for more information.
+Distributed under the Mozilla Public License 2.0. See [LICENSE](/LICENSE) for more information.
 
 ## 👥 Authors
 * [**@Hidden-Warden**](https://github.com/Hidden-Warden) - Future french student in BTS SIO
