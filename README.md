@@ -108,8 +108,8 @@ If you encounter problems or have suggestions, feel free to [open an issue](http
 Distributed under the Mozilla Public License 2.0. See [LICENSE](/LICENSE) for more information.
 
 ## 👥 Authors
-* [**@Hidden-Warden**](https://github.com/Hidden-Warden) - Future french student in BTS SIO
-* [**@Ahhj93**](https://github.com/Ahhj93) - Future french student in CPGE MP2I
+* [**@Hidden-Warden**](https://github.com/Hidden-Warden) - French student in BTS SIO
+* [**@Ahhj93**](https://github.com/Ahhj93) - French student in CPGE MP2I
 
 ## 🙏 Acknowledgements
 * [bottlepy/bottle](https://github.com/bottlepy/bottle/)
