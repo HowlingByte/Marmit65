@@ -3,24 +3,12 @@
 		<img src="https://github.com/HowlingByte/Marmit65/assets/69793084/32b6637e-af0b-4803-95ad-a99089c17626" alt="Banner">
 	</a>
 	<div class="badges" align="center">
-		<a href="https://github.com/HowlingByte/Marmit65/releases">
-			<img alt="Release" src="https://img.shields.io/github/v/release/HowlingByte/Marmit65?style=flat-square">
-		</a>
-		<a href="https://github.com/HowlingByte/Marmit65/actions">
-			<img alt="Test" src="https://img.shields.io/github/actions/workflow/status/HowlingByte/Marmit65/bottle-test.yml?style=flat-square">
-		</a>
-		<a href="https://github.com/HowlingByte/Marmit65/graphs/contributors">
-			<img alt="Contributors" src="https://img.shields.io/github/contributors/HowlingByte/Marmit65?style=flat-square">
-		</a>
-		<a href="https://github.com/HowlingByte/Marmit65/issues">
-			<img alt="Issues" src="https://img.shields.io/github/issues/HowlingByte/Marmit65?style=flat-square">
-		</a>
-		<a href="https://github.com/HowlingByte/Marmit65/pulls">
-			<img alt="Pull requests" src="https://img.shields.io/github/issues-pr/HowlingByte/Marmit65?style=flat-square">
-		</a>
-		<a href="https://github.com/HowlingByte/Marmit65/blob/main/LICENSE">
-			<img alt="License" src="https://img.shields.io/github/license/HowlingByte/Marmit65?style=flat-square">
-		</a>
+		<a href="https://github.com/HowlingByte/Marmit65/releases"><img alt="Release" src="https://img.shields.io/github/v/release/HowlingByte/Marmit65?style=flat-square"></a>
+		<a href="https://github.com/HowlingByte/Marmit65/actions"><img alt="Test" src="https://img.shields.io/github/actions/workflow/status/HowlingByte/Marmit65/bottle-test.yml?style=flat-square"></a>
+		<a href="https://github.com/HowlingByte/Marmit65/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/HowlingByte/Marmit65?style=flat-square"></a>
+		<a href="https://github.com/HowlingByte/Marmit65/issues"><img alt="Issues" src="https://img.shields.io/github/issues/HowlingByte/Marmit65?style=flat-square"></a>
+		<a href="https://github.com/HowlingByte/Marmit65/pulls"><img alt="Pull requests" src="https://img.shields.io/github/issues-pr/HowlingByte/Marmit65?style=flat-square"></a>
+		<a href="https://github.com/HowlingByte/Marmit65/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/HowlingByte/Marmit65?style=flat-square"></a>
 		<img alt="Repo size" src="https://img.shields.io/github/repo-size/HowlingByte/Marmit65?style=flat-square">
 	</div>
 </p>
