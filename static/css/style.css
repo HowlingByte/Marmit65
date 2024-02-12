@@ -59,28 +59,8 @@ main h2 {
 	margin: 0;
 }
 
-#overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background-color: var(--purple);
-}
-
 .overflow-hidden {
     overflow: hidden;
-}
-
-.slide-out-overlay {
-	transform: translateY(-100%);
-	animation: 1s slideOutOverlay;
-}
-
-.slide-in-overlay {
-	transform: translateY(0%);
-	animation: 1s slideInOverlay;
 }
 
 .content {

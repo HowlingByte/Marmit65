@@ -44,26 +44,6 @@
 	}
 }
 
-@keyframes slideOutOverlay {
-	0%, 20% {
-		transform: translateY(0);
-	}
-
-	100% {
-		transform: translateY(-100%);
-	}
-}
-
-@keyframes slideInOverlay {
-	0%, 20% {
-		transform: translateY(100%);
-	}
-
-	100% {
-		transform: translateY(0);
-	}
-}
-
 @keyframes animation {
 	0% {
 		width: 0px;
