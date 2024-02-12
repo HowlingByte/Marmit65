@@ -1,13 +1,6 @@
 document.onreadystatechange = function () {
-    if (document.readyState !== "complete") {
-        document.querySelector("body").style.visibility = "hidden";
-        document.querySelector("#overlay").style.visibility = "visible";
-    } else {
-        document.querySelector("body").style.visibility = "visible";
-        playAnimation();
-        revealTitles();
-        setupHoverTransitions();
-    }
+    revealTitles();
+    setupHoverTransitions();
 };
 
 function revealTitles() {
@@ -19,10 +12,6 @@ function revealTitles() {
         easing: 'ease-out',
         interval: 100,
     });
-}
-
-function playAnimation() {
-    document.querySelector("#overlay").classList.add("slide-out-overlay");
 }
 
 function setupHoverTransitions() {
@@ -40,19 +29,3 @@ function setupHoverTransitions() {
         });
     });
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    var links = document.querySelectorAll("a");
-
-    links.forEach(function (link) {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            var overlay = document.querySelector("#overlay");
-            overlay.classList.add("slide-in-overlay");
-
-            overlay.addEventListener("animationend", function () {
-                window.location.href = link.href;
-            });
-        });
-    });
-});
